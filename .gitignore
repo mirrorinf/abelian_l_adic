@@ -1,7 +1,2 @@
 .vscode
-*.blg
-*.log
-*.aux
-*.bbl
-*.pdf
-*.out
+build
