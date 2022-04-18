@@ -1,1 +1,20 @@
 \section{引言}
+
+绝对Galois群是数论中最引人注目的对象之一，而对它的研究通常是通过研究它的表示进行的.
+通过Abel簇的平展上同调群可以定义一类Galois表示。其中最简单的情形是考虑Galois群在椭圆曲线的挠点上的作用：
+
+设$E$是定义在域$K$上的椭圆曲线，$\ell$是素数且$\ell\neq \mathrm{char}\ K$. 对所有的正整数$n$，$E[\ell^n]$是$E(\overline{K})$的有限子群，且同构于$(\mathbb{Z}/\ell^n\mathbb{Z})^2$. $G = \mathrm{Gal}(\overline{K}/K)$作用在$E[\ell^n]$上，且作用与$E$上的加法交换，即有表示$\rho_n:G\to \mathrm{GL}_2(\mathbb{Z}/\ell^n \mathbb{Z})$.
+
+记$K_n=K(E[\ell^n])$. $\sigma\in G$在$K_n$上作用平凡当且仅当$\sigma$在$E[\ell^n]$上的作用平凡，因此$K_n/K$是Galois扩张，且$\mathrm{Gal}(K_n/K)=\mathrm{Im}\ \rho_n$. $\mathrm{Im}\ \rho_n$的大小反映了$K_n$的复杂程度，也就是$E$的挠点之间相互独立的程度.
+
+可以将所有的$\rho_n$放在一起考虑. 记$E[\ell^{\infty}]=\bigcup_n E[\ell^n]$，$K_{\infty} = K(E[\ell^{\infty}])$. $K_{\infty}$也是Galois扩张，且$\mathrm{Gal}(K_{\infty}/K) = \lim\limits_{\longleftarrow} \mathrm{Gal}(K_n/K)$. 记$\rho = \lim\limits_{\longleftarrow} \rho_n$，$\rho: G\to \mathrm{GL}_2(\mathbb{Z}_{\ell})$，其中转移映射$\mathrm{GL}_2(\mathbb{Z}/\ell^{n+1} \mathbb{Z}) \to \mathbb{Z}/\ell^n \mathbb{Z}$，$\tau \mapsto \tau \pmod{\ell^n}$.
+
+Tate提出了另一种将$\rho_n$放在一起的方式. 令Tate模$T_{\ell}(E) = \lim\limits_{\longleftarrow} E[\ell^n]$，其中转移映射为$E[\ell^{n+1}]\to E[\ell^n], P\mapsto \ell P$，则$T_{\ell}\cong (\mathbb{Z}_{\ell})^2$. $G$在$E[\ell^n]$上的作用还与椭圆曲线上的加法交换，因此在同构$T_{\ell}(E)\cong (\mathbb{Z}_{\ell})^2$下$G$的作用是线性映射. 这就得到了表示$G\mapsto \mathrm{GL}_2(\mathbb{Z}_{\ell})$. 可以看出Tate模定义的表示在模每个$\ell^n$之后都成为$\rho_n$，因此就是上一段中定义的$\rho$.
+
+在$\mathrm{char}\ K = 0$，且$E$具有复乘的情况下，$\mathrm{Im}\ \rho$是相对简单的. 通过将$K$取成一个有限扩张，不妨设$\mathrm{End}_K(E) \cong \mathcal{O}$. 此时$T_{\ell}$是$\mathcal{O}_{\ell} = \lim\limits_{\longleftarrow}\mathcal{O}/\ell^n \mathcal{O}$上秩为$1$的模，$G$的作用与$\mathcal{O}_{\ell}$的作用交换. 此时$\rho$实际上是表示$G\to (\mathcal{O}_{\ell})^{\times}$，即$\mathrm{Im}\ \rho$是交换群.
+
+如果$K$是代数数域，绝对Galois群的表示的像似乎遵从一个原则，“如果没有让像变小的理由，那么它就会尽可能地大”. $E$具有复乘就是一个让$\rho$的像变小的原因. Serre证明了复乘就是仅有的让像变小的原因，也就是本文的主定理：
+
+\begin{cthm}
+    令$K$是代数数域，$E$是定义在$K$上的椭圆曲线. 假设$\mathrm{End}_{\overline{K}}(E) \cong \mathbb{Z}$. 则$\mathrm{Im}\ \rho$是$\mathrm{GL}_2(\mathbb{Z}_{\ell})$的开子群.
+\end{cthm}
