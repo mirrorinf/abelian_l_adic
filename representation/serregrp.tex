@@ -1,0 +1,109 @@
+\subsection{在\texorpdfstring{$S_{\mathfrak{m}}$}{Sm}中取值的表示}
+
+记$\varepsilon : \mathbb{A}_K^{\times} \to I_{\mathfrak{m}}\to S_{\mathfrak{m}}(\mathbb{Q})$，$\pi: T \to T_{\mathfrak{m}}\to S_{\mathfrak{m}}$为定义$S_{\mathfrak{m}}$的映射. 对$\pi$取$\mathbb{Q}_{\ell}$点，得到$\pi_{\ell} : T(\mathbb{Q}_{\ell}) \to S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$. 但是$T(\mathbb{Q}_{\ell}) = (K\otimes \mathbb{Q}_l)^{\times} = \prod_{v\mid l} K_v^{\times}$，由此得到映射$\alpha_{\ell} : \mathbb{A}_K^{\times} \xrightarrow{proj} T(\mathbb{Q}_{\ell}) \xrightarrow{\pi_{\ell}} S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$.
+
+\begin{clem}
+    以下图表交换，其中的映射或者是上面定义的，或者是自然嵌入和投射
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            \mathbb{A}_K^{\times} \arrow[ddr, bend right] \arrow[drr, bend left]& & & \\
+             &K^{\times} \arrow[ul] \arrow[r]\arrow[d] &K^{\times}/E_{\mathfrak{m}} \arrow[r]\arrow[d] &I_{\mathfrak{m}} \arrow[d]\\
+             &T(\mathbb{Q}_{\ell}) \arrow[r] &T_{\mathfrak{m}}(\mathbb{Q}_{\ell}) \arrow[r] &S_{\mathfrak{m}}(\mathbb{Q}_{\ell})
+        \end{tikzcd}
+    \end{figure}
+\end{clem}
+
+因此，$\varepsilon_{\ell}(a) = \varepsilon(a) \alpha_{\ell}(a^{-1})$定义了$C_K \to S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$的映射. 但是$S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$的拓扑是完全不连通的，因此$C_K$的连通分支$D_K$的像为$1$. 那么，由类域论，$\varepsilon_{\ell}$定义了$G^{\mathrm{ab}}\to S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$的映射.
+
+记$F_v = \varepsilon(f_v) \in S_{\mathfrak{m}}(\mathbb{Q})$，其中$f_v$是任何一个在$v$处取素元，在其它地方取$1$的idèle.
+
+\begin{cthm}
+    (1) $\varepsilon_{\ell}$是一个取值在$S_{\mathfrak{m}}$中的有理$\ell$进表示
+
+    (2) $\varepsilon_{\ell}$在$v\in \Sigma_K - \mathrm{supp}(\mathfrak{m})\bigcup S_{\ell}$处非分歧，且$F_{v, \varepsilon_{\ell}} = F_v \in S_{\mathfrak{m}}(\mathbb{Q})$.
+
+    (3) $\{\varepsilon_{\ell}\}$形成了一族取值在$S_{\mathfrak{m}}$中的严格相容的$\ell$进表示.
+\end{cthm}
+
+\begin{proof}
+    如果$v\in \Sigma_K - \mathrm{supp}(\mathfrak{m}), a\in U_v$，则$\epsilon(a) = 1$. 如果进一步地，$v\nmid \ell$，则$\alpha_{\ell}(a) = 1$，因此$\varepsilon_{\ell}$在$v$处非分歧. 同时，$\varepsilon_{\ell}(f_v)=\varepsilon(f_v) = F_v$，即$v$处的Frobenius元素是$F_v$.
+\end{proof}
+
+\begin{cthm}
+    $\mathrm{Im}(\varepsilon_{\ell})$在$S_{\mathfrak{m}}/\mathbb{Q}_{\ell}$中Zariski稠密.
+\end{cthm}
+
+\begin{proof}
+    $\varepsilon$在$U_{\ell, \mathfrak{m}} = \prod_{v\mid \ell} U_{v, \mathfrak{m}}$上平凡，故$\epsilon_{\ell}(U_{\ell, \mathfrak{m}}) = \pi_{\ell}(U_{\ell, \mathfrak{m}})\subset T_{\mathfrak{m}}(\mathbb{Q}_{\ell}) \subset S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$. 因此，$\mathrm{Im}(\varepsilon_{\ell})$是$S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$的（$\ell$进拓扑下的）开子群. 另一方面，由素理想在$C_{\mathfrak{m}}$中分布的经典结果，$f_v\in I_{\mathfrak{m}}$在$C_{\mathfrak{m}}$中的像取遍了整个$C_{\mathfrak{m}}$.
+    因此$\mathrm{Im}(\varepsilon_{\ell})$在$S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$的Zariski拓扑下稠密.
+\end{proof}
+
+\begin{ccor}
+    $\{F_v\}$在$S_{\mathfrak{m}}$中Zariski稠密. \label{frob_dense}
+\end{ccor}
+
+\begin{proof}
+    令$X$表示所有$F_v$的集合. 令$\ell$是素数. 令$\overline{X}, \overline{X}_{\ell}$分别为$X$在$S_{\mathfrak{m}}$(Zariski拓扑)，$S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$（$\ell$进拓扑）中的闭包. 那么$\overline{X}_{\ell}\subset \overline{X}(\mathbb{Q}_{\ell})$. 但是\Chebotarev 密度定理说明，$X$在$\mathrm{Im}(\varepsilon_{\ell})$中（$\ell$进）稠密，即$\overline{X}_{\ell} = \mathrm{Im}(\varepsilon_{\ell})$. $\mathrm{Im}(\varepsilon_{\ell})$在$S_{\mathfrak{m}}/\mathbb{Q}_{\ell}$（Zariski）稠密，因此$\overline{X}(\mathbb{Q}_{\ell}) = S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$.
+\end{proof}
+
+\subsection{通过\texorpdfstring{$S_{\mathfrak{m}}$}{Sm}定义的表示}
+
+设$V_{\ell}$是$\mathbb{Q}_{\ell}$上的有限维线性空间，$\varphi: S_{\mathfrak{m}}/\mathbb{Q}_{\ell} \to GL(V_{\ell})$是$S_{\mathfrak{m}}/\mathbb{Q}_{\ell}$的表示. 令$\varphi_{\ell}$为映射$G^{\mathrm{ab}}\to S_{\mathfrak{m}}(\mathbb{Q}_{\ell})\xrightarrow{\varphi} GL(V_{\ell})$.
+
+\begin{cthm}
+    (1) $\varphi_{\ell}$是半单表示
+
+    (2) 令$v\in \Sigma_K - \mathrm{supp}(\mathfrak{m})\bigcup S_{\ell}$，则$\varphi_{\ell}$在$v$处非分歧，且$F_{v, \varphi_{\ell}} = \varphi(F_v)$
+
+    (3) $\varphi_{\ell}$是有理表示当且仅当$\varphi$可以在$\mathbb{Q}$上定义 \label{single_ell}
+\end{cthm}
+
+\begin{proof}
+    $S_{\mathfrak{m}}$是乘法型群，任意表示都可以在有限扩张后对角化，由此得到(1). 由$\epsilon_{\ell}$的非分歧性和Frobenius元素的指定，(2)是显然的.
+    为了不打断行文顺序，(3)的证明留到本小节最后给出.
+\end{proof}
+
+(3)告诉我们，考察有理表示时，只需要从一个$\mathbb{Q}$上的表示$S_{\mathfrak{m}}\to GL(V)$出发.
+
+设$V$是$\mathbb{Q}$上的有限维空间，$\varphi: S_{\mathfrak{m}}\to GL(V)$是$S_{\mathfrak{m}}$的表示. 令$V_{\ell} = V\otimes \mathbb{Q}_{\ell}$，那么有$\varphi_{\ell}: S_{\mathfrak{m}}/\mathbb{Q}_{\ell}\to GL(V_{\ell})$. 按照上面的讨论，这就是在说有表示$\varphi_{\ell}: G^{\mathrm{ab}}\to GL(V_{\ell})$. 称如此定义的$\{\varphi_{\ell}\}$为通过$S_{\mathfrak{m}}$定义的.
+
+\begin{cthm}
+    (1) $\{\varphi_{\ell}\}$形成了一族严格相容的有理$\ell$进表示，例外集不大于$\mathrm{supp}(\mathfrak{m})$
+
+    (2) 当$v\in \Sigma_K - \mathrm{supp}(\mathfrak{m})\bigcup S_{\ell}$时，$F_{v, \varphi_{\ell}} = \varphi(F_v)$
+
+    (3) 存在无穷多个素数$\ell$使得$\varphi_{\ell}$在$\mathbb{Q}_{\ell}$上可以对角化
+\end{cthm}
+
+\begin{proof}
+    (1)和(2)由定理\ref{single_ell}对单个$\ell$的计算容易得到. 由命题\ref{split_finite}，存在$K$的有限扩张$E$使得$\varphi$在$E$上对角化. 如果$\ell$在$E$上完全分裂，则有嵌入$E\to \mathbb{Q}_{\ell}$，此时$\varphi_{\ell}$在$\mathbb{Q}_{\ell}$上可以对角化. 由\Chebotarev 密度定理，存在无穷多个这样的$\ell$.
+\end{proof}
+
+\begin{ccor}
+    如果$\{\rho_{\ell}\}$是一族通过$S_{\mathfrak{m}}$定义的$\ell$进表示，则存在无穷很多个素数$\ell$使得$\rho_{\ell}$是一维表示的直和；特别地，$\rho_{\ell}$在$\mathbb{Q}_{\ell}$上可约.\label{sm_to_reducile}
+\end{ccor}
+
+现在来证明定理\ref{single_ell}的(3). 回顾，如果$H$是$k$上的代数群，记$\mathsf{Rep}_k(H)$为$H$的有限维半单表示的范畴. 当$k_1$是$k$的扩张是，有自然的$-\otimes k_1: \mathsf{Rep}_k(H)\to \mathsf{Rep}_{k_1}(H/k_1)$. 如果$\rho\in \mathsf{Rep}_{k_1}(H/k_1)$落在$-\otimes k_1$的像（essential image）中，则称$\rho$可以定义在$k$上.
+
+\begin{cprop}
+    令$\mathbb{Q}\subset k\subset k_1$. 对于$\varphi\in \mathsf{Rep}_{k_1}(S_{\mathfrak{m}}/k_1)$，以下性质等价：
+
+    (1) $\varphi$可以定义在$k$上
+
+    (2) 对任意的$v\not\in \mathrm{supp}(\mathfrak{m})$，$\varphi(F_v)$的特征多项式的系数都落在$k$中
+
+    (3) 存在密度为$1$的子集$\Sigma \subset \Sigma_K$使得当$v\in \Sigma$时，$\mathrm{Tr}(\varphi(F_v))\in k$.
+\end{cprop}
+
+\begin{proof}
+    (1)$\Rightarrow$(2)$\Rightarrow$(3)是显然的.
+\end{proof}
+
+% \subsection{\texorpdfstring{$T_{\mathfrak{m}}$}{Tm}的结构}
+
+% 本小节中$G = \mathrm{Gal}(\overline{\mathbb{Q}}/\mathbb{Q})$.
+
+% 设$\omega$是$\overline{\mathbb{Q}}$的一个复嵌入，记复共轭诱导的$\overline{\mathbb{Q}}$的自同构为$c_{\omega}$. 那么对不同的$\omega$，$c_{\omega}$形成了一个共轭类，记为$C_{\infty}$.
+
+% 将$X(T)$写成加法形式，令$Y(T) = X(T)\otimes_{\mathbb{Z}} \mathbb{Q}$. 令

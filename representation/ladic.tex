@@ -1,0 +1,108 @@
+\subsection{\texorpdfstring{$\ell$}{ELL}进表示的基本定义}
+
+令$\ell$是一个素数，$k$是一个域，$k_s$是$k$的一个可分闭包. 记$G = \mathrm{Gal}(k_{s}/k)$.
+
+\begin{cdef}
+    $k$的一个$\ell$进表示是一个连续的同态$\rho: G\to GL(V)$，其中$V$是一个有限维$\mathbb{Q}_{\ell}$向量空间.
+\end{cdef}
+
+令$K$是一个代数数域. 记$\Sigma_K$是$K$的有限素点的集合.
+
+\begin{cdef}
+    设$v\in \Sigma_K$. 称一个$\ell$进表示$\rho$在$v$处非分歧，当且仅当对某一个$K_{s}$的素点$w\mid v$（等价于对所有的$w\mid v$）有$\rho(I_w) = 1$，$I_w$是惯性子群. 如果$\rho$在$v$处非分歧，则$D_w$中所有Frobenius元素在$\rho$下的像是同一个，称其为$\rho$下的Frobenius元素，记为$F_{w, \rho}$. 所有$w\mid v$定义的Frobenius元素形成$G$的一个共轭类，称为$v$处的Frobenius共轭类.
+\end{cdef}
+
+\begin{crem}
+    如果$L$是$\ker \rho$的固定域，则$\rho$在$v$处非分歧当且仅当$L$在$v$处非分歧.
+\end{crem}
+
+我们需要\Chebotarev 密度定理的一个无穷版本，这里的密度指自然密度：
+
+\begin{cthm}
+    令$L$是$K$的Galois扩张，只在有限个素点处分歧. 给$H = \mathrm{Gal}(L/K)$赋Krull拓扑，令$\mu$是相应的Haar测度（注意到紧群都是幺模的），满足$\mu(H) = 1$，那么：
+
+    (1) $L$的非分歧素点定义的Frobenius元素在$H$中稠密
+
+    (2) 令$X$是$H$的一个在共轭下不变的子集，并假设$X$是开集或者$X$是闭集或者$X$的边界集在$\mu$下是零测集. 那么使得Frobenius元素落在$X$中的非分歧素点$v$的密度恰好为$\mu(X)$.
+\end{cthm}
+
+\begin{proof}
+    只要证明(2). 令$K\subset L_1\subset L_2\subset \cdots \subset L$使得$L = \bigcup_i L_i$. 记$p_i: H\to \mathrm{Gal}(L_i/K)$为自然的投射. 如果$F$是闭集，则$F = \bigcap_i p_i^{-1}(p_i(F))$，因此由有限扩张的\Chebotarev 密度定理，结论对$F$成立. 如果$U$是开集，且$U$在共轭下不变，则$H-U$是在共轭下不变的闭集，结论对$H-U$成立，从而对$U$也成立. 取$F = \overline{X}, U = H - \overline{H-X}$. 但是$\mu(F) = \mu(U)$，因此结论对$X$成立.
+\end{proof}
+
+\begin{crem}
+    如果$\rho$是一个$\ell$进表示，且在有限多个素点以外非分歧. 令$L$是$\ker(\rho)$的固定域，则$L$也在有限多个素点以外非分歧. 由\Chebotarev 密度定理，Frobenius元素在$\mathrm{Im}(\rho)$中稠密.
+\end{crem}
+
+\subsection{有理\texorpdfstring{$\ell$}{ELL}进表示}
+
+令$\rho$是一个$\ell$进表示，$v$是一个素点使得$\rho$在$v$处非分歧. 记$P_{v, \rho}(T) = \det (1 - F_{w, \rho}T)$，其中$w\mid v$.
+
+\begin{cdef}
+    称$\rho$为一个有理$\ell$进表示当且仅当存在有限集合$S\subset \Sigma_K$使得当$v\in \Sigma - S$时，$\rho$在$v$处非分歧，而且$P_{v, \rho}$的系数都是有理数. 如果进一步的，$P_{v,\rho}$的系数都是整数，则称$\rho$为整$\ell$进表示.
+\end{cdef}
+
+\begin{cdef}
+    令$\ell'$为一个素数（不一定和$\ell$不同），$\rho'$为$K$的$\ell'$进表示. 假设$\rho, \rho'$都是有理的. 称$\rho, \rho'$相容当且仅当存在有限集合$S\subset \Sigma_K$使得$\rho, \rho'$在所有$v\in \Sigma_K - S$处都非分歧，且$P_{v,\rho} = P_{v, \rho'}$.
+\end{cdef}
+
+令$\rho$为一个$\ell$进表示，$V$是表示空间. 则$V$有合成序列$0 = V_0\subset \cdots \subset V_q = V$，其中$V_{i+1}/V_i$是单$G$模. 令$V' = \bigoplus_i V_{i+1}/V_i$，则$V'$上定义了半单的有理$\ell$进表示，且和$\rho$相容. 称这个表示为$\rho$的半单化.
+
+\begin{cdef}
+    假设对每个素数$\ell$有一个有理$\ell$进表示$\rho_{\ell}$. 称$\{\rho_{\ell}\}$为严格相容的，当且仅当存在有限集合$S\subset \Sigma_K$满足：
+
+    (1) 对任意的素数$\ell$，记$S_{\ell} = \{v\mid p_v = \ell\}$. 对所有的$v\in \Sigma_K - S\bigcup S_{\ell}$，$\rho_{\ell}$在$v$处非分歧，且$P_{v, \rho_{\ell}}$的系数都是有理数
+
+    (2) 对任意的素数对$\ell, \ell'$，当$v\in \Sigma_K - S\bigcup S_{\ell}\bigcup S_{\ell'}$时有$P_{v, \rho_{\ell}} = P_{v, \rho_{\ell'}}$.
+\end{cdef}
+
+半单的表示可以被特征多项式决定，具体来说：
+
+\begin{clem}
+    令$k$是一个特征$0$的域，$A$是$k$代数，$M_1, M_2$是$A$的两个$k$-有限维半单模. 如果$\mathrm{Tr}\circ \rho_1 = \mathrm{Tr}\circ \rho_2$，则$M_1, M_2$同构.
+\end{clem}
+
+\begin{proof}
+    只需要证明，如果$\{M_i\}$是有限多个互不同构的$k$-有限维不可约模，则$\mathrm{Tr}\ M_i: A\to k$线性无关. 令$N_i\subset A$是$M_i$的零化子，则$N_i$是双边理想，且作为左理想都是极大的. 由于$M_i$互不同构，$N_i$互不相同. 那么对每个$i$，存在$f_i\in A$使得$f_i\equiv 1\pmod{M_i}, f_i\equiv 0\pmod{M_j}, j\neq i$. 此时$\mathrm{Tr}\ M_i(f_i) = \dim_k M_i, \mathrm{Tr}\ M_j(f_i) = 0, j\neq i$.
+\end{proof}
+
+\begin{cthm}
+    令$\rho$是有理$\ell$进表示，$\ell'$是一个素数（不一定和$\ell$不同）. 那么在同构意义下至多有一个半单$\ell'$进表示$\rho'$，使得$\rho$和$\rho'$相容.
+\end{cthm}
+
+\begin{proof}
+    令$\rho'_1, \rho'_2$是两个半单有理$\ell'$进表示，且都和$\rho$相容. 先证明$\mathrm{Tr}(\rho'_1(g)) = \mathrm{Tr}(\rho'_2(g))$对所有$g\in G$都成立. 记$J = \ker(\rho'_1)\bigcap \ker(\rho'_2)$，$H = G/J$，$M$是$J$对应的扩张. 那么$\mathrm{Gal}(M/K) = H$且$M/K$在有点多个素点以外非分歧. 由\Chebotarev 密度定理，Frobenius元素在$H$中稠密；而$\mathrm{Tr}\circ \rho'_1, \mathrm{Tr}\circ \rho'_1$可以定义为$H$上的连续函数，且在Frobenius元素上都相等，因此在整个$H$上相等，也就在整个$G$上相等. 在引理中取$k = \mathbb{Q}_{\ell'}, A = k[H]$，就得到$\rho'_1, \rho'_2$同构.
+\end{proof}
+
+$\ell$进表示最简单的两个非平凡的例子是通过单位根和椭圆曲线构造的. 这两种构造都是用上同调构造$\ell$进表示的例子. 暂时假设$K$是一般的域：
+\paragraph{单位根}
+假设$\ell\neq \mathrm{char}(K)$. 此时$x^{l^m}-1$是可分多项式，因此$K_s$中的$\ell^m$次单位根的乘法群$\mu_m$同构于$\mathbb{Z}/\ell^m \mathbb{Z}$. $G$作用在$\mu_m$上，因此作用在$\mathbb{Z}_{\ell} \cong T_{\ell}(\mu) = \invlim\mu_m$. 那么有$\chi_{\ell}:G\to \mathbb{Z}_{\ell}^{\times}\subset \mathbb{Q}_{\ell}^{\times}$，即一个一维的$\ell$进表示. 而如果$K$是代数数域，$v\in \Sigma_K, v\nmid \ell$，则$\chi_{\ell}$在$v$处非分歧，而且$F_{v, \chi_{\ell}} = Nv$. 因此$\chi_{\ell}$是一个整的$\ell$进表示. 当$\ell$取遍所有素数时，$\{\chi_{\ell}\}$形成了一族严格相容的有理$\ell$进表示，定义中的$S$可以取为空集.
+
+\paragraph{椭圆曲线}
+引言部分中通过$T_{\ell}$定义的Galois表示就是一种$\ell$进表示.
+
+\subsection{定义在线性代数群中的表示}
+
+\begin{cdef}
+    令$H$是一个$k$上的线性代数群，$k[H]$是$H$的坐标环. 若$f\in k[H]$满足对任意的交换$k$代数$k'$以及$x,y\in H(k')$，都有$f(xy)=f(yx)$，则称$f$是中心函数. 若$x\in H(k')$，且对任意的中心函数$f\in k[H]$都有$f(x)\in k$，则称$x$的共轭类是有理的.
+\end{cdef}
+
+\begin{cdef}
+    令$H$是一个$\mathbb{Q}$上线性代数群. $K$的一个在$H$中取值的$\ell$进表示是指一个连续的$\rho: \mathrm{Gal}(\overline{K}/K)\to H(\mathbb{Q}_{\ell})$.
+\end{cdef}
+
+显然地定义非分歧、Frobenius元素.
+
+\begin{cdef}
+    称一个在$H$中取值的$\ell$进表示$\rho$为有理的，当且仅当存在有限子集$S\subset \Sigma_K$使得当$v\in \Sigma_K - S$时，$\rho$在$v$处非分歧，而且$F_{v, \rho}$的共轭类是有理的. （$k=\mathbb{Q}, k'=\mathbb{Q}_{\ell}$）
+\end{cdef}
+
+显然地定义相容性和严格相容性.
+
+\begin{crem}
+    如果$H$是交换的，则$F_{v,\rho}$的共轭类是有理的当且仅当$F_{v,\rho} \in H(\mathbb{Q})$.
+\end{crem}
+
+\begin{crem}
+    如果$H = GL_n$，则由Chevalley关于不变多项式的定理，$H$上的中心函数形成的子代数就是$k[t_0,\ldots,t_{n-1}, (\det)^{-1}]$，其中$t_0=\det,t_1,\ldots,t_{n-2},t_{n-1}=\mathrm{tr}$是特征多项式的系数. 因此前一节定义的$\ell$进表示的有理性和本节定义的是一致的.
+\end{crem}

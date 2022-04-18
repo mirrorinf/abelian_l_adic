@@ -1,0 +1,86 @@
+\subsection{代数数论回顾}
+
+这一小节回顾一些代数数论的内容，主要目的是固定后面要用到的记号.
+
+令$K$是代数数域，$\mathfrak{m}$是$\order_K$的整理想. 记$U_{\mathfrak{m}, v}$为：当$K_v \cong \mathbb{C}$时，$K_v^{\times}$；当$K_v\cong \mathbb{R}$时，$K_v^{+}$；当$v\nmid\mathfrak{m}\infty$时，$U_{v}$；当$v(\mathfrak{m})=t>0$时，$1+\mathfrak{p}_v^{t}$. 记$U_{\mathfrak{m}}=\prod_v U_{\mathfrak{m}, v}$，$U_{\mathfrak{m}, finite} = \prod_{v\nmid \infty}U_{\mathfrak{m}, v}$（看作$\mathbb{A}_K^{\times}$的子群时，指要求$v\mid \infty$处取值为$1$）. $E_{\mathfrak{m}} = K^{\times} \bigcap U_{\mathfrak{m}}$，$I_{\mathfrak{m}} = \mathbb{A}_K^{\times}/U_{\mathfrak{m}}$，$C_{\mathfrak{m}} = \mathbb{A}_K^{\times} / K^{\times}U_{\mathfrak{m}}$.
+
+$T = \mathrm{Res}_{K/\mathbb{Q}}(\mathbb{G}_m/K)$，$T_{\mathfrak{m}} = T / \overline{E_{\mathfrak{m}}}$.
+
+先给出Hecke特征的理想版本和idèle版本一一对应的精确形式：
+
+\begin{cthm}
+    以下两类对象之间存在一一对应：
+
+    (1) $\chi: \mathbb{A}_K^{\times}/K^{\times} \to \mathbb{C}^{\times}$，满足$\chi(U_{\mathfrak{m}, finite}) = 1$
+
+    (2) $\tilde{\chi}: J^{\mathfrak{m}}\to \mathbb{C}^{\times}$，使得存在$\chi_{\infty}:\prod_{v\mid \infty}K_v^{\times} \to \mathbb{C}^{\times}$，满足当$a\in K, a\equiv 1\pmod{\mathfrak{m}}$时，$\tilde{\chi}((a)) = \chi_{\infty}(a)$.
+
+    其中映射$\chi\mapsto \tilde{\chi}$是，对所有$v\nmid \mathfrak{m}\infty$，选定一个素元$\pi_v\in \mathcal{O}_v$得到映射$J^{\mathfrak{m}}\to \mathbb{A}_K^{\times}$，再与$\chi$复合.
+\end{cthm}
+
+\begin{crem}
+    在(2)中对$a$的要求再加上全正，对$\tilde{\chi}$的要求看上去是减弱了，但事实上是一样的. 可以通过强逼近定理转化到idèle版本再还原来看，也可以直接证明：令$K^{\mathfrak{m}} = \{\alpha\in K^{\times}, \alpha\equiv 1\pmod{\mathfrak{m}}\}$，$K^{\mathfrak{m}}_{+} = \{\alpha\in K^{\mathfrak{m}}, \alpha 全正\}$. 如果$\chi_{\infty}$满足当$a\in K^{\mathfrak{m}}_{+}$时，$\tilde{\chi}((a)) = \chi_{\infty}(a)$，则$\tilde{\chi}\chi_{\infty}^{-1}$定义了$K^{\mathfrak{m}}/K^{\mathfrak{m}}_{+}$的一个特征，但是则$K^{\mathfrak{m}}/K^{\mathfrak{m}}_{+} \cong \prod_{v实素点} \{\pm 1\}$. 因此存在一个$\phi: \prod_{v\mid \infty} K_v^{\times}\to \{\pm 1\}$使得在$K^{\mathfrak{m}}$上有$\tilde{\chi}\chi_{\infty}^{-1} = \phi$，于是$\chi_{\infty}\phi$满足定理中（看起来更强的）条件(2).
+\end{crem}
+
+\begin{cdef}
+    Serre群$S_{\mathfrak{m}}$是一个$\mathbb{Q}$代数群，带着一个代数群态射$T_{\mathfrak{m}}\to S_{\mathfrak{m}}$和一个群同态$\mathbb{A}_K^{\times}/U_{\mathfrak{m}}\to S_{\mathfrak{m}}(\mathbb{Q})$使得图表交换，且是以上条件定义的范畴中的始对象
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            K^{\times}/E_{\mathfrak{m}}\arrow[r]\arrow[d] &\mathbb{A}_K^{\times}/U_{\mathfrak{m}}\arrow[d]\\
+            T_{\mathfrak{m}}(\mathbb{Q})\arrow[r] &S_{\mathfrak{m}}(\mathbb{Q})
+        \end{tikzcd}
+    \end{figure}
+\end{cdef}
+
+\begin{cprop}
+    如果$R$是$\mathbb{Q}$代数，且$\mathrm{Spec}\ R$连通，则有交换图表
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            0\arrow[r] &K^{\times}/E_{\mathfrak{m}}\arrow[r]\arrow[d] &\mathbb{A}_K^{\times}/U_{\mathfrak{m}}\arrow[d] \arrow[r] &C_{\mathfrak{m}}\arrow[d]\arrow[r] &0\\
+            0\arrow[r] &T_{\mathfrak{m}}(R)\arrow[r] &S_{\mathfrak{m}}(R) \arrow[r] &C_{\mathfrak{m}}\arrow[r] &0
+        \end{tikzcd}
+    \end{figure}
+    且图表中的两行都是正合列.
+\end{cprop}
+
+\begin{cprop}
+    $X(S_{\mathfrak{m}}) = \mathrm{Hom}_{\overline{\mathbb{Q}}}(S_{\mathfrak{m}}/\overline{\mathbb{Q}}, \mathbb{G}_{m}/\overline{\mathbb{Q}})$可以被描述为以下对象的集合：$(\phi, \chi)$，其中$\phi: I_{\mathfrak{m}}\to \overline{\mathbb{Q}}^{\times}$，$\chi\in X(T_{\mathfrak{m}})$满足$\phi(y) = \chi(y), y\in K^{\times}/ E_{\mathfrak{m}}$.
+\end{cprop}
+
+以上两个命题可以直接通过$S_{\mathfrak{m}}$的构造来证明.
+
+\begin{cprop}
+    存在$\mathbb{Q}$的有限扩张$E$使得对任意有限维表示$\rho:S_{\mathfrak{m}}\to GL(V)$，$\rho/E$可以对角化. \label{split_finite}
+\end{cprop}
+
+这里需要用到可对角化群和乘法型群的概念. 假设$F$是一个特征$0$的域，$\Gamma = \mathrm{Gal}(\overline{F}/F)$. $G$是定义在$F$上的交换代数群.
+若$G$同构于某一个对角矩阵群$D_n/F$的闭子群，则称$G$是可对角化的. 如果$G$在$\overline{F}$上可对角化，则称$G$为乘法型的.
+
+\begin{cprop}
+    如果$G$可对角化，则$G$的任何有限维表示都可对角化.
+\end{cprop}
+
+\begin{cprop}
+    如果$G$是乘法型群，则$G$在$F$的某个有限扩张上可对角化.
+\end{cprop}
+
+\begin{proof}
+    因为$G$是线性代数群，任何一个$G/\overline{F}\to \mathbb{G}_m/\overline{F}$可以定义在一个有限扩张上. 而$G$的一个对角化是由有限多个映射$G/\overline{F}\to \mathbb{G}_m/\overline{F}$定义的，因此也可以定义在一个有限扩张上.
+\end{proof}
+
+\begin{cprop}
+    如果$G',G''$都是乘法型群，$G$是交换代数群，且有正合列
+    \begin{equation*}
+        0\to G'\to G\to G''\to 0
+    \end{equation*}
+    则$G$也是乘法型群.
+\end{cprop}
+
+事实上
+\begin{cprop}
+    函子$X(-) = \mathrm{Hom}_{\overline{F}}(-/\overline{F}, \mathbb{G}_m/\overline{F})$定义了$F$上乘法型代数群范畴和有限生成Abel群范畴的反变等价，且正合列对应到正合列.
+\end{cprop}
+
+所有这些命题的证明可以看Milne.
