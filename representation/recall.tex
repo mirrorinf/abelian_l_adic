@@ -1,5 +1,7 @@
 \subsection{一些记号}
 
+\subsubsection{代数数论}
+
 这一小节回顾一些代数数论和代数群理论的内容，用以固定后面要用到的记号.
 
 令$K$是代数数域，$\mathfrak{m}$是$\order_K$的整理想. 记$U_{\mathfrak{m}, v}$为：当$K_v \cong \mathbb{C}$时，$K_v^{\times}$；当$K_v\cong \mathbb{R}$时，$K_v^{+}$；当$v\nmid\mathfrak{m}\infty$时，$U_{v}$；当$v(\mathfrak{m})=t>0$时，$1+\mathfrak{p}_v^{t}$. 记$U_{\mathfrak{m}}=\prod_v U_{\mathfrak{m}, v}$，$U_{\mathfrak{m}, finite} = \prod_{v\nmid \infty}U_{\mathfrak{m}, v}$（看作$\mathbb{A}_K^{\times}$的子群时，指要求$v\mid \infty$处取值为$1$）. $E_{\mathfrak{m}} = K^{\times} \bigcap U_{\mathfrak{m}}$，$I_{\mathfrak{m}} = \mathbb{A}_K^{\times}/U_{\mathfrak{m}}$，$C_{\mathfrak{m}} = \mathbb{A}_K^{\times} / K^{\times}U_{\mathfrak{m}}$.
@@ -52,35 +54,70 @@ $T = \mathrm{Res}_{K/\mathbb{Q}}(\mathbb{G}_m/K)$，$T_{\mathfrak{m}} = T / \ove
 以上两个命题可以直接通过$S_{\mathfrak{m}}$的构造来证明.
 
 \begin{cprop}
-    存在$\mathbb{Q}$的有限扩张$E$使得对任意有限维表示$\rho:S_{\mathfrak{m}}\to GL(V)$，$\rho/E$可以对角化. \label{split_finite}
+    固定$\mathfrak{m}$. 存在$\mathbb{Q}$的有限扩张$E$使得对任意有限维表示$\rho:S_{\mathfrak{m}}\to GL(V)$，$\rho/E$可以对角化. \label{reps::split_finite}
 \end{cprop}
 
-这里需要用到可对角化群和乘法型群的概念. 假设$F$是一个特征$0$的域，$\Gamma = \mathrm{Gal}(\overline{F}/F)$. $G$是定义在$F$上的交换代数群.
-若$G$同构于某一个对角矩阵群$D_n/F$的闭子群，则称$G$是可对角化的. 如果$G$在$\overline{F}$上可对角化，则称$G$为乘法型的.
+\subsubsection{乘法型代数群}
+
+命题\ref{reps::split_finite}的证明需要用到可对角化群和乘法型群的概念，因此专门开一小节来写.
+假设$k$是一个特征$0$的域，以下讨论的代数群都是定义在$k$上的仿射代数群.
+
+\paragraph*{可对角化群}
 
 \begin{cprop}
-    如果$G$可对角化，则$G$的任何有限维表示都可对角化.
-\end{cprop}
-
-\begin{cprop}
-    如果$G$是乘法型群，则$G$在$F$的某个有限扩张上可对角化.
+    对任意有限生成交换群$M$（群运算用乘法记），函子$D(M): R\to \mathrm{Hom}(M, R^{\times})$是可由$\mathrm{Spec}\ k[M]$表出.
 \end{cprop}
 
 \begin{proof}
-    因为$G$是线性代数群，任何一个$G/\overline{F}\to \mathbb{G}_m/\overline{F}$可以定义在一个有限扩张上. 而$G$的一个对角化是由有限多个映射$G/\overline{F}\to \mathbb{G}_m/\overline{F}$定义的，因此也可以定义在一个有限扩张上.
+    要给出一个$k$代数的态射$k[M]\to R$就是给出一个群同态$M\to R^{\times}$.
+\end{proof}
+
+\begin{cdef}
+    若一个代数群$G$同构于某个$D(M)$，则称$G$为可对角化的.
+\end{cdef}
+
+\begin{cprop}
+    $M\to D(M)$和$X: G\mapsto \mathrm{Hom}_k(G, \mathbb{G}_m)$互为伪逆，定义了可对角化代数群和有限生成交换群范畴的反变等价，且$D,X$都是正合的.
+\end{cprop}
+
+\begin{proof}
+    \cite{milne2017algebraic}, Theorem 12.9.
+\end{proof}
+
+\begin{cprop}
+    如果$G$可对角化，则$G$的任何有限维表示都（在同一个域$F$上）可对角化，即可以通过$\sigma\in\mathrm{GL}_n(k)$的共轭成为对角矩阵.
+\end{cprop}
+
+\begin{proof}
+    \cite{milne2017algebraic}, Theorem 12.12.
+\end{proof}
+
+\paragraph*{环面群}
+
+\begin{cdef}
+    若$G$在$k$的某个扩张上同构于有限个$\mathbb{G}_m$的乘积，则称$G$是环面群. 如果在$k$上就已经是同构的，则称$G$是分裂的环面群.
+\end{cdef}
+
+\paragraph*{乘法型群}
+
+如果$G$在$k$的某个扩张下可对角化，则称$G$为乘法型的.
+
+\begin{cprop}
+    如果$G$是乘法型群，则$G$在$k$的某个有限扩张上可对角化.
+\end{cprop}
+
+\begin{proof}
+    任何一个$G/\overline{k}\to \mathbb{G}_m/\overline{k}$可以定义在一个有限扩张上. 而$G$的一个对角化是由有限多个映射$G/\overline{k}\to \mathbb{G}_m/\overline{k}$定义的，因此也可以定义在一个有限扩张上.
 \end{proof}
 
 \begin{cprop}
     如果$G',G''$都是乘法型群，$G$是交换代数群，且有正合列
-    \begin{equation*}
+    \begin{equation}
         0\to G'\to G\to G''\to 0
-    \end{equation*}
+    \end{equation}
     则$G$也是乘法型群.
 \end{cprop}
 
-事实上
-\begin{cprop}
-    函子$X(-) = \mathrm{Hom}_{\overline{F}}(-/\overline{F}, \mathbb{G}_m/\overline{F})$定义了$F$上乘法型代数群范畴和有限生成Abel群范畴的反变等价，且正合列对应到正合列.
-\end{cprop}
-
-所有这些命题的证明可以看Milne.
+\begin{proof}
+    \cite{milne2017algebraic}, Corollary 12.22.
+\end{proof}
