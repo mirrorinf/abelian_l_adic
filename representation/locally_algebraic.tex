@@ -3,7 +3,6 @@
 这一小节给出一个$\ell$进表示可以从$S_{\mathfrak{m}}$定义的充分条件.
 
 先看局部域的情况.
-
 令$L$是$\mathbb{Q}_p$的有限扩张，$T = \mathrm{Res}_{L/\mathbb{Q}_p}(\mathbb{G}_m / L)$.
 假设$V$是有限维$\mathbb{Q}_p$向量空间，$\rho$是一个Abel的$p$进表示$\rho: \mathrm{Gal}(\overline{L}/L)^{ab} \to \mathrm{Aut}(V)$.
 
@@ -11,14 +10,37 @@
     称$\rho$是局部代数表示是在说，存在代数群的态射$r:T\to \mathrm{GL}(V)$使得当$x\in L^{\times}$足够接近于$1$时，$\rho\circ \iota(x) = r(x^{-1})$，其中$\iota: L^{\times}\to \mathrm{Gal}(\overline{L}/L) $是局部Artin映射.（这里局部Artin映射约定为$\pi$映射到Frobenius元素的逆）
 \end{cdef}
 
+一维的局部代数表示就是代数Hecke特征的$\ell$进类比. 由于$T$是环面，而$\rho$“差不多”是一个$T$的代数表示，可以将$\rho$对角化为一系列一维表示来处理.
+
 \begin{cprop}
     如果$\rho: \mathrm{Gal}(\overline{L}/L)^{ab} \to \mathrm{Aut}(V)$是局部代数的表示，则$\rho$限制在惯性子群上的表示是半单的.
 \end{cprop}
 
+\begin{proof}
+    由定义，存在$U_L$的开子群$U'$和代数群的态射$r: T\to \mathrm{GL}(V)$使得当$x\in U'$时$\rho\circ \iota(x) = r(x^{-1})$. 如果$W$是$V$的$\rho\circ\iota(U_L)$-不变的子空间，那么$W$也是$\rho\circ\iota(U')=r(U')$-不变的. 又因为$U'$在$T$中Zariski-稠密，$W$也是$r(T)$不变的. 但是$T$是环面群，所有$T$的表示都是半单的. 因此$W$有补空间，即存在投影映射$\pi: V\to W$使得$\pi$和$r(T)$的作用交换. 此时$\pi$也和$\rho\circ\iota(U')$的作用交换. 再令$\pi' = \frac{1}{[U_L:U']} \sum_{s\in U_L/U'} \rho\circ \iota(s) \pi \rho\circ \iota(s^{-1})$，则$\pi'$是和$\rho\circ\iota(U_L)$的作用交换的投影映射. 从而$W$在$V$中有$\rho\circ\iota(U_L)$-不变的补空间.
+\end{proof}
 
+固定一个$\rho$，取一个足够大的有限扩张$E/\mathbb{Q}_p$使得(i)$\rho$在$U_L$上的限制在$E$上可以对角化；(ii)$E$包含了$L$的正规闭包. 令$\Gamma_{L}$为所有域嵌入$L\to E$形成的群. 记$\chi_i: U_L\to E^{\times}, i=1,2,\ldots,\mathrm{dim}\ \rho$满足$\rho \cong_{E} \mathrm{diag}(\chi_1,\ldots, \chi_{\mathrm{dim}\ \rho})$.
+
+\begin{cprop}
+    $\rho$是局部代数表示当且仅当存在整数$n_{\sigma}(i)$使得对所有的$i$以及足够接近于$1$的$u$都有
+    \begin{equation}
+        \chi_i(u) = \prod_{\sigma\in \Gamma_K} \sigma(u)^{-n_{\sigma}(i)} \label{eqns::temp::1}
+    \end{equation}
+\end{cprop}
+
+\begin{proof}
+    如果$\rho$是局部代数的，则每个$\chi_i$都是局部代数的，这就等价于\refeq{eqns::temp::1}.
+
+    反之，\refeq{eqns::temp::1}定义了$T$的$E$上的态射$r$，且满足和$\rho$的相容性关系. 只要证明$r$可以定义在$\mathbb{Q}_p$上. 但是在某个小邻域$U'$上，$r$的迹就是$\rho$的迹，从而是$\mathbb{Q}_p$的元素；同时，$U'$在$T$中Zariski-稠密.
+\end{proof}
 
 现在可以证明这一小节的主定理：
 
 \begin{cthm}
     设$\rho: \mathrm{Gal}(\overline{K}/K)^{ab} \to \mathrm{Aut}(V_{\ell})$是有理$\ell$进表示，且$\rho$是局部代数的，$\mathfrak{m}$是$\rho$的定义模. 那么存在$V_{\ell}$的$\mathbb{Q}$-向量子空间$V$使得$V_{\ell} = V\otimes \mathbb{Q}_{\ell}$，以及代数群的态射$\phi: S_{\mathfrak{m}}\to \mathrm{GL}(V)$使得$\rho$同构于$\phi_{\ell}$.
 \end{cthm}
+
+\begin{crem}
+    由Waldschmidt的结果，实际上半单的Abel的有理$\ell$进表示都是局部代数的\cite{waldschmidt1981transcendance}.
+\end{crem}
