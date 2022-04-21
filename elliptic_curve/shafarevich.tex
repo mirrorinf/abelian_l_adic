@@ -1,0 +1,48 @@
+\subsection{Néron-Ogg-Shafarevich判别法}
+
+当惯性子群的作用是平凡的时候，称一个Galois模为非分歧的.
+
+\begin{cthm}[Néron-Ogg-Shafarevich]
+    令$K$是局部域，$E$是$K$上的椭圆曲线，则以下命题等价：
+
+    (i) $E$有好约化；
+
+    (ii) 当$(m, \mathrm{char}\ k)=1$时，$E[m]$非分歧；
+
+    (iii) 当$\ell\neq \mathrm{char}\ k$时，$T_{\ell}$非分歧；
+
+    (iv) 对无穷多个与$\mathrm{char}\ k$互素的$m$，$E[m]$非分歧.
+\end{cthm}
+
+\begin{proof}
+    \cite{silverman2009arithmetic}, Theorem 7.1.
+\end{proof}
+
+\begin{ccor}
+    如果$K$是代数数域，$E, E'$是$K$上同源的椭圆曲线，$v$是$K$的有限素点. 则$E$在$v$处有好约化当且仅当$E'$在$v$处有好约化. \label{galois::same_reduction}
+\end{ccor}
+
+\begin{proof}
+    设$E\to E'$是次数为$n$的同源，则有$K_v$上相同次数的同源. 令$m$是与$\mathrm{char}\ k_v$，$\mathrm{deg}(E\to E')$都互素的正整数，那么Galois模$E_v[m]$和$E'_v[m]$同构. 由Néron-Ogg-Shafarevich判别法，$E, E'$在$v$处同时有好约化或者同时有坏约化.
+\end{proof}
+
+
+\subsection{Shafarevich的定理和一些推论}
+
+令$K$是代数数域.
+
+\begin{cthm}[Shafarevich]
+    如果$S$是$K$的素点的一个有限集合，那么$K$上在$S$以外有好约化的椭圆曲线（在$K$-同构意义下）只有有限多条.
+\end{cthm}
+
+\begin{proof}
+    % TODO
+\end{proof}
+
+\begin{ccor}
+    给定$K$上的椭圆曲线$E$，则和$E$在$K$上同源的椭圆曲线（在$K$-同构意义下）只有有限多条.\label{galois::isogeny_finite_curves}
+\end{ccor}
+
+\begin{proof}
+    Shafarevich的定理和\ref{galois::same_reduction}.
+\end{proof}

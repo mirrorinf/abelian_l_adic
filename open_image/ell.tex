@@ -1,1 +1,28 @@
-\subsection{Tate模的不可约性}
+\subsection{Galois模的不可约性}
+
+本小节要证明
+
+\begin{cthm}
+    如果$E$在$K$上没有复乘，则：
+
+    (i) 对所有素数$\ell$，$V_{\ell}$不可约；
+
+    (ii) 对除有限个以外的素数$\ell$，$E[\ell]$不可约.
+    \label{galois::irreducible}
+\end{cthm}
+
+\begin{clem}
+    如果$E$在$K$上没有复乘，$E'\to E$和$E''\to E$是两个定义在$K$上的同源，且核是不同构的循环群. 那么$E'$和$E''$在$K$上不同构.
+\end{clem}
+
+\begin{proof}
+    假设$E'\to E$和$E''\to E$的核分别是阶为$n', n''$的循环群，$E'\to E''$是一个同构. 令$E\to E'$是$E'\to E$的转置，则它的核是$n'$阶循环群. 此时以上几个映射的复合$E\to E'\to E''\to E$的核是$n''$阶循环群关于$n'$阶循环群的群扩张. 但是$\mathrm{End}_K(E) \cong \mathrm{Z}$，于是这个映射只能是某个$a$倍映射，核只能是$(\mathbb{Z}/a\mathbb{Z})^2$的形式. 此时$n'\mid a, n''\mid a$且$n'n''=a^2$，那么只能是$a=n'=n''$，矛盾.
+\end{proof}
+
+\begin{proof}
+    （定理\ref{galois::irreducible}）
+    (i) 假设$V_{\ell}$有一个一维的不变子空间$Y$，则$X=Y\bigcap T_{\ell}$是$T_{\ell}$的子模，且$X$和$T_{\ell}/X$都是秩为$1$的自由$\mathbb{Z}_{\ell}$-模. 令$n\geq 0$，记$X(n)$是$X$在$T_{\ell} / \ell^n T_{\ell}$中的像. $X(n)$是$E[\ell^n]$的子模，而且是阶为$\ell^n$的循环群. 那么$X(n)$是$E$的$K$-代数子群. 令$E(n) = E/X(n)$，那么$E\to E(n)$是$K$-同源，且核为$\ell^n$阶循环群. 上面的引理说明不同的$n$对应的$E(n)$互不同构，与Shafarevich的定理\ref{galois::isogeny_finite_curves}矛盾.
+    % TODO: quotient of elliptic curves?
+
+    (ii) 如果$E[\ell]$中有一维不变子空间$X_{\ell}$，则类似(i)中的情况，存在同源$E\to E/X_{\ell}$. 由引理，对于不同的$\ell$的取值，$E/X_{\ell}$互不同构. 如果存在无穷多个$\ell$使得$E[\ell]$不可约，则有无穷多条$E/X_{\ell}$，与Shafarevich的定理矛盾.
+\end{proof}
