@@ -1,2 +1,14 @@
 \subsection{主定理的证明}
 
+由于Galois群是紧的，$G_{\ell} = \mathrm{Im}(\rho_\ell)$是$\mathrm{GL}_2(\mathbb{Q}_{\ell})$的闭子群. 由非阿基米德的Cartan定理，$\mathrm{Im}(\rho_{\ell})$是一个$\ell$进李群. 令$\mathfrak{g}_{\ell}$为其李代数.
+
+\begin{proof}
+    （定理\ref{main::open_image}）
+    只需要证明$\mathfrak{g}_{\ell} = \mathrm{End}(V_{\ell})$.
+
+    $E$在$K$的所有有限扩张上都没有复乘，从而$G_{\ell}$的任何开子群$U$，$V_{\ell}$都是不可约的$U$模. 那么，$V_{\ell}$是不可约的$\mathfrak{g}_{\ell}$模. 由Schur引理，$\mathrm{End}(V_{\ell})$中与$\mathfrak{g}_{\ell}$交换的元素形成了一个域$\mathfrak{g}'_{\ell}$. 但是$\mathrm{dim}\ V_{\ell}=2$，所以$\mathfrak{g}'_{\ell}$或者是$\mathbb{Q}_{\ell}$，或者是$\mathbb{Q}_{\ell}$的二次扩张.
+
+    如果$\mathfrak{g}'_{\ell} = \mathbb{Q}_{\ell}$，则$\mathfrak{g}_{\ell}$或者是$\mathrm{End}(V_{\ell})$，或者是$\mathfrak{sl}(V_{\ell})$. 但如果$\mathfrak{g}_{\ell} = \mathfrak{sl}(V_{\ell})$，$\mathfrak{g}_{\ell}$在$\wedge^2 V_{\ell}$上的作用是平凡的. 但是由Weil配对，$\wedge^2 V_{\ell}$作为Galois模与$T_{\ell}(\mu)\otimes \mathbb{Q}_{\ell}$同构，矛盾.
+
+    
+\end{proof}

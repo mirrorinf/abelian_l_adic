@@ -1,0 +1,24 @@
+\subsection{局部代数表示}
+
+这一小节给出一个$\ell$进表示可以从$S_{\mathfrak{m}}$定义的充分条件.
+
+先看局部域的情况.
+
+令$L$是$\mathbb{Q}_p$的有限扩张，$T = \mathrm{Res}_{L/\mathbb{Q}_p}(\mathbb{G}_m / L)$.
+假设$V$是有限维$\mathbb{Q}_p$向量空间，$\rho$是一个Abel的$p$进表示$\rho: \mathrm{Gal}(\overline{L}/L)^{ab} \to \mathrm{Aut}(V)$.
+
+\begin{cdef}
+    称$\rho$是局部代数表示是在说，存在代数群的态射$r:T\to \mathrm{GL}(V)$使得当$x\in L^{\times}$足够接近于$1$时，$\rho\circ \iota(x) = r(x^{-1})$，其中$\iota: L^{\times}\to \mathrm{Gal}(\overline{L}/L) $是局部Artin映射.（这里局部Artin映射约定为$\pi$映射到Frobenius元素的逆）
+\end{cdef}
+
+\begin{cprop}
+    如果$\rho: \mathrm{Gal}(\overline{L}/L)^{ab} \to \mathrm{Aut}(V)$是局部代数的表示，则$\rho$限制在惯性子群上的表示是半单的.
+\end{cprop}
+
+
+
+现在可以证明这一小节的主定理：
+
+\begin{cthm}
+    设$\rho: \mathrm{Gal}(\overline{K}/K)^{ab} \to \mathrm{Aut}(V_{\ell})$是有理$\ell$进表示，且$\rho$是局部代数的，$\mathfrak{m}$是$\rho$的定义模. 那么存在$V_{\ell}$的$\mathbb{Q}$-向量子空间$V$使得$V_{\ell} = V\otimes \mathbb{Q}_{\ell}$，以及代数群的态射$\phi: S_{\mathfrak{m}}\to \mathrm{GL}(V)$使得$\rho$同构于$\phi_{\ell}$.
+\end{cthm}
