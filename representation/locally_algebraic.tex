@@ -35,12 +35,60 @@
     反之，\refeq{eqns::temp::1}定义了$T$的$E$上的态射$r$，且满足和$\rho$的相容性关系. 只要证明$r$可以定义在$\mathbb{Q}_p$上. 但是在某个小邻域$U'$上，$r$的迹就是$\rho$的迹，从而是$\mathbb{Q}_p$的元素；同时，$U'$在$T$中Zariski-稠密.
 \end{proof}
 
+现在回到整体的情况. 仍然令$K$为代数数域. 给定$\ell$进表示$\rho: \mathrm{Gal}(\overline{K}/K)^{ab}\to \mathrm{Aut}(V_{\ell})$. 令$v$是$K$的有限素点，且$p_v = \ell$. 选定一个$\overline{K}$的素点$w\mid v$，则有
+\begin{equation}
+    \mathrm{Gal}(\overline{K_v}/K_v) \xrightarrow{D_{w}} \mathrm{Gal}(\overline{K}/K) \to \mathrm{Gal}(\overline{K}/K)^{ab}
+\end{equation}
+由于最终的像是交换群，映射与$w$的选取无关，并可以通过$\mathrm{Gal}(\overline{K_v}/K_v)^{ab}$分解. 因此有表示
+\begin{equation}
+    \rho_v: \mathrm{Gal}(\overline{K_v}/K_v)^{ab} \to \mathrm{Gal}(\overline{K}/K)^{ab} \xrightarrow{\rho} \mathrm{Aut}(V_{\ell})
+\end{equation}
+
+\begin{cdef}
+    称$\rho$是局部代数表示是指对所有满足$p_v=\ell$的素点$v$，表示$\rho_v$是局部代数的.
+\end{cdef}
+
+局部代数表示也可以用整体的方式来刻画. 记$\iota_{\ell}: K_{\ell}^{\times}=(K\otimes \mathbb{Q}_{\ell})^{\times} \to \mathbb{A}_{K}^{\times} \to \mathrm{Gal}(\overline{K}/K)^{ab}$为显然的单射与整体Artin映射的复合.
+
+\begin{cprop}
+    $\rho$是局部代数表示当且仅当存在态射$f: T/\mathbb{Q}_{\ell} \to \mathrm{GL}(V_{\ell})$使得对所有足够接近$1$的$x\in K_{\ell}^{\times}$都有$\rho\circ \iota_{\ell}(x) = f(x^{-1})$.
+\end{cprop}
+
+\begin{cdef}
+    令$\mathfrak{m}$是$K$的整理想. 称$\rho$可以模$\mathfrak{m}$定义，或者说$\mathfrak{m}$是$\rho$的定义理想，是在说
+
+    (i) 当$p_v\neq \ell$时，$\rho\circ \iota$在$U_{v, \mathfrak{m}}$上平凡；
+
+    (ii) 当$x\in \prod_{v\mid \ell} U_{v, \mathfrak{m}}$时，$\rho\circ\iota_{\ell} (x) = f(x^{-1})$.
+\end{cdef}
+
+\begin{prop}
+    每个局部代数表示$\rho$可以模某个$\mathfrak{m}$定义.
+\end{prop}
+
+要证明这个命题，只需要利用一下拓扑性质：
+
+\begin{clem}
+    令$H$是$\ell$进李群，设有连续映射$\alpha: \mathbb{A}_{K}^{\times}\to H$. 那么：
+
+    (i) 如果$p_v\neq \ell$，则$\alpha$限制在$K_v^{\times}$上之后，在某个开子群上平凡；
+
+    (ii) 对除了有限多个以外的素点$v$，$\alpha$限制在$U_v$上平凡.
+
+    特别地，所有Abel的$\ell$进表示都在一个有限的素点集合以外非分歧.
+\end{clem}
+
+\begin{proof}
+    (i) 注意到$K_v^{\times}$是$p_v$进李群，而$p_v\neq \ell$，此时任何连续映射$K_v^{\times}\to H$都通过有限群分解.
+
+    (ii) 令$N$是$H$中$1$的邻域，且$N$中不包含非平凡的有限子群. 对几乎所有的$v$，$\alpha(U_v)\in N$，而且当$p_v\neq \ell$时像是有限子群. 此时$\alpha(U_v)=1$.
+\end{proof}
+
+满足$\rho$可以模$\mathfrak{m}$定义的最小理想$\mathfrak{m}$称为$\rho$的导子.
+
 现在可以证明这一小节的主定理：
 
 \begin{cthm}
-    设$\rho: \mathrm{Gal}(\overline{K}/K)^{ab} \to \mathrm{Aut}(V_{\ell})$是有理$\ell$进表示，且$\rho$是局部代数的，$\mathfrak{m}$是$\rho$的定义模. 那么存在$V_{\ell}$的$\mathbb{Q}$-向量子空间$V$使得$V_{\ell} = V\otimes \mathbb{Q}_{\ell}$，以及代数群的态射$\phi: S_{\mathfrak{m}}\to \mathrm{GL}(V)$使得$\rho$同构于$\phi_{\ell}$.
+    设$\rho: \mathrm{Gal}(\overline{K}/K)^{ab} \to \mathrm{Aut}(V_{\ell})$是有理$\ell$进表示，且$\rho$是局部代数的，$\mathfrak{m}$是$\rho$的定义\modulus . 那么存在$V_{\ell}$的$\mathbb{Q}$-向量子空间$V$使得$V_{\ell} = V\otimes \mathbb{Q}_{\ell}$，以及代数群的态射$\phi: S_{\mathfrak{m}}\to \mathrm{GL}(V)$使得$\rho=\phi_{\ell}$.
 \end{cthm}
 
-\begin{crem}
-    由Waldschmidt的结果，实际上半单的Abel的有理$\ell$进表示都是局部代数的\cite{waldschmidt1981transcendance}.
-\end{crem}
