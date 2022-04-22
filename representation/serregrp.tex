@@ -31,7 +31,7 @@
 \end{proof}
 
 \begin{cthm}
-    $\mathrm{Im}(\varepsilon_{\ell})$在$S_{\mathfrak{m}}/\mathbb{Q}_{\ell}$中Zariski稠密.
+    $\mathrm{Im}(\varepsilon_{\ell})$在$\basechange{S_{\mathfrak{m}}}{\mathbb{Q}_{\ell}}$中Zariski稠密.
 \end{cthm}
 
 \begin{proof}
@@ -44,12 +44,12 @@
 \end{ccor}
 
 \begin{proof}
-    令$X$表示所有$F_v$的集合. 令$\ell$是素数. 令$\overline{X}, \overline{X}_{\ell}$分别为$X$在$S_{\mathfrak{m}}$(Zariski拓扑)，$S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$（$\ell$进拓扑）中的闭包. 那么$\overline{X}_{\ell}\subset \overline{X}(\mathbb{Q}_{\ell})$. 但是\Chebotarev 密度定理说明，$X$在$\mathrm{Im}(\varepsilon_{\ell})$中（$\ell$进）稠密，即$\overline{X}_{\ell} = \mathrm{Im}(\varepsilon_{\ell})$. $\mathrm{Im}(\varepsilon_{\ell})$在$S_{\mathfrak{m}}/\mathbb{Q}_{\ell}$（Zariski）稠密，因此$\overline{X}(\mathbb{Q}_{\ell}) = S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$.
+    令$X$表示所有$F_v$的集合. 令$\ell$是素数. 令$\overline{X}, \overline{X}_{\ell}$分别为$X$在$S_{\mathfrak{m}}$(Zariski拓扑)，$S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$（$\ell$进拓扑）中的闭包. 那么$\overline{X}_{\ell}\subset \overline{X}(\mathbb{Q}_{\ell})$. 但是\Chebotarev 密度定理说明，$X$在$\mathrm{Im}(\varepsilon_{\ell})$中（$\ell$进）稠密，即$\overline{X}_{\ell} = \mathrm{Im}(\varepsilon_{\ell})$. $\mathrm{Im}(\varepsilon_{\ell})$在$\basechange{S_{\mathfrak{m}}}{\mathbb{Q}_{\ell}}$（Zariski）稠密，因此$\overline{X}(\mathbb{Q}_{\ell}) = S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$.
 \end{proof}
 
 \subsection{通过\texorpdfstring{$S_{\mathfrak{m}}$}{Sm}定义的表示}
 
-设$V_{\ell}$是$\mathbb{Q}_{\ell}$上的有限维线性空间，$\varphi: S_{\mathfrak{m}}/\mathbb{Q}_{\ell} \to GL(V_{\ell})$是$S_{\mathfrak{m}}/\mathbb{Q}_{\ell}$的表示. 令$\varphi_{\ell}$为映射$G^{\mathrm{ab}}\to S_{\mathfrak{m}}(\mathbb{Q}_{\ell})\xrightarrow{\varphi} GL(V_{\ell})$.
+设$V_{\ell}$是$\mathbb{Q}_{\ell}$上的有限维线性空间，$\varphi: \basechange{S_{\mathfrak{m}}}{\mathbb{Q}_{\ell}} \to GL(V_{\ell})$是$\basechange{S_{\mathfrak{m}}}{\mathbb{Q}_{\ell}}$的表示. 令$\varphi_{\ell}$为映射$G^{\mathrm{ab}}\to S_{\mathfrak{m}}(\mathbb{Q}_{\ell})\xrightarrow{\varphi} GL(V_{\ell})$.
 
 \begin{cthm}
     (1) $\varphi_{\ell}$是半单表示
@@ -66,7 +66,7 @@
 
 (3)告诉我们，考察有理表示时，只需要从一个$\mathbb{Q}$上的表示$S_{\mathfrak{m}}\to GL(V)$出发.
 
-设$V$是$\mathbb{Q}$上的有限维空间，$\varphi: S_{\mathfrak{m}}\to GL(V)$是$S_{\mathfrak{m}}$的表示. 令$V_{\ell} = V\otimes \mathbb{Q}_{\ell}$，那么有$\varphi_{\ell}: S_{\mathfrak{m}}/\mathbb{Q}_{\ell}\to GL(V_{\ell})$. 按照上面的讨论，这就是在说有表示$\varphi_{\ell}: G^{\mathrm{ab}}\to GL(V_{\ell})$. 称如此定义的$\{\varphi_{\ell}\}$为通过$S_{\mathfrak{m}}$定义的.
+设$V$是$\mathbb{Q}$上的有限维空间，$\varphi: S_{\mathfrak{m}}\to GL(V)$是$S_{\mathfrak{m}}$的表示. 令$V_{\ell} = V\otimes \mathbb{Q}_{\ell}$，那么有$\varphi_{\ell}: \basechange{S_{\mathfrak{m}}}{\mathbb{Q}_{\ell}}\to GL(V_{\ell})$. 按照上面的讨论，这就是在说有表示$\varphi_{\ell}: G^{\mathrm{ab}}\to GL(V_{\ell})$. 称如此定义的$\{\varphi_{\ell}\}$为通过$S_{\mathfrak{m}}$定义的.
 
 \begin{cthm}
     (1) $\{\varphi_{\ell}\}$形成了一族严格相容的有理$\ell$进表示，例外集不大于$\mathrm{supp}(\mathfrak{m})$
@@ -84,10 +84,10 @@
     如果$\{\rho_{\ell}\}$是一族通过$S_{\mathfrak{m}}$定义的$\ell$进表示，则存在无穷很多个素数$\ell$使得$\rho_{\ell}$是一维表示的直和；特别地，$\rho_{\ell}$在$\mathbb{Q}_{\ell}$上可约.\label{sm_to_reducile}
 \end{ccor}
 
-现在来证明定理\ref{single_ell}的(3). 回顾，如果$H$是$k$上的代数群，记$\mathsf{Rep}_k(H)$为$H$的有限维半单表示的范畴. 当$k_1$是$k$的扩张是，有自然的$-\otimes k_1: \mathsf{Rep}_k(H)\to \mathsf{Rep}_{k_1}(H/k_1)$. 如果$\rho\in \mathsf{Rep}_{k_1}(H/k_1)$落在$-\otimes k_1$的像（essential image）中，则称$\rho$可以定义在$k$上.
+现在来证明定理\ref{single_ell}的(3). 回顾，如果$H$是$k$上的代数群，记$\mathsf{Rep}_k(H)$为$H$的有限维半单表示的范畴. 当$k_1$是$k$的扩张是，有自然的$-\otimes k_1: \mathsf{Rep}_k(H)\to \mathsf{Rep}_{k_1}(\basechange{H}{k_1})$. 如果$\rho\in \mathsf{Rep}_{k_1}(H/k_1)$落在$-\otimes k_1$的像（essential image）中，则称$\rho$可以定义在$k$上.
 
 \begin{cprop}
-    令$\mathbb{Q}\subset k\subset k_1$. 对于$\varphi\in \mathsf{Rep}_{k_1}(S_{\mathfrak{m}}/k_1)$，以下性质等价：
+    令$\mathbb{Q}\subset k\subset k_1$. 对于$\varphi\in \mathsf{Rep}_{k_1}(\basechange{S_{\mathfrak{m}}}{k_1})$，以下性质等价：
 
     (1) $\varphi$可以定义在$k$上
 
@@ -99,11 +99,3 @@
 \begin{proof}
     (1)$\Rightarrow$(2)$\Rightarrow$(3)是显然的.
 \end{proof}
-
-% \subsection{\texorpdfstring{$T_{\mathfrak{m}}$}{Tm}的结构}
-
-% 本小节中$G = \mathrm{Gal}(\overline{\mathbb{Q}}/\mathbb{Q})$.
-
-% 设$\omega$是$\overline{\mathbb{Q}}$的一个复嵌入，记复共轭诱导的$\overline{\mathbb{Q}}$的自同构为$c_{\omega}$. 那么对不同的$\omega$，$c_{\omega}$形成了一个共轭类，记为$C_{\infty}$.
-
-% 将$X(T)$写成加法形式，令$Y(T) = X(T)\otimes_{\mathbb{Z}} \mathbb{Q}$. 令

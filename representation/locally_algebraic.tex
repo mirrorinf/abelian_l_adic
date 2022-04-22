@@ -51,7 +51,7 @@
 局部代数表示也可以用整体的方式来刻画. 记$\iota_{\ell}: K_{\ell}^{\times}=(K\otimes \mathbb{Q}_{\ell})^{\times} \to \mathbb{A}_{K}^{\times} \to \mathrm{Gal}(\overline{K}/K)^{ab}$为显然的单射与整体Artin映射的复合.
 
 \begin{cprop}
-    $\rho$是局部代数表示当且仅当存在态射$f: T/\mathbb{Q}_{\ell} \to \mathrm{GL}(V_{\ell})$使得对所有足够接近$1$的$x\in K_{\ell}^{\times}$都有$\rho\circ \iota_{\ell}(x) = f(x^{-1})$.
+    $\rho$是局部代数表示当且仅当存在态射$f: \basechange{T}{\mathbb{Q}_{\ell}} \to \mathrm{GL}(V_{\ell})$使得对所有足够接近$1$的$x\in K_{\ell}^{\times}$都有$\rho\circ \iota_{\ell}(x) = f(x^{-1})$.
 \end{cprop}
 
 \begin{cdef}
@@ -94,7 +94,7 @@
 
 
 \begin{proof}
-    设$r: T/\mathbb{Q}_{\ell} \to GL(V_{\ell})$是代数群的态射使得当$x\in K_{\ell}^{\times}\bigcap U_{\mathfrak{m}}$时$\rho\circ\iota(x) = r(x^{-1})$.
+    设$r: \basechange{T}{\mathbb{Q}_{\ell}} \to GL(V_{\ell})$是代数群的态射使得当$x\in K_{\ell}^{\times}\bigcap U_{\mathfrak{m}}$时$\rho\circ\iota(x) = r(x^{-1})$.
 
     令$\psi: \mathbb{A}_{K}^{\times}\to \mathrm{Aut}(V_{\ell})$为
     \begin{equation}
@@ -102,9 +102,9 @@
     \end{equation}
     其中$x_{\ell}$是$x$的$\ell$部分. 此时$\psi$在$U_{\mathfrak{m}}$上平凡，且在$K^{\times}$上等于$r$.
 
-    那么$r$在$E_{\mathfrak{m}}$（$=K^{\times} \bigcap U_{\mathfrak{m}}$）上平凡，即可以通过$T_{\mathfrak{m}}/\mathbb{Q}_{\ell}$分解. 由$S_{\mathfrak{m}}$的定义，存在代数群态射$\phi: S_{\mathfrak{m}}\to \mathrm{GL}(V_{\ell})$使得
+    那么$r$在$E_{\mathfrak{m}}$（$=K^{\times} \bigcap U_{\mathfrak{m}}$）上平凡，即可以通过$\basechange{T_{\mathfrak{m}}}{\mathbb{Q}_{\ell}}$分解. 由$S_{\mathfrak{m}}$的定义，存在代数群态射$\phi: S_{\mathfrak{m}}\to \mathrm{GL}(V_{\ell})$使得
 
-    (i) 态射$T_{\mathfrak{m}}/\mathbb{Q}_{\ell} \to S_{\mathfrak{m}}/\mathbb{Q}_{\ell}\xrightarrow{\phi} \mathrm{GL}(V_{\ell})$等于$r_{\mathfrak{m}}$；
+    (i) 态射$\basechange{T_{\mathfrak{m}}}{\mathbb{Q}_{\ell}} \to \basechange{S_{\mathfrak{m}}}{\mathbb{Q}_{\ell}}\xrightarrow{\phi} \mathrm{GL}(V_{\ell})$等于$r_{\mathfrak{m}}$；
 
     (ii) 映射$\mathbb{A}_{K}^{\times}\to S_{\mathfrak{m}}(\mathbb{Q}_{\ell})\xrightarrow{\phi} \mathrm{Aut}(V_{\ell})$等于$\psi$.
 

@@ -1,12 +1,14 @@
 \subsection{一些记号}
 
-\subsubsection{代数数论}
+如果$G$是$k$上的代数群，$k'$是$k$的扩张，则记$\basechange{G}{k'}$为$G$通过基域扩张到$k'$得到的$k'$上的代数群.
 
-这一小节回顾一些代数数论和代数群理论的内容，用以固定后面要用到的记号.
+再回顾一些代数数论和代数群理论的内容，用以固定后面要用到的记号.
+
+\subsubsection{代数数论}
 
 令$K$是代数数域，$\mathfrak{m}$是$\order_K$的整理想. 记$U_{\mathfrak{m}, v}$为：当$K_v \cong \mathbb{C}$时，$K_v^{\times}$；当$K_v\cong \mathbb{R}$时，$K_v^{+}$；当$v\nmid\mathfrak{m}\infty$时，$U_{v}$；当$v(\mathfrak{m})=t>0$时，$1+\mathfrak{p}_v^{t}$. 记$U_{\mathfrak{m}}=\prod_v U_{\mathfrak{m}, v}$，$U_{\mathfrak{m}, finite} = \prod_{v\nmid \infty}U_{\mathfrak{m}, v}$（看作$\mathbb{A}_K^{\times}$的子群时，指要求$v\mid \infty$处取值为$1$）. $E_{\mathfrak{m}} = K^{\times} \bigcap U_{\mathfrak{m}}$，$I_{\mathfrak{m}} = \mathbb{A}_K^{\times}/U_{\mathfrak{m}}$，$C_{\mathfrak{m}} = \mathbb{A}_K^{\times} / K^{\times}U_{\mathfrak{m}}$.
 
-$T = \mathrm{Res}_{K/\mathbb{Q}}(\mathbb{G}_m/K)$，$T_{\mathfrak{m}} = T / \overline{E_{\mathfrak{m}}}$.
+$T = \mathrm{Res}_{K/\mathbb{Q}}(\basechange{\mathbb{G}_m}{K})$，$T_{\mathfrak{m}} = T / \overline{E_{\mathfrak{m}}}$.
 
 先给出Hecke特征的理想版本和idèle版本一一对应的精确形式：
 
@@ -48,13 +50,13 @@ $T = \mathrm{Res}_{K/\mathbb{Q}}(\mathbb{G}_m/K)$，$T_{\mathfrak{m}} = T / \ove
 \end{cprop}
 
 \begin{cprop}
-    $X(S_{\mathfrak{m}}) = \mathrm{Hom}_{\overline{\mathbb{Q}}}(S_{\mathfrak{m}}/\overline{\mathbb{Q}}, \mathbb{G}_{m}/\overline{\mathbb{Q}})$可以被描述为以下对象的集合：$(\phi, \chi)$，其中$\phi: I_{\mathfrak{m}}\to \overline{\mathbb{Q}}^{\times}$，$\chi\in X(T_{\mathfrak{m}})$满足$\phi(y) = \chi(y), y\in K^{\times}/ E_{\mathfrak{m}}$.
+    $X^{*}(S_{\mathfrak{m}}) = \mathrm{Hom}_{\overline{\mathbb{Q}}}(\basechange{S_{\mathfrak{m}}}{\overline{\mathbb{Q}}}, \basechange{\mathbb{G}_{m}}{\overline{\mathbb{Q}})}$可以被描述为以下对象的集合：$(\phi, \chi)$，其中$\phi: I_{\mathfrak{m}}\to \overline{\mathbb{Q}}^{\times}$，$\chi\in X^{*}(T_{\mathfrak{m}})$满足$\phi(y) = \chi(y), y\in K^{\times}/ E_{\mathfrak{m}}$.
 \end{cprop}
 
 以上两个命题可以直接通过$S_{\mathfrak{m}}$的构造来证明.
 
 \begin{cprop}
-    固定$\mathfrak{m}$. 存在$\mathbb{Q}$的有限扩张$E$使得对任意有限维表示$\rho:S_{\mathfrak{m}}\to GL(V)$，$\rho/E$可以对角化. \label{reps::split_finite}
+    固定$\mathfrak{m}$. 存在$\mathbb{Q}$的有限扩张$E$使得对任意有限维表示$\rho:S_{\mathfrak{m}}\to GL(V)$，$\basechange{\rho}{E}$可以对角化. \label{reps::split_finite}
 \end{cprop}
 
 \subsubsection{乘法型代数群}
@@ -107,10 +109,6 @@ $T = \mathrm{Res}_{K/\mathbb{Q}}(\mathbb{G}_m/K)$，$T_{\mathfrak{m}} = T / \ove
 \begin{cprop}
     如果$G$是乘法型群，则$G$在$k$的某个有限扩张上可对角化.
 \end{cprop}
-
-\begin{proof}
-    任何一个$G/\overline{k}\to \mathbb{G}_m/\overline{k}$可以定义在一个有限扩张上. 而$G$的一个对角化是由有限多个映射$G/\overline{k}\to \mathbb{G}_m/\overline{k}$定义的，因此也可以定义在一个有限扩张上.
-\end{proof}
 
 \begin{cprop}
     如果$G',G''$都是乘法型群，$G$是交换代数群，且有正合列
