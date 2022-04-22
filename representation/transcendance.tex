@@ -1,15 +1,40 @@
 \subsection{交换表示的局部代数性}
 
-Serre在\cite{serre1997abelian}中对证明$\ell$进表示的局部代数性质给出了两种方法，分别利用Hodge-Tate理论和对局部域上相应表示的分析. 但事实上这些讨论都是不必要的，因为这些表示是局部代数的事实与它们来自椭圆曲线并无多大关系. 现在，更强大的关于超越数的结果允许我们证明以下非常一般的事实：
+Serre在\cite{serre1997abelian}中为了证明$\ell$进表示的局部代数性质给出了三种方法，其中两种利用Hodge-Tate分解和对局部域上相应表示的分析. 但事实上这些表示是局部代数的事实与它们来自椭圆曲线并没有多大关系. Serre的第三种方法是用Lang关于超越数的结果证明以下简洁的结果，但由于Lang的结果所限只能局限在$K$是二次域的复合的情形. 现在，有了更强大的Waldschmidt关于超越数的结果，我们可以证明
 
 \begin{cthm}
     如果$\rho$是有理、半单、交换的$\ell$进表示，那么$\rho$是局部代数的. \label{reps::abelian_loc_alg}
 \end{cthm}
 
-需要用到Waldschmidt的定理
+证明定理\ref{reps::abelian_loc_alg}前还需要一些准备工作.
 
+\begin{cprop}
+    如果$\rho$是有理、半单、交换的表示，且存在正整数$N$使得$\rho^N$是局部代数的，那么$\rho$是局部代数的.
+\end{cprop}
+
+\begin{proof}
+    
+\end{proof}
+
+令$L$为$\overline{\mathbb{Q}_{\ell}}$的完备化，$T$为$\mathbb{Q}$上的$n$维环面子群.
+设$f: T(\mathbb{Q}_{\ell})\to L^{\times}$是连续映射. 若存在$1$在$T(\mathbb{Q}_{\ell})$的（$\ell$进拓扑下）开邻域$U$和$\phi\in X^{*}(T)$使得当$x\in U$时$f(x)=\phi(x)$，则称$f$是局部代数的. 如果存在正整数$N$使得$f^N$是局部代数的，则称$f$是几乎局部代数的.
+
+固定素数的一个有限集合$S$. 对每个$p\in S$，令$W_p$是$T(\mathbb{Q}_p)$的开子群. 记$T(\mathbb{Q})_{W}$为所有的$x\in T(\mathbb{Q})$使得$x\in W_p\subset T(\mathbb{Q}_p)$. 那么$T(\mathbb{Q})_{W}$是$T(\mathbb{Q})$的子群.
+
+\begin{cprop}
+    如果存在一族$W_p, p\in S$使得$f(T(\mathbb{Q})_W)$都是$\mathbb{Q}$-代数数，则$f$是几乎代数的.
+\end{cprop}
+
+\begin{proof}
+    
+\end{proof}
+
+需要用到Waldschmidt的定理
 \begin{cthm}[\cite{waldschmidt1981transcendance}, Théorème 1.1.p]
-    令$L$是完备的非阿基米德域，$\mathrm{char}\ L = 0$，剩余类域特征为$p$. 设$v(p) = 1$. 记$E=\{z\in K\mid v(z) > \frac{1}{p-1}\}$为$\exp$的收敛区域. 
+    令$L$是完备的非阿基米德域，$\mathrm{char}\ L = 0$，剩余类域特征为$p$. 设$v(p) = 1$. 记$E=\{z\in K\mid v(z) > \frac{1}{p-1}\}$为$\exp$的收敛区域.
 \end{cthm}
 
-证明定理\ref{reps::abelian_loc_alg}前还需要一些准备工作.
+现在开始定理\ref{reps::abelian_loc_alg}的证明.
+\begin{proof}
+    
+\end{proof}
