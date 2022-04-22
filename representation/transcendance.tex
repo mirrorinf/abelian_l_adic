@@ -62,7 +62,7 @@ Serre在\parencite{serre1997abelian}中为了证明$\ell$进表示的局部代�
     如果存在一族$W_p, p\in S$使得$f(T(\mathbb{Q})_W)$都是$\mathbb{Q}$-代数数，则$f$是几乎局部代数的. \label{temp::reps::loc_alg}
 \end{cprop}
 
-需要用到Waldschmidt的定理
+需要用到Waldschmidt的定理和它的推论
 \begin{cthm}[\parencite{waldschmidt1981transcendance}, Théorème 1.1.p]
     令$L$是完备的非阿基米德域，$\mathrm{char}\ L = 0$，剩余类域特征为$p$. 设$v(p) = 1$. 记$E=\{z\in K\mid v(z) > \frac{1}{p-1}\}$为$\exp$的收敛区域. 令$x_1,\ldots,x_d,y_1,\ldots,y_l\in L^n$，其中$ld>n(l+d)$，$\{x_i\}, \{y_j\}$分别$\mathbb{Z}$线性无关. 记$X,Y$分别为$\{x_i\}, \{y_j\}$生成的$\mathbb{Z}$模. 假设$\langle X, Y\rangle \subset E$.
 
@@ -75,6 +75,17 @@ Serre在\parencite{serre1997abelian}中为了证明$\ell$进表示的局部代�
         \frac{d_1}{n_1} > \frac{d}{n}, l_1d_1\leq n_1(l_1+d_1)
     \end{equation}
 \end{cthm}
+
+取$d=n+1$，$l$充分大，就得到
+\begin{ccor}[\parencite{waldschmidt1981transcendance}, Corollaire 1.2.p]
+    令$\alpha_{i,j} \in L^{\times}, 1\leq i\leq n, 1\leq j\leq m$是代数数，其中$m\geq n^2+n+1$.
+    如果$t_1,\ldots,t_n\in L$使得对每个$j$
+    \begin{equation}
+        \exp\paten{\sum_i t_i\log \alpha_{i, j}}
+    \end{equation}
+    都收敛并且值为代数数，那么
+    
+\end{ccor}
 
 \begin{proof}[命题\ref{temp::reps::loc_alg}的证明]
 
@@ -95,10 +106,9 @@ Serre在\parencite{serre1997abelian}中为了证明$\ell$进表示的局部代�
     通过在$b_i$上乘上适当的$\ell^k$，不妨设所有的$\langle b_0, (\mathbb{Z}_{\ell})^n\rangle$都落在$\exp$的收敛区域内，且以上各式在$(\mathbb{Z}_{\ell})^n$上成立.
 
     令$\Lambda = \{z\in (\mathbb{Z}_{\ell})^{\ell}\mid \exp(z)\in T(\mathbb{Q})_{W}\}$. 由于$T(\mathbb{Q}_{\ell})/\exp(\mathbb{Z}_{\ell})$都是有限生成的，$\Lambda$是无限秩的$\mathbb{Z}$模. 而当$z\in \Lambda$时，$f\circ \exp(z)$和$\chi_i\circ\exp(z)$都是代数数. 由Waldschmidt定理的推论，$b_0,b_1,\ldots,b_n$ $\mathbb{Z}$线性相关. 但是$\{\chi_i\}$是$X^{*}(T)$的一组基，$b_1,\ldots,b_n$ $\mathbb{Z}$线性无关；那么只能是$f$在局部上是$\chi_i$的有理系数线性组合. 因此存在$N$使得$f^N$是局部代数的.
-
 \end{proof}
 
 现在开始定理\ref{reps::abelian_loc_alg}的证明.
 \begin{proof}
-    
+    %TODO: 22 avr
 \end{proof}
