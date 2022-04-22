@@ -92,3 +92,30 @@
     设$\rho: \mathrm{Gal}(\overline{K}/K)^{ab} \to \mathrm{Aut}(V_{\ell})$是有理$\ell$进表示，且$\rho$是局部代数的，$\mathfrak{m}$是$\rho$的定义\modulus . 那么存在$V_{\ell}$的$\mathbb{Q}$-向量子空间$V$使得$V_{\ell} = V\otimes \mathbb{Q}_{\ell}$，以及代数群的态射$\phi: S_{\mathfrak{m}}\to \mathrm{GL}(V)$使得$\rho=\phi_{\ell}$. \label{galois::when_sm}
 \end{cthm}
 
+
+\begin{proof}
+    设$r: T/\mathbb{Q}_{\ell} \to GL(V_{\ell})$是代数群的态射使得当$x\in K_{\ell}^{\times}\bigcap U_{\mathfrak{m}}$时$\rho\circ\iota(x) = r(x^{-1})$.
+
+    令$\psi: \mathbb{A}_{K}^{\times}\to \mathrm{Aut}(V_{\ell})$为
+    \begin{equation}
+        \psi(x) = \rho\circ \iota(x) \cdot r(x_{\ell})
+    \end{equation}
+    其中$x_{\ell}$是$x$的$\ell$部分. 此时$\psi$在$U_{\mathfrak{m}}$上平凡，且在$K^{\times}$上等于$r$.
+
+    那么$r$在$E_{\mathfrak{m}}$（$=K^{\times} \bigcap U_{\mathfrak{m}}$）上平凡，即可以通过$T_{\mathfrak{m}}/\mathbb{Q}_{\ell}$分解. 由$S_{\mathfrak{m}}$的定义，存在代数群态射$\phi: S_{\mathfrak{m}}\to \mathrm{GL}(V_{\ell})$使得
+
+    (i) 态射$T_{\mathfrak{m}}/\mathbb{Q}_{\ell} \to S_{\mathfrak{m}}/\mathbb{Q}_{\ell}\xrightarrow{\phi} \mathrm{GL}(V_{\ell})$等于$r_{\mathfrak{m}}$；
+
+    (ii) 映射$\mathbb{A}_{K}^{\times}\to S_{\mathfrak{m}}(\mathbb{Q}_{\ell})\xrightarrow{\phi} \mathrm{Aut}(V_{\ell})$等于$\psi$.
+
+    此时对$a\in \mathbb{A}_{K}^{\times}$都有
+    \begin{align}
+        \phi_{\ell}\circ\iota(a)
+        &= \phi(\epsilon_{\ell}(a)) = \phi(\epsilon(a))\phi(\pi_{\ell}(a_{\ell}^{-1}))\\
+        &= \psi(a)\phi(\pi_{\ell}(a_{\ell}^{-1}))\\
+        &= \rho\circ\iota(a) r(a_{\ell})\phi(\pi_{\ell}(a_{\ell}^{-1}))\\
+        &= \rho\circ\iota(a)
+    \end{align}
+    因此$\phi_{\ell}=\rho$.
+    而$\rho$是有理表示，从而$\phi$可以定义在$\mathbb{Q}$上.
+\end{proof}
