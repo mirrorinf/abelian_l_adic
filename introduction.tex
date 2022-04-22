@@ -20,7 +20,15 @@ Tate提出了另一种将$\rho_n$放在一起的方式. 令Tate模$T_{\ell}(E) =
 \end{cthm}
 
 \begin{cthm}
-    $K, E$同上. 对于除了有限多个以外的素数$\ell$，$\pmod{\ell}$Galois表示$\overline{\rho}_{\ell}: \mathrm{Gal}(\overline{K}/K)\to \mathrm{GL_2}(\mathbb{F}_{\ell})$是满射.
+    $K, E$同上. 对于除了有限多个以外的素数$\ell$，$\pmod{\ell}$Galois表示$\overline{\rho}_{\ell}: \mathrm{Gal}(\overline{K}/K)\to \mathrm{GL}_2(\mathbb{F}_{\ell})$是满射.
 \end{cthm}
 
-这两个定理的证明都分为部分：利用不同素数$\ell$的$\ell$进Galois表示之间的相容性限制$\rho_{\ell}$的行为；对$\mathrm{GL}_2$（这里的模糊时故意的，两种情况下的$\mathrm{GL}_2$是不一样的）子群分类.
+两个主定理的证明思路是类似的，就是分类出$\mathrm{GL}_2$的子群，再一个一个排除. 这里$\mathrm{GL}_2$的模糊表述是故意的，同时指$\mathrm{GL}_2(\mathbb{Q}_{\ell})$和$\mathrm{GL}_2(\mathbb{F}_{\ell})$. 两者一个通过李代数的方法分类，另一个是有限群的子群的分类，结果却殊途同归. 其中发挥本质作用的当然是根系.
+
+而另一方面，排除一个子群的可能性就需要控制$\rho_{\ell}$的行为. 具体来说，在$\ell$变化时，$\rho_{\ell}$遵守很强的相容性条件，$\rho_{\ell}$的性质可以通过分析其它$\rho_{\ell'}$得到，也就是说可以随时找一个方便的$\ell$在研究$\rho_{\ell}$的性质. 进一步地，相容性条件还允许结合无穷多个$\rho_{\ell}$的力量，反过来对椭圆曲线做出限制. 事实上，本文中最重要的定理可能是
+
+\begin{cthm}
+    如果$\rho_{\ell}$的像是交换的，则$E$在$K$上有复乘.
+\end{cthm}
+
+在证明以上三个定理的过程中，Serre发现了一类代数群$S_{\mathfrak{m}}$. 所有带复乘的椭圆曲线定义的$\rho_{\ell}$实际上都是从$S_{\mathfrak{m}}$的代数表示得到的. 而且逆命题也是对的，即如果$\rho_{\ell}$是从$S_{\mathfrak{m}}$的代数表示得到的，则$E$有复乘. 或者说$S_{\mathfrak{m}}$就刻画了复乘现象.
