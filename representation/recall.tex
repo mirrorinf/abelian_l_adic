@@ -100,7 +100,9 @@ $T = \mathrm{Res}_{K/\mathbb{Q}}(\mathbb{G}_m/K)$，$T_{\mathfrak{m}} = T / \ove
 
 \paragraph*{乘法型群}
 
-如果$G$在$k$的某个扩张下可对角化，则称$G$为乘法型的.
+\begin{cdef}
+    如果$G$在$k$的某个扩张下可对角化，则称$G$为乘法型的.
+\end{cdef}
 
 \begin{cprop}
     如果$G$是乘法型群，则$G$在$k$的某个有限扩张上可对角化.
@@ -113,11 +115,23 @@ $T = \mathrm{Res}_{K/\mathbb{Q}}(\mathbb{G}_m/K)$，$T_{\mathfrak{m}} = T / \ove
 \begin{cprop}
     如果$G',G''$都是乘法型群，$G$是交换代数群，且有正合列
     \begin{equation}
-        0\to G'\to G\to G''\to 0
+        1\to G'\to G\to G''\to 1
     \end{equation}
     则$G$也是乘法型群.
 \end{cprop}
 
 \begin{proof}
     \cite{milne2017algebraic}, Corollary 12.22.
+\end{proof}
+
+\begin{cprop}
+    如果$G$是乘法型群，那么$G$是群扩张
+    \begin{equation}
+        1\to G'\to G\to G''\to 1
+    \end{equation}
+    其中$G'$是环面群，$G''$是有限乘法型群.
+\end{cprop}
+
+\begin{proof}
+    \cite{milne2017algebraic}, Corollary 12.24.
 \end{proof}
