@@ -1,6 +1,6 @@
 \subsection{交换表示的局部代数性}
 
-Serre在\cite{serre1997abelian}中为了证明$\ell$进表示的局部代数性质给出了三种方法，其中两种利用Hodge-Tate分解和对局部域上相应表示的分析. 但事实上这些表示是局部代数的事实与它们来自椭圆曲线并没有多大关系. Serre的第三种方法是用Lang关于超越数的结果证明以下简洁的结果，但由于Lang的结果所限只能局限在$K$是二次域的复合的情形. 现在，有了更强大的Waldschmidt关于超越数的结果，我们可以证明
+Serre在\parencite{serre1997abelian}中为了证明$\ell$进表示的局部代数性质给出了三种方法，其中两种利用Hodge-Tate分解和对局部域上相应表示的分析. 但事实上这些表示是局部代数的事实与它们来自椭圆曲线并没有多大关系. Serre的第三种方法是用Lang关于超越数的结果证明以下简洁的结果，但由于Lang的结果所限只能局限在$K$是二次域的复合的情形. 现在，有了更强大的Waldschmidt关于超越数的结果，我们可以证明
 
 \begin{cthm}
     如果$\rho$是有理、半单、交换的$\ell$进表示，那么$\rho$是局部代数的. \label{reps::abelian_loc_alg}
@@ -13,26 +13,90 @@ Serre在\cite{serre1997abelian}中为了证明$\ell$进表示的局部代数性�
 \end{cprop}
 
 \begin{proof}
-    
+
+    由半单性，$\rho$可以在$\mathbb{Q}_{\ell}$的一个有限扩张上对角化. 将$\rho$写成$\mathrm{diag}(\psi_1,\ldots,\psi_n)$，其中$n=\mathrm{dim}\ \rho$，$\psi_i: \mathbb{A}_{K}^{\times}/K^{\times}\to \overline{\mathbb{Q}_{\ell}}^{\times}$是连续特征.
+    令$\chi_i = \psi_i^N$是$\rho^N$的特征. 由于$\rho^N$是局部代数的，对每个$\chi_i$都存在一个$\chi_i^{alg}\in X^{*}(T)$使得当$x$充分靠近$1$时$\chi_i(x) = \chi_i^{alg}(x^{-1})$. 而$X^{*}(T)$可以看作是$\mathrm{Hom}(\basechange{T}{\overline{\mathrm{Q}_{\ell}}}, \basechange{\mathbb{G}_m}{\overline{\mathbb{Q}_{\ell}}})$，即$\chi_i^{alg}$可以写成$\prod_{\sigma\in \Gamma} \sigma^{n_{\sigma}(i)}$，其中$\Gamma$是$K$到$\overline{Q_{\ell}}$的域嵌入的群.
+
+    \vskip0.3cm
+
+    先证明，每个$n_{\sigma}(i)$都被$N$整除. 令$U$是$\overline{\mathbb{Q}_{\ell}}^{\times}$的开子群，且不包含非平凡的$N$次单位根. 取$\mathfrak{m}$为一个充分大的理想，使得对
+
+    (i) $\psi_i(U_{\mathfrak{m}})\subset U$；
+
+    (ii) $\rho^N$可以模$\mathfrak{m}$定义；
+
+    (iii) $\rho$在$v\not\in \mathrm{supp}(\mathfrak{m})$处非分歧，且$F_{v, \rho}$的特征多项式是有理系数的.
+
+    令$K_{\mathfrak{m}}$是$K^{\times} U_{\mathfrak{m}}$对应的Abel扩张. 取一个包含$K_{\mathfrak{m}}$的Galois$L/\mathbb{Q}$. 再取一个充分大的素数$p$，使得$p>\ell$，$p>p_v,\forall v\in \mathrm{supp}(\mathfrak{m})$，而且$p$在$L$中完全分裂. 令$v$是$K$的素点，且$v\mid p$. 记$f_v$为在$v$处取素元，其余处取$1$的idèle.
+
+    $v$在$K_{\mathfrak{m}}$中完全分解，因此$f_v \in N_{K_{\mathfrak{m}}/K}$，即$f_v\in K^{\times} U_{\mathfrak{m}}$. 因此素理想$p_v$是主理想$(\alpha)$，其中$\alpha\equiv 1\pmod{\mathfrak{m}\prod_{k_w\cong \mathbb{R}} w}$.
+
+    记$x = \phi_i(f_v)$，$y = \chi_i(f_v)$，由定义有
+    \begin{equation}
+        y = \chi_i(f_v) = \chi_i(\alpha^{-1}_{\ell}) = \chi_i^{alg}(\alpha_{\ell}) = \prod_{\sigma\in \Gamma} \sigma(\alpha)^{n_{\sigma}(i)}
+    \end{equation}
+    其中$\sigma\in \Gamma$看成是$K\to L$的嵌入. $x,y$都看成是$L$的元素.
+
+    此时$y\in \tilde{L}\subset \mathbb{Q}_p$，$\tilde{L}$是$\mathbb{Q}_p$中（唯一的）与$L$同构的子域. 如果$w_{\sigma}$是$L$的素点，使得$w_{\sigma}\circ \sigma$限制在$K$上是$v$，那么$w_{\sigma}(y) = n_{\sigma}(i)$.
+
+    如果$N$不整除$n_{\sigma}(i)$，那么$x\not\in \overline{L}$. 那么存在一个非平凡的$N$次单位根$z$使得$x, zx$在$\overline{L}$上共轭，从而在$\mathbb{Q}$上共轭. 但是$F_{v,\rho}$的特征多项式是有理系数的，$F_{v,\rho}$的特征值的共轭也是特征值. 那么存在一个$j$使得$\psi_j(f_v) = zx = z\psi_i(f_v)$. 但是$\psi_j(f_v)\in U$，$\psi_i(f_v)\in U$，与$U$中没有非平凡的$N$次单位根矛盾.
+
+    \vskip0.3cm
+
+    回到命题本身的证明. 由于$n_{\sigma}(i)$都被$N$整除，存在$\phi_i\in X^{*}(T)$使得$\phi_i^N = \chi_i^{alg}$. 当$x\in K_{\ell}^{\times}$充分靠近$1$时，
+    \begin{equation}
+        \phi_i(x^{-1})^N = \chi_i^{alg}(x^{-1}) = \chi_i(x) = \psi_i(x)^N
+    \end{equation}
+    此时$\phi_i(x)\psi_i(x)$是$N$次单位根. 但是$N$次单位根的群是离散的，从而存在一个$1$的小邻域使得$\phi_i\psi_i$在这个邻域上是$1$. 令$\phi=\mathrm{diag}(\phi_1,\ldots,\phi_n)$，则在$1$的小邻域上$\rho = \psi^{-1}$. 由于$\rho$能定义在$\mathbb{Q}_{\ell}$上，$\phi$也能定义在$\mathbb{Q}_{\ell}$上.
+
+    那么$\rho$是局部代数的.
 \end{proof}
 
+接下来需要一个环面群的特征的结论.
 令$L$为$\overline{\mathbb{Q}_{\ell}}$的完备化，$T$为$\mathbb{Q}$上的$n$维环面子群.
 设$f: T(\mathbb{Q}_{\ell})\to L^{\times}$是连续映射. 若存在$1$在$T(\mathbb{Q}_{\ell})$的（$\ell$进拓扑下）开邻域$U$和$\phi\in X^{*}(T)$使得当$x\in U$时$f(x)=\phi(x)$，则称$f$是局部代数的. 如果存在正整数$N$使得$f^N$是局部代数的，则称$f$是几乎局部代数的.
 
-固定素数的一个有限集合$S$. 对每个$p\in S$，令$W_p$是$T(\mathbb{Q}_p)$的开子群. 记$T(\mathbb{Q})_{W}$为所有的$x\in T(\mathbb{Q})$使得$x\in W_p\subset T(\mathbb{Q}_p)$. 那么$T(\mathbb{Q})_{W}$是$T(\mathbb{Q})$的子群.
+设$S$是素数的一个有限集合. 对每个$p\in S$，令$W_p$是$T(\mathbb{Q}_p)$的开子群. 记$T(\mathbb{Q})_{W}$为所有的$x\in T(\mathbb{Q})$使得$x\in W_p\subset T(\mathbb{Q}_p)$. 那么$T(\mathbb{Q})_{W}$是$T(\mathbb{Q})$的子群.
 
 \begin{cprop}
-    如果存在一族$W_p, p\in S$使得$f(T(\mathbb{Q})_W)$都是$\mathbb{Q}$-代数数，则$f$是几乎代数的.
+    如果存在一族$W_p, p\in S$使得$f(T(\mathbb{Q})_W)$都是$\mathbb{Q}$-代数数，则$f$是几乎局部代数的. \label{temp::reps::loc_alg}
 \end{cprop}
 
-\begin{proof}
-    
-\end{proof}
-
 需要用到Waldschmidt的定理
-\begin{cthm}[\cite{waldschmidt1981transcendance}, Théorème 1.1.p]
-    令$L$是完备的非阿基米德域，$\mathrm{char}\ L = 0$，剩余类域特征为$p$. 设$v(p) = 1$. 记$E=\{z\in K\mid v(z) > \frac{1}{p-1}\}$为$\exp$的收敛区域.
+\begin{cthm}[\parencite{waldschmidt1981transcendance}, Théorème 1.1.p]
+    令$L$是完备的非阿基米德域，$\mathrm{char}\ L = 0$，剩余类域特征为$p$. 设$v(p) = 1$. 记$E=\{z\in K\mid v(z) > \frac{1}{p-1}\}$为$\exp$的收敛区域. 令$x_1,\ldots,x_d,y_1,\ldots,y_l\in L^n$，其中$ld>n(l+d)$，$\{x_i\}, \{y_j\}$分别$\mathbb{Z}$线性无关. 记$X,Y$分别为$\{x_i\}, \{y_j\}$生成的$\mathbb{Z}$模. 假设$\langle X, Y\rangle \subset E$.
+
+    如果所有的$\exp \langle x, y\rangle, x\in X, y\in Y$都是代数数，那么有分解
+    \begin{equation}
+        X = X_1\oplus X_2, Y=Y_1\oplus Y_2
+    \end{equation}
+    使得$\langle X_1, Y_2\rangle = 0$，且如果$d_1 = \mathrm{rank}(X_1)$，$l_1 = \mathrm{rank}(Y_1)$，$n_1 = \dim_L X_1\otimes L$，则有
+    \begin{equation}
+        \frac{d_1}{n_1} > \frac{d}{n}, l_1d_1\leq n_1(l_1+d_1)
+    \end{equation}
 \end{cthm}
+
+\begin{proof}[命题\ref{temp::reps::loc_alg}的证明]
+
+    令$\chi_1,\ldots,\chi_n$是$X^{*}(T)$的一组基.
+    $T(\mathbb{Q})$是无限秩的$\mathbb{Z}$模.
+    而$T(\mathbb{Q}_p)/W_p$都是秩不大于$n$的有限生成$\mathbb{Z}$模，于是$T(\mathbb{Q})/T(\mathbb{Q})_W$是有限生成的. 从而$T(\mathbb{Q})_W$是无限秩的$\mathbb{Z}$模.
+
+    $T(\mathbb{Q}_{\ell})$是一个$\ell$进李群. 令$\mathfrak{t}$为其李代数. 则存在$\mathfrak{t}$的一个紧开子群$\mathfrak{t}_0$使得$\exp: \mathfrak{t}_0\to T(\mathbb{Q}_{\ell})$是到一个紧开子群的同胚，而且群结构可以有Campbell-Hausdorff公式计算. 由于$T(\mathbb{Q}_{\ell})$是交换的，$\mathfrak{t}$也是交换的. $\exp$是$(\mathbb{Z}_{\ell})^n\cong \mathfrak{t}_0$到$T(\mathbb{Q}_{\ell})$的一个紧开子群的解析同构.
+
+    通过与$\exp$复合，可以得到$n+1$个连续映射
+    \begin{equation}
+        f\circ\exp, \chi_i\circ\exp, i=1,2,\ldots,n
+    \end{equation}
+    由于$\mathbb{Z}_{\ell}\to L^{\times}$的连续映射局部上都是指数映射，存在$b_0, b_1,\ldots,b_n \in L^n$使得在充分小的开子群上有
+    \begin{equation}
+        f\circ\exp(z) = \exp \langle b_0 z\rangle, \chi_i\circ\exp = \exp\langle b_i z\rangle, i=1,2,\ldots,n
+    \end{equation}
+    通过在$b_i$上乘上适当的$\ell^k$，不妨设所有的$\langle b_0, (\mathbb{Z}_{\ell})^n\rangle$都落在$\exp$的收敛区域内，且以上各式在$(\mathbb{Z}_{\ell})^n$上成立.
+
+    令$\Lambda = \{z\in (\mathbb{Z}_{\ell})^{\ell}\mid \exp(z)\in T(\mathbb{Q})_{W}\}$. 由于$T(\mathbb{Q}_{\ell})/\exp(\mathbb{Z}_{\ell})$都是有限生成的，$\Lambda$是无限秩的$\mathbb{Z}$模. 而当$z\in \Lambda$时，$f\circ \exp(z)$和$\chi_i\circ\exp(z)$都是代数数. 由Waldschmidt定理的推论，$b_0,b_1,\ldots,b_n$ $\mathbb{Z}$线性相关. 但是$\{\chi_i\}$是$X^{*}(T)$的一组基，$b_1,\ldots,b_n$ $\mathbb{Z}$线性无关；那么只能是$f$在局部上是$\chi_i$的有理系数线性组合. 因此存在$N$使得$f^N$是局部代数的.
+
+\end{proof}
 
 现在开始定理\ref{reps::abelian_loc_alg}的证明.
 \begin{proof}
