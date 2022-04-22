@@ -2,14 +2,14 @@
 
 Serre在\parencite{serre1997abelian}中为了证明$\ell$进表示的局部代数性质给出了三种方法，其中两种利用Hodge-Tate分解和对局部域上相应表示的分析. 但事实上这些表示是局部代数的事实与它们来自椭圆曲线并没有多大关系. Serre的第三种方法是用Lang关于超越数的结果证明以下简洁的结果，但由于Lang的结果所限只能局限在$K$是二次域的复合的情形. 现在，有了更强大的Waldschmidt关于超越数的结果，我们可以证明
 
-\begin{cthm}
+\begin{cthm}[\parencite{henniart}, Théorème 7]
     如果$\rho$是有理、半单、交换的$\ell$进表示，那么$\rho$是局部代数的. \label{reps::abelian_loc_alg}
 \end{cthm}
 
 证明定理\ref{reps::abelian_loc_alg}前还需要一些准备工作.
 
 \begin{cprop}
-    如果$\rho$是有理、半单、交换的表示，且存在正整数$N$使得$\rho^N$是局部代数的，那么$\rho$是局部代数的.
+    如果$\rho$是有理、半单、交换的表示，且存在正整数$N$使得$\rho^N$是局部代数的，那么$\rho$是局部代数的. \label{reps::power_N}
 \end{cprop}
 
 \begin{proof}
@@ -53,8 +53,16 @@ Serre在\parencite{serre1997abelian}中为了证明$\ell$进表示的局部代�
 \end{proof}
 
 接下来需要一个环面群的特征的结论.
-令$L$为$\overline{\mathbb{Q}_{\ell}}$的完备化，$T$为$\mathbb{Q}$上的$n$维环面子群.
-设$f: T(\mathbb{Q}_{\ell})\to L^{\times}$是连续映射. 若存在$1$在$T(\mathbb{Q}_{\ell})$的（$\ell$进拓扑下）开邻域$U$和$\phi\in X^{*}(T)$使得当$x\in U$时$f(x)=\phi(x)$，则称$f$是局部代数的. 如果存在正整数$N$使得$f^N$是局部代数的，则称$f$是几乎局部代数的.
+令$C$为$\overline{\mathbb{Q}_{\ell}}$的完备化. 仍然令$T=\mathrm{Res}_{K/\mathbb{Q}}(\basechange{\mathbb{G}_m}{K})$为$\mathbb{Q}$上的$n$维环面子群.
+设$f: T(\mathbb{Q}_{\ell})\to C^{\times}$是连续映射. 若存在$1$在$T(\mathbb{Q}_{\ell})$的（$\ell$进拓扑下）开邻域$U$和$\phi\in X^{*}(T)$使得当$x\in U$时$f(x)=\phi(x)$，则称$f$是局部代数的. 如果存在正整数$N$使得$f^N$是局部代数的，则称$f$是几乎局部代数的.
+
+需要的关于超越数的结论是
+\begin{cprop}[\parencite{henniart}, Théorème 8; \parencite{waldschmidt1981transcendance}, Corollaire 4.2.p]
+    令$V$是$C$上的有限维线性空间，$\Gamma$是$V$的有限秩子群. 记$\mu_{V}(\Gamma) = \min_W \left\{ \frac{\mathrm{rank}(\Gamma) - \mathrm{rank}(\Gamma \bigcap W)}{\dim V-\dim W} \right\}$，其中$W$取遍$V$的真子空间. 如果$\Lambda, \Gamma$是$V, V^{*}$的有限秩子群，$\mathrm{rank}(\Gamma)>\dim V$，且$\exp\langle \lambda, \gamma\rangle, \lambda \in \Lambda, \gamma\in \Gamma$都收敛并取代数数值. 那么
+    \begin{equation}
+        \mu_{V^{*}}(\Gamma)\leq \frac{\mathrm{rank}(\Lambda)}{\mathrm{rank}(\Lambda) - \dim V}
+    \end{equation}\label{temp::theo8}
+\end{cprop}
 
 设$S$是素数的一个有限集合. 对每个$p\in S$，令$W_p$是$T(\mathbb{Q}_p)$的开子群. 记$T(\mathbb{Q})_{W}$为所有的$x\in T(\mathbb{Q})$使得$x\in W_p\subset T(\mathbb{Q}_p)$. 那么$T(\mathbb{Q})_{W}$是$T(\mathbb{Q})$的子群.
 
@@ -62,30 +70,21 @@ Serre在\parencite{serre1997abelian}中为了证明$\ell$进表示的局部代�
     如果存在一族$W_p, p\in S$使得$f(T(\mathbb{Q})_W)$都是$\mathbb{Q}$-代数数，则$f$是几乎局部代数的. \label{temp::reps::loc_alg}
 \end{cprop}
 
-需要用到Waldschmidt的定理和它的推论
-\begin{cthm}[\parencite{waldschmidt1981transcendance}, Théorème 1.1.p]
-    令$L$是完备的非阿基米德域，$\mathrm{char}\ L = 0$，剩余类域特征为$p$. 设$v(p) = 1$. 记$E=\{z\in K\mid v(z) > \frac{1}{p-1}\}$为$\exp$的收敛区域. 令$x_1,\ldots,x_d,y_1,\ldots,y_l\in L^n$，其中$ld>n(l+d)$，$\{x_i\}, \{y_j\}$分别$\mathbb{Z}$线性无关. 记$X,Y$分别为$\{x_i\}, \{y_j\}$生成的$\mathbb{Z}$模. 假设$\langle X, Y\rangle \subset E$.
+\begin{clem}
+    如果$\chi\in X^{*}(T)$不是$0$，则$\chi(T(\mathbb{Q}))$是无限秩的.
+\end{clem}
 
-    如果所有的$\exp \langle x, y\rangle, x\in X, y\in Y$都是代数数，那么有分解
+\begin{proof}
+    也就是要证明
     \begin{equation}
-        X = X_1\oplus X_2, Y=Y_1\oplus Y_2
+        K^{\times}\to L^{\times}, x\mapsto \prod_{\sigma} \sigma(x)^{n_{\sigma}}
     \end{equation}
-    使得$\langle X_1, Y_2\rangle = 0$，且如果$d_1 = \mathrm{rank}(X_1)$，$l_1 = \mathrm{rank}(Y_1)$，$n_1 = \dim_L X_1\otimes L$，则有
-    \begin{equation}
-        \frac{d_1}{n_1} > \frac{d}{n}, l_1d_1\leq n_1(l_1+d_1)
-    \end{equation}
-\end{cthm}
+    的像是无限秩的，其中$L$是$K$的正规闭包. 设$p$是在$L$中完全分解的素数，$v$是$K$的素点且$v\mid p$.
+    如果$w_{\sigma}$是$L$的满足$w_{\sigma}\circ\sigma=v$的素点，则$w_{\sigma}(\chi(x)) = n_{\sigma}v(x)$.
+    特别地，如果$x\in K^{\times}$使得$v(x) > 0$，且$v'\neq v$时$v'(x) = 0$，则$w_{\sigma}(\chi(x)) = n_{\sigma}v(x)$，而当$w'\nmid p$时$w'(\chi(x))=0$.
 
-取$d=n+1$，$l$充分大，就得到
-\begin{ccor}[\parencite{waldschmidt1981transcendance}, Corollaire 1.2.p]
-    令$\alpha_{i,j} \in L^{\times}, 1\leq i\leq n, 1\leq j\leq m$是代数数，其中$m\geq n^2+n+1$.
-    如果$t_1,\ldots,t_n\in L$使得对每个$j$
-    \begin{equation}
-        \exp\paten{\sum_i t_i\log \alpha_{i, j}}
-    \end{equation}
-    都收敛并且值为代数数，那么
-    
-\end{ccor}
+    对不同的$p$构造的$x$的像是线性无关的. 由于在$L$中完全分解的素数有无穷多个，$\chi$的像的秩是无穷的.
+\end{proof}
 
 \begin{proof}[命题\ref{temp::reps::loc_alg}的证明]
 
@@ -99,19 +98,49 @@ Serre在\parencite{serre1997abelian}中为了证明$\ell$进表示的局部代�
     \begin{equation}
         f\circ\exp, \chi_i\circ\exp, i=1,2,\ldots,n
     \end{equation}
-    由于$\mathbb{Z}_{\ell}\to L^{\times}$的连续映射局部上都是指数映射，存在$b_0, b_1,\ldots,b_n \in L^n$使得在充分小的开子群上有
+    由于$\mathbb{Z}_{\ell}\to C^{\times}$的连续映射局部上都是指数映射，存在$b_0, b_1,\ldots,b_n \in C^n$使得在充分小的开子群上有
     \begin{equation}
         f\circ\exp(z) = \exp \langle b_0 z\rangle, \chi_i\circ\exp = \exp\langle b_i z\rangle, i=1,2,\ldots,n
     \end{equation}
-    通过在$b_i$上乘上适当的$\ell^k$，不妨设所有的$\langle b_0, (\mathbb{Z}_{\ell})^n\rangle$都落在$\exp$的收敛区域内，且以上各式在$(\mathbb{Z}_{\ell})^n$上成立.
+    通过在$b_i$上乘上适当的$\ell^k$，不妨设所有的$\langle b_0, (\mathbb{Z}_{\ell})^n\rangle$都落在$\exp$的收敛区域内，且以上各式在$(\mathbb{Z}_{\ell})^n$上成立. 记$\Gamma$为$b_0, \ldots,b_n$生成的$\mathbb{Z}$模.
 
-    令$\Lambda = \{z\in (\mathbb{Z}_{\ell})^{\ell}\mid \exp(z)\in T(\mathbb{Q})_{W}\}$. 由于$T(\mathbb{Q}_{\ell})/\exp(\mathbb{Z}_{\ell})$都是有限生成的，$\Lambda$是无限秩的$\mathbb{Z}$模. 而当$z\in \Lambda$时，$f\circ \exp(z)$和$\chi_i\circ\exp(z)$都是代数数. 由Waldschmidt定理的推论，$b_0,b_1,\ldots,b_n$ $\mathbb{Z}$线性相关. 但是$\{\chi_i\}$是$X^{*}(T)$的一组基，$b_1,\ldots,b_n$ $\mathbb{Z}$线性无关；那么只能是$f$在局部上是$\chi_i$的有理系数线性组合. 因此存在$N$使得$f^N$是局部代数的.
+    令$\Lambda = \{z\in (\mathbb{Z}_{\ell})^{\ell}\mid \exp(z)\in T(\mathbb{Q})_{W}\}$. 由于$T(\mathbb{Q}_{\ell})/\exp(\mathbb{Z}_{\ell})$都是有限生成的，$\Lambda$是无限秩的$\mathbb{Z}$模. 而当$z\in \Lambda$时，$f\circ \exp(z)$和$\chi_i\circ\exp(z)$都是代数数.
+
+    记$V\cong \mathbb{Q}_{\ell}^n$为$\Lambda$生成的空间，通过二次型$\sum_i x_iy_i$确定$V$和$V^{*}$的同构，并将$b_i$视为$V^{*}$的元素.
+    
+    注意到$\{\chi_i\}$是$X^{*}(T)$的一组基，$b_1,\ldots,b_n$ $\mathbb{Z}$线性无关. 因此只要证明$\mathrm{rank}(\Gamma)= n$，就能得到$b_0$是其它$b_i$的有理系数线性组合，于是$f$是$\chi_i$的有理系数线性组合. 这就证明了$f$是几乎局部代数的.
+
+    假设$\mathrm{rank}(\Gamma) = n+1$. 对$\Gamma$和$\Lambda$的秩任意大的有限秩子群用命题\ref{temp::theo8}，可知$\mu_{V^{*}}(\Gamma)\leq 1$，即存在真子空间$W\subset V^{*}$使得$\mathrm{rank}(\Gamma) - \mathrm{rank}(\Gamma\bigcap W) \leq \dim V - \dim W$，即$\mathrm{rank}(\Gamma\bigcap W)\geq \dim W + 1$. 取$W$为满足条件的空间中维数最小的. 注意到无论如何$\mathrm{rank}(\Gamma\bigcap W)\geq 2$，从而存在非零的$w\in \Gamma\bigcap W$是$b_1, b_2,\ldots, b_n$张成的（$b_0$的系数为$0$）.
+
+    先验证$\Lambda$在$V/w^{\perp}$的投影还是无限秩的. 记$\pi_w: V\to V/w^{\perp}$设$w = \sum_i n_i b_i$. 令$\chi = \prod_i \chi_i^{n_i}$. 由假设，$\chi$是非平凡特征.
+    $T(\mathbb{Q})/\exp(\Lambda)$是有限生成的，而$\chi(T(\mathbb{Q}))$的秩无限. 而且当$\lambda\in \Lambda$时，
+    \begin{equation}
+        \exp \langle w, \pi_w(\lambda)\rangle = \exp \langle w, \lambda\rangle = \chi \circ \exp (\lambda)
+    \end{equation}
+    因此$\pi_w(\Lambda)$还是无限秩的.
+
+    此时$\Lambda$在$V/W^{\perp}$上的投影$\pi(\Lambda)$还是无限秩的. 对$\Gamma\bigcap W$和$\pi(\Lambda)$再用一次命题\ref{temp::theo8}，有$\mu_{W^{*}}(\Gamma\bigcap W)\leq 1$，即存在真子空间$W'$满足$\mathrm{rank}(\Gamma\bigcap W) - \mathrm{rank}(\Gamma\bigcap W') \leq \dim W - \dim W'$，即$\mathrm{\Gamma \bigcap W'}\geq \dim W' + 1$. 但这与$W$的极小性矛盾.
+
 \end{proof}
 
 现在开始定理\ref{reps::abelian_loc_alg}的证明.
 \begin{proof}
 
-    由半单性，$\rho$在$L$上对角化. 设$\rho \cong_{L} \mathrm{diag}(\psi_1,\ldots,\psi_n)$. 令$f_i$为$\psi_i$在$K_{\ell}^{\times}$上的限制.
+    由半单性，$\rho$在$C$上对角化. 设$\rho \cong_{C} \mathrm{diag}(\psi_1,\ldots,\psi_n)$. 令$f_i$为$\psi_i$在$K_{\ell}^{\times}$上的限制.
 
-    下面验证命题\ref{temp::reps::loc_alg}的条件.
+    固定一个$i$.
+    令$S$是有限的素数集合，使得$\ell\not\in S$，而且当$v\in \Sigma_K, p_v\neq \ell, p_v\not\in S$时，$\rho$在$v$处非分歧并且$F_{v,\rho}$的特征多项式是有理系数的.
+    当$p\in S$时，取$W_p$为$K_{p}^{\times}$的开子群，使得$\phi_i(W_p)=1$.
+
+    下面对以上$S$和$\{W_p\}$验证命题\ref{temp::reps::loc_alg}的条件. 设$x\in K^{\times}$. 将$x$作为idèle分解为各个分量之积
+    \begin{equation}
+        x = x_{\infty} x_{\ell} x_{S} x'
+    \end{equation}
+    由$\psi_i(x) = 1$和$\psi_i(x_{\ell}) = f_i(x)$有
+    \begin{equation}
+        f_i(x^{-1}) = \psi_i(x_{\infty})\psi_i(x_S)\psi_i(x')
+    \end{equation}
+    由构造，$\psi_i(x_S)=1$；由完全不连通性，$\phi_i(x_{\infty})=\pm 1$. 对于$v\not\in S, p_v\neq \ell$的情况，此时$\rho$在$v$处非分歧，$F_{v,\rho}$的特征多项式是有理系数多项式，因此$\psi_i(f_v)$作为一个特征值是代数数. 而$\psi_i(x')$是有限多个$\psi_i(f_v)$的乘积，因此也是代数数. 那么$f_i(x)$是代数数.
+
+    由命题\ref{temp::reps::loc_alg}，每个$f_i$都是几乎局部代数的. 那么存在一个$N$使得每个$f_i$都是局部代数的，此时$\rho^N$也是局部代数的. 再由命题\ref{reps::power_N}，$\rho$是局部代数的.
 \end{proof}
