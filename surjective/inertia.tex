@@ -1,0 +1,53 @@
+\subsection{对惯性子群的控制}
+
+$\overline{\rho}_{\ell}$作为表示能给出的信息当然比$\rho_{\ell}$本身弱得多了，
+因此在用模表示限制椭圆曲线的性质时，需要充分利用它是从椭圆曲线来的这一事实.
+
+具体来说，令$w\mid v\mid \ell$分别是$\overline{K},K$的素点，且$v$在$K/\mathbb{Q}$中非分歧，$E$在$v$处有好约化.
+（对几乎所有的素数$\ell$都可以找到这样的素点$v, w$）
+记$G_w=\mathrm{Gal}(\overline{K}_w/K_v)$，$I_w$是$w/v$的惯性子群.
+这一小节中要证明
+\begin{cprop}
+    $\overline{\rho}_{\ell}(I_w)$或者是一个半Cartan子群，
+    或者是一个半Borel子群，
+    或者是一个Borel子群. \label{local::inertia}
+\end{cprop}
+
+于是上一小节中的结果能够完全分类可能成为$\mathrm{Im}\ \overline{\rho}_{\ell}$的子群，
+接着就可以逐一讨论并排除.
+命题\ref{local::inertia}的证明主要是群论的. 或者说，是惯性子群本身的结构限制了表示的可能性.
+
+为了记号方便，固定$v,w$并记$G = G_w, I = I_w$.
+在本小节中，暂时用$K$来记$K_v$.
+记$I_p = \mathrm{Gal}(\overline{K}/K_t), I_t = I/I_p$，其中$K_t$是$K$的极大\tame 扩张.
+
+首先说明，在$\overline{\rho}_{\ell}$中起作用的是\tame 部分.
+
+\begin{cprop}
+    如果$V$是特征$\ell$的有限域$k$上的有限维线性空间，表示$\rho: G\to \mathrm{Aut}(V)$是半单的，
+    那么$\rho(I_p) = 1$.
+\end{cprop}
+
+\begin{proof}
+    只要对单表示$\rho$证明即可. 令$V'$是$\rho(I_p)$固定的向量的子空间.
+    如果$x\in \rho(G),t\in \rho(I_p), v\in V'$，那么由于$I_p$是$G$的正规子群，
+    $t(xv) = x(t'v)=xv$，因此$xv\in V'$. 即$V'$是$G$作用不变的子空间.
+    由不可约性，只要证明$V'\neq 0$即可.
+    
+    注意到$\rho(I_p)$是有限$p$群.
+
+    首先，如果$x\in\mathrm{Aut}(V)$是$p$阶元素，则$x$固定了一个非零的向量$v$.
+    令$x=s+n$是Jordan-Chevalley分解，则$s^p = 1, n^p = 0$. 那么$s = 1$.
+    而$n$的秩小于$\dim V$，因此存在$v\in V$使得$nv=0$. 那么$xv = v$.
+
+    对$m$归纳证明，$p^m$阶群一定固定一个非零元素$v$. 当$m=0$时是显然的，$m=1$时已经证明过了.
+    假设$m\geq 1$，命题对不大于$m$的自然数都成立. 考虑一个$p^{m+1}$阶群$H$.
+    令$N$是$I$的正规子群，且$N\neq 1,N\neq H$. 这样的$N$总是能找到的.
+    例如，当$H$交换时任意取一个，当$H$非交换时取$N$为$H$的中心.
+    由归纳假设，$W = \{v\mid Nv=v\}\neq 0$.
+    此时，$H/N$作用在$W$上，还是由归纳假设，存在$w'\in W$使得$H/N w' = w'$.
+    此时$Hw' = w'$.
+\end{proof}
+
+这就是说，要研究所有的半单表示$\rho: I\to \mathrm{Aut}(V)$，只要研究$I_t$的特征就可以了.
+
