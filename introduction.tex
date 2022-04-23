@@ -33,11 +33,11 @@ $\rho_{\ell}'$的像就不是$\mathrm{GL}_2(\mathbb{Z}_{\ell})$了.
 因此可以先问什么时候$\tilde{\rho}$是满射. 这就是第二个主定理
 
 \begin{cthm}
-    $K, E$同上. 对于除了有限多个以外的素数$\ell$，模$\ell$Galois表示$\overline{\rho}_{\ell}: \mathrm{Gal}(\overline{K}/K)\to \mathrm{GL}_2(\mathbb{F}_{\ell})$是满射. \label{main::surjective}
+    $K, E$同上. 对于除了有限多个以外的素数$\ell$，模$\ell$Galois表示$\tilde{\rho}_{\ell}: \mathrm{Gal}(\overline{K}/K)\to \mathrm{GL}_2(\mathbb{F}_{\ell})$是满射. \label{main::surjective}
 \end{cthm}
 
 事实上，由几乎所有的$\tilde{\rho}_{\ell}$是满射，可以推出几乎所有的$\rho_{\ell}$都是满射.
-证明将在定理\ref{main::open_image}的证明后给出.
+证明将在讨论模表示时给出.
 
 两个主定理的证明思路是类似的，就是分类出$\mathrm{GL}_2$的子群，再一个一个排除. 这里$\mathrm{GL}_2$的模糊表述是故意的，同时指$\mathrm{GL}_2(\mathbb{Q}_{\ell})$和$\mathrm{GL}_2(\mathbb{F}_{\ell})$. 两者一个通过李代数的方法分类，另一个是有限群的子群的分类，结果却殊途同归. 其中发挥本质作用的当然是根系.
 
@@ -50,7 +50,7 @@ $\rho_{\ell}'$的像就不是$\mathrm{GL}_2(\mathbb{Z}_{\ell})$了.
 在证明以上三个定理的过程中，Serre发现了一类代数群$S_{\mathfrak{m}}$. 所有带复乘的椭圆曲线定义的$\rho_{\ell}$实际上都是从$S_{\mathfrak{m}}$的代数表示得到的. 而且逆命题也是对的，即如果$\rho_{\ell}$是从$S_{\mathfrak{m}}$的代数表示得到的，则$E$有复乘. 或者说$S_{\mathfrak{m}}$就刻画了复乘现象.
 
 有了定理\ref{main::surjective}，自然就可以进一步地问例外的素数可以有多少个.
-记$\ell_{E}$是最大的使得$\overline{\rho}_{\ell}$不是满射的素数.
+记$\ell_{E}$是最大的使得$\tilde{\rho}_{\ell}$不是满射的素数.
 Serre在\parencite{serre1981quelques}中证明了，如果$E/\mathbb{Q}$没有复乘，记$N_E$是所有$E$有坏约化的素数的乘积.
 假设GRH，有
 \begin{equation}
