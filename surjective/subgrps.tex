@@ -1,0 +1,66 @@
+\subsection{\texorpdfstring{$\mathrm{GL}_2(\mathbb{F}_p)$}{GL2Fp}的子群}
+
+记$V$是$\mathbb{F}_p$上的二维线性空间，将$\mathrm{GL}_2(\mathbb{F}_p)$看作是$\mathrm{Aut}(V)$.
+为了避免小特征带来的麻烦，只考虑$p\geq 7$的情况.
+
+\paragraph{Cartan子群}
+
+Cartan子群是Cartan子代数的类比. 由于基域不是代数闭的，还需要讨论是否分裂的问题.
+
+设$D_1,D_2$是$V$的一维子空间，使得$V=D_1\oplus D_2$.
+称$C=\{s\in \mathrm{Aut}(V)\mid sD_1=D_1, sD_2=D_2\}$
+为一个分裂的Cartan子群.
+选取$D_1, D_2$中的非零元素作为基时，$C$可以写成矩阵群$\left\{\matbt{*}{0}{0}{*}\right\}$.
+由此可以看到$|C|=(p-1)^2$.
+
+称$C_1 =\{s\in C\mid \forall x\in D_1, sx=x\}$为一个分裂的半Cartan子群. $C_1$可以写成矩阵群
+$\left\{\matbt{1}{0}{0}{*}\right\}$，此时$|C_1|=p-1$.
+
+如果子代数$k\subset \mathrm{End}(V)$同构于$\mathbb{F}_{p^2}$，
+则称$C = k^{\times}\subset \mathrm{Aut}(V)$为一个未分裂的Cartan子群.
+$|C| = p^2-1$.
+将基域扩张到$\mathbb{F}_{p^2}$后，未分裂的Cartan子群可以写成矩阵群
+$\left\{\matbt{a}{0}{0}{\overline{a}}, a\in \mathbb{F}_{p^2}^{é}\right\}$.
+
+将分裂和未分裂的Cartan子群统称为Cartan子群.
+
+设$C$是一个Cartan子群，记$N$为$C$的正规化子.
+
+\begin{cprop}
+    (i) $[N:C]=2$；
+
+    (ii) 如果$C'$是Cartan子群，$C'\subset N$，则$C' = C$.
+
+    (iii) 如果$C'$是半Cartan子群，$C'\subset N$，则$C' \subset C$.
+\end{cprop}
+
+\paragraph{Borel子群}
+
+设$D$是$V$的一维子空间，称$B=\{s\in \mathrm{Aut}(V)\mid sD=D\}$为一个Borel子群.
+$B$可以写成矩阵群
+$\left\{\matbt{*}{*}{0}{*}\right\}$，容易验证$\absn{B}=p(p-1)^2$. $D$是$B$作用下唯一的一维不变子空间.
+
+\begin{cprop}
+    如果子群$G\subset \mathrm{GL}_2(\mathbb{F}_p)$的阶被$p$整除，且$G$不包含$\mathrm{SL}_2(\mathbb{F}_p)$，
+    则$G$包含在某个Borel子群$B$中.
+\end{cprop}
+
+\begin{proof}
+    %TODO
+\end{proof}
+
+\paragraph{包含Cartan子群的子群}
+
+现在可以开始$\mathrm{GL}_2(\mathbb{F}_p$中的子群分类.
+如果能够证明$\overline{\rho}_{\ell}$的像包含一个Cartan子群，那么像的可能性就不多了.
+具体来说，
+\begin{cprop}
+    如果$G\subset \mathrm{GL}_2(\mathbb{F}_p)$包含了一个Cartan子群，或者一个半Cartan子群，
+    那么$G$或者是整个$ \mathrm{GL}_2(\mathbb{F}_p$，
+    或者包含在一个Borel子群中，
+    或者包含在一个Cartan子群的正规化子中.
+\end{cprop}
+
+\begin{proof}
+    %TODO
+\end{proof}
