@@ -14,15 +14,30 @@ Tate提出了另一种将$\rho_n$放在一起的方式. 令Tate模$T_{\ell}(E) =
 
 在$\mathrm{char}\ K = 0$，且$E$具有复乘的情况下，$\mathrm{Im}\ \rho$是相对简单的. 通过将$K$取成一个有限扩张，不妨设$\mathrm{End}_K(E) \cong \mathcal{O}$. 此时$T_{\ell}$是$\mathcal{O}_{\ell} = \lim\limits_{\longleftarrow}\mathcal{O}/\ell^n \mathcal{O}$上秩为$1$的模，$G$的作用与$\mathcal{O}_{\ell}$的作用交换. 此时$\rho$实际上是表示$G\to (\mathcal{O}_{\ell})^{\times}$，即$\mathrm{Im}\ \rho$是交换群.
 
-如果$K$是代数数域，绝对Galois群的表示的像似乎遵从一个原则，“如果没有让像变小的理由，那么它就会尽可能地大”. $E$具有复乘就是一个让$\rho$的像变小的原因. Serre证明了复乘就是仅有的让像变小的原因，也就是本文的主定理：
+如果$K$是代数数域，绝对Galois群的表示的像似乎遵从一个原则，“如果没有让像变小的理由，那么它就会尽可能地大”. $E$具有复乘就是一个让$\rho$的像变小的原因. Serre证明了复乘就是仅有的让像变小的原因，也就是本文的第一个主定理：
 
 \begin{cthm}
     令$K$是代数数域，$E$是定义在$K$上的椭圆曲线. 假设$\mathrm{End}_{\overline{K}}(E) \cong \mathbb{Z}$. 则$\mathrm{Im}\ \rho$是$\mathrm{GL}_2(\mathbb{Z}_{\ell})$的开子群. \label{main::open_image}
 \end{cthm}
 
+定理\ref{main::open_image}的条件和结论都可以差一个有限扩张.
+但既然证明了像是开子群，有一个自然的问题就是它是否是整个$\mathrm{GL}_2(\mathbb{Z}_{\ell})$.
+这当然是不一定的. 就算$\rho_{\ell}$的像是$\mathrm{GL}_2(\mathbb{Z}_{\ell})$，
+只要取一个真开子群$G'\subset \mathrm{GL}_2(\mathbb{Z}_{\ell})$，
+并令$K' = K(E[\ell^{\infty}])^{G'}$，则$K'/K$是有限扩张且定义在$K'$上的$\ell$进表示
+$\rho_{\ell}'$的像就不是$\mathrm{GL}_2(\mathbb{Z}_{\ell})$了.
+
+但无论如何，还可以继续追问什么时候$\rho_{\ell}$的像是整个$\mathrm{GL}_2(\mathbb{Z}_{\ell})$.
+首先，如果$\rho_{\ell}$的像是$\mathrm{GL}_2(\mathbb{Z}_{\ell})$，
+则$\tilde{\rho} = \rho \pmod{\ell}$也是满射.
+因此可以先问什么时候$\tilde{\rho}$是满射. 这就是第二个主定理
+
 \begin{cthm}
     $K, E$同上. 对于除了有限多个以外的素数$\ell$，模$\ell$Galois表示$\overline{\rho}_{\ell}: \mathrm{Gal}(\overline{K}/K)\to \mathrm{GL}_2(\mathbb{F}_{\ell})$是满射. \label{main::surjective}
 \end{cthm}
+
+事实上，由几乎所有的$\tilde{\rho}_{\ell}$是满射，可以推出几乎所有的$\rho_{\ell}$都是满射.
+证明将在定理\ref{main::open_image}的证明后给出.
 
 两个主定理的证明思路是类似的，就是分类出$\mathrm{GL}_2$的子群，再一个一个排除. 这里$\mathrm{GL}_2$的模糊表述是故意的，同时指$\mathrm{GL}_2(\mathbb{Q}_{\ell})$和$\mathrm{GL}_2(\mathbb{F}_{\ell})$. 两者一个通过李代数的方法分类，另一个是有限群的子群的分类，结果却殊途同归. 其中发挥本质作用的当然是根系.
 
