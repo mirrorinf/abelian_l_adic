@@ -1,8 +1,8 @@
-\subsection{一些记号}
+\subsection{一些背景知识}
 
-如果$G$是$k$上的代数群，$k'$是$k$的扩张，则记$\basechange{G}{k'}$为$G$通过基域扩张到$k'$得到的$k'$上的代数群.
+如果$G$是$k$上的仿射代数群，$k'$是$k$的扩张，则记$\basechange{G}{k'}$为$G$通过基域扩张到$k'$得到的$k'$上的代数群.
 
-再回顾一些代数数论和代数群理论的内容，用以固定后面要用到的记号.
+现在来回顾一些代数数论和代数群理论的内容，用以固定后面要用到的记号.
 
 \subsubsection{代数数论}
 
@@ -133,3 +133,35 @@ $T = \mathrm{Res}_{K/\mathbb{Q}}(\basechange{\mathbb{G}_m}{K})$，$T_{\mathfrak{
 \begin{proof}
     \cite{milne2017algebraic}, Corollary 12.24.
 \end{proof}
+
+\subsection{代数群的表示}
+
+设$\Lambda = \mathscr{O}(G)$，$\overline{\Lambda} = \Lambda \otimes \overline{k} = \mathscr{O}(\basechange{G}{\overline{k}})$.
+每个$\chi\in X^{*}(G)$都可以看作是$\overline{\Lambda}$的元素.
+那么有映射$\alpha: \overline{k}[X^{*}(G)] \to \overline{\Lambda}$，其中$\overline{k}[X^{*}(G)]$是$X^{*}$的群代数.（这里$X^{*}(G)$用乘法记号）
+
+$G = \mathrm{Gal}(\overline{k}/k)$通过$s(\sum a_{\chi} \chi) = \sum s(a_{\chi}) s(\chi)$作用在$\overline{k}[X^{*}(H)]$上.
+通过直接计算可以验证$G$的作用和$\alpha$交换.
+当$G$是乘法型群时，$\basechange{G}{\overline{k}}$是对角化群，此时$\alpha$是双射.
+
+设$V$是$k$上的有限维线性空间，$\phi: G\to \mathrm{GL}(V)$是一个半单表示.
+记$\theta_{\phi}$为$\phi$的迹$\theta_{\phi} = \sum n_{\chi}(\phi)\chi$，
+其中$n_{\phi}(\chi)$是$\phi$在$\overline{k}$上的分解中$\chi$的重数.
+对于$h\in G(R)$，$\theta_{\phi}(h) = \mathrm{Tr}(\phi(h))$.
+
+记$\mathsf{Rep}_{k}(G)$为$G$的半单表示的范畴. 如果$k'/k$是域扩张，
+那么通过基域扩张可以得到映射$\mathsf{Rep}_{k}(G)\to \mathsf{Rep}_{k'}(\basechange{G}{k'})$.
+称$V\in \mathsf{Rep}_{k'}(G)$可以定义在$k$上是指$V$落在基域扩张的像（essential image）中.
+
+\begin{cprop}
+    $\phi\mapsto \theta_{\phi}$是$\mathsf{Rep}_{k}(G)$的骨架和$S \subset \mathbb{Z}[X^{*}(G)]$之间的双射，
+    其中$S$包含了满足以下条件的元素$\theta$：
+
+    (i) $\theta$在$G$的作用下不变；
+
+    (ii) 所有的$n_{\chi}\geq 0$.
+\end{cprop}
+
+\begin{ccor}
+    $\phi'\in \mathsf{Rep}_{k'}(\basechange{G}{k'})$可以定义在$k$上当且仅当$\theta_{\phi'}\in \Lambda \otimes k'$属于$\Lambda$.
+\end{ccor}

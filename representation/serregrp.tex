@@ -40,7 +40,7 @@
 \end{proof}
 
 \begin{ccor}
-    $\{F_v\}$在$S_{\mathfrak{m}}$中Zariski稠密. \label{frob_dense}
+    $\{F_v\}$在$S_{\mathfrak{m}}$中Zariski稠密. \label{reps::sm::frob_dense}
 \end{ccor}
 
 \begin{proof}
@@ -84,19 +84,29 @@
     如果$\{\rho_{\ell}\}$是一族通过$S_{\mathfrak{m}}$定义的$\ell$进表示，则存在无穷很多个素数$\ell$使得$\rho_{\ell}$是一维表示的直和；特别地，$\rho_{\ell}$在$\mathbb{Q}_{\ell}$上可约.\label{sm_to_reducile}
 \end{ccor}
 
-现在来证明定理\ref{single_ell}的(3). 回顾，如果$H$是$k$上的代数群，记$\mathsf{Rep}_k(H)$为$H$的有限维半单表示的范畴. 当$k_1$是$k$的扩张是，有自然的$-\otimes k_1: \mathsf{Rep}_k(H)\to \mathsf{Rep}_{k_1}(\basechange{H}{k_1})$. 如果$\rho\in \mathsf{Rep}_{k_1}(H/k_1)$落在$-\otimes k_1$的像（essential image）中，则称$\rho$可以定义在$k$上.
+现在来证明定理\ref{single_ell}的(3).
 
 \begin{cprop}
     令$\mathbb{Q}\subset k\subset k_1$. 对于$\varphi\in \mathsf{Rep}_{k_1}(\basechange{S_{\mathfrak{m}}}{k_1})$，以下性质等价：
 
-    (1) $\varphi$可以定义在$k$上
+    (i) $\varphi$可以定义在$k$上
 
-    (2) 对任意的$v\not\in \mathrm{supp}(\mathfrak{m})$，$\varphi(F_v)$的特征多项式的系数都落在$k$中
+    (ii) 对任意的$v\not\in \mathrm{supp}(\mathfrak{m})$，$\varphi(F_v)$的特征多项式的系数都落在$k$中
 
-    (3) 存在密度为$1$的子集$\Sigma \subset \Sigma_K$使得当$v\in \Sigma$时，$\mathrm{Tr}(\varphi(F_v))\in k$.
+    (iii) 存在密度为$1$的子集$\Sigma \subset \Sigma_K$使得当$v\in \Sigma$时，$\mathrm{Tr}(\varphi(F_v))\in k$.
 \end{cprop}
 
 \begin{proof}
-    (1)$\Rightarrow$(2)$\Rightarrow$(3)是显然的.
-    %TODO: 22 avr
+    (i)$\Rightarrow$(ii)$\Rightarrow$(iii)是显然的.
+    
+    现在证明(iii)$\Rightarrow$(i). 记$\Lambda = \mathscr{O}(\basechange{S_{\mathfrak{m}}}{k})$，
+    $\theta_{\varphi}$为$\varphi$的特征.
+    令$\{\ell_{\alpha}\}$为$k_1$作为$k$向量空间的一组基，$\ell_{0} = 1$.
+    将$\theta_{\varphi}$写成$\sum_{\alpha} \lambda_{\alpha} \ell_{\alpha}$的形式，
+    其中$\lambda_{\alpha}\in \Lambda$.
+    那么当$h\in S_{\mathfrak{m}}(k_1)$时，
+    $\mathrm{Tr}(\varphi(h)) = \theta_{\varphi}(h) = \sum_{\alpha} \lambda_{\alpha}(h)\ell_{\alpha}$.
+    令$h=F_v$，由$\mathrm{Tr}(\varphi(F_v))\in k$可知当$\alpha\neq 0$时$\lambda_{\alpha}F_v = 0$.
+    但是由推论\ref{reps::sm::frob_dense}，$F_v,v\in \Sigma$在$\mathbb{S}_{\mathfrak{m}}$中
+    Zariski稠密. 从而当$\alpha\neq 0$时，$\lambda_{\alpha} = 0$.
 \end{proof}
