@@ -1,3 +1,169 @@
 \subsection{主定理的证明}
 
+选择$\overline{\mathbb{Q}}$的素点$v\mid \ell$.
+$\overline{\mathbb{Q}}$在$v$出的完备化是$\mathbb{Q}_{\ell}$的一个代数闭包.
+令$\order_{\ell}, \mathfrak{p}_{\ell}$是$v$对应的整数环和极大理想，
+$k_{\ell} = \order_{\ell} / \mathfrak{p}_{\ell}$.
 
+记$\Gamma$是$K\to \overline{\mathbb{Q}}$的嵌入的群.
+如果$\sigma\in \Gamma$，则$\sigma$可以延拓为$\mathbb{Q}_{\ell}$代数的映射
+$\sigma_{\ell}: K_{\ell} = K\otimes \mathbb{Q}_{\ell}\to \overline{\mathbb{Q}}_{\ell}$.
+
+接下来证明一个类似于局部代数性质的条件.
+主要的想法就是，既然一个$\tilde{\rho}_{\ell}$的力量不足以对$\rho_{\ell}$本身产生足够的限制，
+那就考虑无穷多个$\tilde{\rho}_{\ell}$.
+再利用一个事实，即当一个等式模无穷多个素数$\ell$成立时，它可以被提升到特征$0$的情况.
+于是无穷多个$\tilde{\rho}_{\ell}$一起了发挥威力.
+
+假设当素数$\ell$变化时$\{\theta_{\ell}\}$，是一族Galois群的特征
+$\theta_{\ell}: \mathrm{Gal}(\overline{K}/K)^{ab}\to k_{\ell}^{\times}$.
+
+\begin{cprop}
+    固定一个理想$\mathfrak{m}$.
+    如果存在$n:\Gamma: \mathbb{Z}$以及无穷多个素数的集合$L$使得
+    对每个$\ell\in L, a\in U_{\mathfrak{m}}$都有
+    \begin{equation}
+        \theta_{\ell}(a) \equiv \prod_{\sigma\in \Gamma} \sigma_{\ell}(a_{\ell}^{-1})^{n(\sigma)} \pmod{\mathfrak{p}_{\ell}}
+    \end{equation}
+
+    那么存在$\psi\in X^{*}(S_{\mathfrak{m}})$使得$\tilde{\phi}_{\ell} = \theta_{\ell}$对无穷多个$\ell\in L$成立.
+\end{cprop}
+
+\begin{proof}
+    令$\phi$为$T$的特征$\phi = \prod_{\sigma\in \Gamma} \sigma^{n_{\sigma}}$.
+    先来验证$\phi$是$T_{\mathfrak{m}}$的特征. 设$x\in E_{\mathfrak{m}}$.
+    此时$x\in K$，因此
+    \begin{equation}
+        \phi(x^{-1}) = \prod_{\sigma\in\Gamma}\sigma(x^{-1})^{n_{\sigma}}
+        \equiv \theta_{\ell}(x) \pmod{\mathfrak{p}_{\ell}}
+    \end{equation}
+    而$\theta_{\ell}(x) = 1$. 那么$\phi(x)\equiv 1\pmod{\mathfrak{p}_{\ell}}$对无穷多个$\ell$成立，
+    因此只能是$\phi(x) = 1$.
+
+    取一个$\chi\in X^{*}(S_{\mathfrak{m}})$使得$\chi$在$X^{*}(S_{\mathfrak{m}})\to X^{*}(T_{\mathfrak{m}})$
+    下的像是$\phi$. 令$\chi_{\ell}$为$\chi$定义的$\ell$进特征，
+    $\tilde{\chi}_{\ell}$为$\chi_{\ell}$模$\mathfrak{p}_{\ell}$的特征.
+    令$\theta'_{\ell} = \tilde{\chi}_{\ell} \theta_{\ell}^{-1}$.
+
+    由$\chi_{\ell}$的定义，当$a\in U_{\mathfrak{m}}$时，$\theta'_{\ell}=1$.
+    那么$\theta'_{\ell}$可通过$C_{\mathfrak{m}}$分解.
+    设$\ell > h_{\mathfrak{m}}$.
+    此时模$\mathfrak{p}_{\ell}$的映射是
+    $\overline{\mathbb{Q}}$和$\overline{k}_{\ell}$的$h_{\mathfrak{m}}$次单位根之间的双射.
+    那么$\theta'_{\mathfrak{m}}$是$C_{\mathfrak{m}}$
+    到$\overline{\mathbb{Q}}^{\times}$中的$h_{\mathfrak{m}}$单位根群$\mu_{h_{\mathfrak{m}}}$的映射.
+    $C_{\mathfrak{m}}$和$\mu_{h_{\mathfrak{m}}}$都是有限群，这样的映射只有有限多个.
+    那么存在$L$的无穷子集$L'$使得每个$\theta'_{\ell},\ell\in L'$都是某一个$\theta''$.
+    此时$\psi = \theta^{''-1}\chi$满足当$\ell\in L'$时，$\tilde{\psi}_{\ell} = \theta_{\ell}$.
+\end{proof}
+
+完成了对特征的讨论之后，可以来考虑一般的表示.
+
+\begin{cthm}
+    如果$\{\rho_{\ell}\}$是一族严格相容的半单、有理$\ell$进表示，$\dim \rho_{\ell} = d$，
+    且存在正整数$N$和素数的无穷集合$L$使得
+    对所有的$\ell\in L$，$\tilde{\rho}_{\ell}$是交换的. 记$\theta_{\ell}^i$为$\tilde{\rho}_{\ell}$分解中的特征.
+    如果存在绝对值不大于$N$的整数
+    $n(\sigma,i,\ell)$使得当$a\in U_{\mathfrak{m}}$时，
+    \begin{equation}
+        \theta_{\ell}^i \equiv \prod_{\sigma\in \Gamma} \sigma_{\ell}(a_{\ell}^{-1})^{n(\sigma, i, \ell)} \pmod{\mathfrak{p}_{\ell}}
+    \end{equation}
+
+    那么存在$\phi:S_{\mathfrak{m}}\to \mathrm{GL}_d$使得$\rho_{\ell}\cong \phi_{\ell}$. \label{surj::main_lemma}
+\end{cthm}
+
+\begin{proof}
+    $n(-,\ell,-)$是有限集合到有限集合的映射，因此可以取出$L$的无穷子集$L'$使得$\ell\in L'$时$n(-,\ell,-)$都是同一个.
+    那么${\theta_{\ell}^{1}}$满足上一个命题的条件，
+    从而有$L'$的无穷子集$L'_1$和$\psi^1\in X^{*}(S_{\mathfrak{m}})$使得
+    当$\ell\in L'_1$时$\tilde{\psi}^1_{\ell} = \theta_{\ell}^{1}$.
+    同样地，继续对$L'_i$和${\theta_{\ell}^{i+1}}$用上一个命题，得到$L'_{i}$的无穷子集$L'_{i+1}$
+    和$\psi^{i+1}\in X^{*}(S_{\mathfrak{m}})$使得
+    当$\ell\in L'_{i+1}$时$\tilde{\psi}^j_{\ell} = \theta_{\ell}^{j},\forall j\leq i+1$.
+    最终得到$L$的无穷子集$L''$和$\psi_1,\ldots,\psi_d$使得
+    当$\ell\in L''$时$\tilde{\psi}^j_{\ell} = \theta_{\ell}^{j},\forall 1\leq j\leq d$.
+
+    令$\phi:\basechange{S_{\mathfrak{m}}}{\overline{Q}}\to \basechange{\mathrm{GL}_d}{\overline{Q}}$
+    是所有$\psi_i$的直和. 接下来验证$\{\phi_{\ell}\}$和$\{\rho_{\ell}\}$相容.
+    取一个$\ell\in L''$.
+    令$S$是$\mathrm{supp}(\mathfrak{m})$和$\{\rho_{\ell}\}$的例外素点集合的并.
+    设$v\in \Sigma_{K}-S$，$f_v$是$v$分量取素元，其它分量取$1$的idèle.
+    记$F_v$为$f_v$在$S_{\mathfrak{m}}(\mathbb{Q})$中的像.
+
+    当$v\in \Sigma-S,\ell\neq p_v,\ell\in L''$时，
+    \begin{align}
+        P'_{v}(t)
+        &= \det (1-t\phi(F_v))
+        = \prod_{i}(1-t\psi^i(F_v))\\
+        &= \prod_{i}(1-t\psi_{\ell}^i(f_v))\\
+        &\equiv \prod_{i} (1 - t\theta_{\ell}^{i} (f_v))\pmod{\mathfrak{p}_{\ell}} 
+    \end{align}
+    即$P'_v(t)\equiv P_{v,\rho_{\ell}}(t) \pmod{\mathfrak{p}_{\ell}}$对无穷多个$\ell$成立.
+    注意到此时$P_{v,\rho_{\ell}}(t)$和$\ell$无关. 记其为$P_{v}(t)$.
+    那么有$P'_v(t)=P_v(t)$.
+
+    这就对无穷多个素数$\ell$验证了$\phi_{\ell}$和$\rho_{\ell}$相容.
+    但两者都是严格相容、半单的，于是对所有的$\ell$都有$\phi_{\ell}\cong \rho_{\ell}$.
+
+    此时$\phi(F_v)$的迹都是有理数，而$F_v$在$S_{\mathfrak{m}}$中稠密，因此$\phi$可以定义在$\mathbb{Q}$上.
+\end{proof}
+
+下面开始主定理\ref{main::surjective}的证明.
+\begin{proof}[]
+    通过将$K$取成一个有限扩张，不妨设$E$是半稳定的，即当$E$在$v$处有坏约化时，
+    这个坏约化是乘性的.
+
+    假设有无穷多个$\ell$使得$\mathrm{Im}\ \tilde{\rho}_{\ell}\neq \mathrm{GL}_2(\mathbb{F}_{\ell})$.
+    进一步假设$\ell\geq 7$，在$K$中非分歧，且$E$在所有$v\mid \ell$处有好约化.
+
+    固定$K$的素点$v\mid \ell$和$\overline{K}$的素点$w\mid v$.
+    当$E$在$v$处有高度$1$的好约化时，$\tilde{\rho}_{\ell}(I_w)$是半Cartan子群或者半Borel子群；
+    当$E$在$v$处有高度$2$的好约化时，$\tilde{\rho}_{\ell}(I_w)$是未分裂的Cartan子群.
+    
+    无论如何，由命题\ref{subgroup_class}，$\mathrm{Im}\ \tilde{\rho}_{\ell}$或者包含在一个Cartan子群的正规化子中，或者包含在一个Borel子群中.
+    \vskip0.3cm
+
+    先来排除$\mathrm{Im}\ \tilde{\rho}_{\ell}$包含在Cartan子群$C$的正规化子$N_{\ell}$中，却不包含在$C_{\ell}$中的情形.
+    假设有无穷多个素数$\ell$落在这一情形中，记这些素数的集合为$L'$. 对每个$\ell\in L'$，
+    由于$[N_{\ell}:C_{\ell}]=2$，此时$\tilde{\rho}_{\ell}$定义了映射$\epsilon_{\ell}:\mathrm{Gal}(\overline{K}/K) \to N_{\ell}\to N_{\ell}/C_{\ell} \cong \{\pm 1\}$. 且$\epsilon_{\ell}$是满射.
+    $\epsilon_{\ell}$对应于$K$的一个二次扩张$F_{\ell}$.
+
+    下面验证$F_{\ell}$在素点$v$，$E$在$v$处有好约化，以外非分歧.
+    如果$p_v=\ell$，那么$\tilde{\rho}_{\ell}(I_w)$或者是一个半Cartan子群，或者是一个未分裂的Cartan子群，因此包含在$C_{\ell}$中. 如果$p_v\neq \ell$且$E$在$v$处有好约化；那么$\rho_{\ell}(I_w) = 1$.
+
+    而$K$的在固定的有限多个素点以外非分歧的二次扩张只有有限多个，那么存在一个$F$使得$F_{\ell} =F$对无穷多个$\ell$成立.
+    如果$v$在$F$上惯性且$E$在$v$处有好约化，则$\mathrm{Tr}(F_v) = 0$.
+    （$F_v$记$\tilde{E}$上的Frobenius作用）
+    这是因为，取一个$\ell\in L',F_{\ell}=F$.
+    令$\pi_w$为$w$处$\tilde{\rho}_{\ell}$的Frobenius元素.
+    由于$\epsilon_{\ell}(\pi_{w})=-1$，$\pi_{w}\in N_{\ell}-C_{\ell}$，此时$\mathrm{Tr}(\pi_w)=0$.
+    那么$\mathrm{Tr}(F_v)\equiv \mathrm{Tr}(\pi_{w})\equiv 0\pmod{\ell}$.
+    这个同余关于对无穷多个$\ell$都成立，因此$\mathrm{Tr}(F_v) = 0$.
+
+    由Chebotarev密度定理，使得$\mathrm{Tr}(F_v)= 0$的$v$的密度是$\frac{1}{2}$.
+    但这与推论\ref{height2::sparse}矛盾.
+
+    \vskip0.3cm
+
+    接下来处理$\mathrm{Im}\ \tilde{\rho}_{\ell}$包含在一个Cartan子群或者一个Borel子群中的情况.
+    令$\phi_{\ell}$是$\tilde{\rho}_{\ell}$的半单化，则$\phi_{\ell}$的像是一个Cartan子群.
+    特别地，$\phi_{\ell}$是交换的.
+
+    取$\mathfrak{m}=1$，$N=1$. 我们希望验证定理\ref{surj::main_lemma}的条件.
+    \begin{equation}
+        \theta_{\ell}^i (a) \equiv \prod_{\sigma\in \Gamma} \sigma_{\ell}(a_{\ell}^{-1})^{n(\sigma, \ell,i)}
+        \pmod{\mathfrak{p}_{\ell}}
+    \end{equation}
+    设$p_v\neq \ell$. 当$E$在$v$处有好约化时，$\phi_{\ell}$在$v$处非分歧.
+    而当$E$在$v$处有坏约化时，$\tilde{\rho}_{\ell}(I_w)$或者是$1$，或者是一个$\ell$阶循环群.
+    因此$\phi_{\ell}(I_w)=1$. 即$\phi_{\ell}$在$p_v\neq \ell$时非分歧.
+    那么$p_v\neq \ell$，$a\in U_{\mathfrak{m}, v}$时，$\theta_{\ell}^{i} = 1$.
+
+    因此只要验证存在$n(\sigma, \ell,i)\in \{0, 1\}$使得当$a\in U_{\ell}$时有
+    \begin{equation}
+        \theta_{\ell}^i (a) \equiv \prod_{\sigma\in \Gamma} \sigma_{\ell}(a^{-1})^{n(\sigma, \ell,i)}
+        \pmod{\mathfrak{p}_{\ell}}
+    \end{equation}
+
+    %TODO
+\end{proof}

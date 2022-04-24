@@ -1,4 +1,47 @@
-\subsection{在\texorpdfstring{$S_{\mathfrak{m}}$}{Sm}中取值的表示}
+\subsection{代数群\texorpdfstring{$S_{\mathfrak{m}}$}{Sm}}
+
+\begin{cdef}
+    Serre群$S_{\mathfrak{m}}$是一个$\mathbb{Q}$代数群，带着一个代数群态射$T_{\mathfrak{m}}\to S_{\mathfrak{m}}$和一个群同态$\mathbb{A}_K^{\times}/U_{\mathfrak{m}}\to S_{\mathfrak{m}}(\mathbb{Q})$使得图表交换，且是以上条件定义的范畴中的始对象
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            K^{\times}/E_{\mathfrak{m}}\arrow[r]\arrow[d] &\mathbb{A}_K^{\times}/U_{\mathfrak{m}}\arrow[d]\\
+            T_{\mathfrak{m}}(\mathbb{Q})\arrow[r] &S_{\mathfrak{m}}(\mathbb{Q})
+        \end{tikzcd}
+    \end{figure}
+\end{cdef}
+
+\begin{cprop}
+    如果$R$是$\mathbb{Q}$代数，且$\mathrm{Spec}\ R$连通，则有交换图表
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            0\arrow[r] &K^{\times}/E_{\mathfrak{m}}\arrow[r]\arrow[d] &\mathbb{A}_K^{\times}/U_{\mathfrak{m}}\arrow[d] \arrow[r] &C_{\mathfrak{m}}\arrow[d]\arrow[r] &0\\
+            0\arrow[r] &T_{\mathfrak{m}}(R)\arrow[r] &S_{\mathfrak{m}}(R) \arrow[r] &C_{\mathfrak{m}}\arrow[r] &0
+        \end{tikzcd}
+    \end{figure}
+    且图表中的两行都是正合列.
+\end{cprop}
+
+\begin{cprop}
+    $X^{*}(S_{\mathfrak{m}}) = \mathrm{Hom}_{\overline{\mathbb{Q}}}(\basechange{S_{\mathfrak{m}}}{\overline{\mathbb{Q}}}, \basechange{\mathbb{G}_{m}}{\overline{\mathbb{Q}})}$可以被描述为以下对象的集合：$(\phi, \chi)$，其中$\phi: I_{\mathfrak{m}}\to \overline{\mathbb{Q}}^{\times}$，$\chi\in X^{*}(T_{\mathfrak{m}})$满足$\phi(y) = \chi(y), y\in K^{\times}/ E_{\mathfrak{m}}$.
+\end{cprop}
+
+以上两个命题可以直接通过$S_{\mathfrak{m}}$的构造来证明.
+
+$T_{\mathfrak{m}},S_{\mathfrak{m}}$都是乘法型群. 按照乘法型群的一般结论，
+
+\begin{cprop}
+    有正合列
+    \begin{equation}
+        0 \to X^{*}(C_{\mathfrak{m}}) \to X^{*}(S_{\mathfrak{m}}) \to X^{*}(T_{\mathfrak{m}}) \to 0
+    \end{equation}
+\end{cprop}
+
+\begin{cprop}
+    固定$\mathfrak{m}$. 存在$\mathbb{Q}$的有限扩张$E$使得对任意有限维表示$\rho:S_{\mathfrak{m}}\to GL(V)$，$\basechange{\rho}{E}$可以对角化. \label{reps::split_finite}
+\end{cprop}
+
 
 记$\varepsilon : \mathbb{A}_K^{\times} \to I_{\mathfrak{m}}\to S_{\mathfrak{m}}(\mathbb{Q})$，$\pi: T \to T_{\mathfrak{m}}\to S_{\mathfrak{m}}$为定义$S_{\mathfrak{m}}$的映射. 对$\pi$取$\mathbb{Q}_{\ell}$点，得到$\pi_{\ell} : T(\mathbb{Q}_{\ell}) \to S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$. 但是$T(\mathbb{Q}_{\ell}) = (K\otimes \mathbb{Q}_l)^{\times} = \prod_{v\mid l} K_v^{\times}$，由此得到映射$\alpha_{\ell} : \mathbb{A}_K^{\times} \xrightarrow{proj} T(\mathbb{Q}_{\ell}) \xrightarrow{\pi_{\ell}} S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$.
 
@@ -47,8 +90,7 @@
     令$X$表示所有$F_v$的集合. 令$\ell$是素数. 令$\overline{X}, \overline{X}_{\ell}$分别为$X$在$S_{\mathfrak{m}}$(Zariski拓扑)，$S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$（$\ell$进拓扑）中的闭包. 那么$\overline{X}_{\ell}\subset \overline{X}(\mathbb{Q}_{\ell})$. 但是\Chebotarev 密度定理说明，$X$在$\mathrm{Im}(\varepsilon_{\ell})$中（$\ell$进）稠密，即$\overline{X}_{\ell} = \mathrm{Im}(\varepsilon_{\ell})$. $\mathrm{Im}(\varepsilon_{\ell})$在$\basechange{S_{\mathfrak{m}}}{\mathbb{Q}_{\ell}}$（Zariski）稠密，因此$\overline{X}(\mathbb{Q}_{\ell}) = S_{\mathfrak{m}}(\mathbb{Q}_{\ell})$.
 \end{proof}
 
-\subsection{通过\texorpdfstring{$S_{\mathfrak{m}}$}{Sm}定义的表示}
-
+\paragraph{通过\texorpdfstring{$S_{\mathfrak{m}}$}{Sm}定义的表示}
 设$V_{\ell}$是$\mathbb{Q}_{\ell}$上的有限维线性空间，$\varphi: \basechange{S_{\mathfrak{m}}}{\mathbb{Q}_{\ell}} \to GL(V_{\ell})$是$\basechange{S_{\mathfrak{m}}}{\mathbb{Q}_{\ell}}$的表示. 令$\varphi_{\ell}$为映射$G^{\mathrm{ab}}\to S_{\mathfrak{m}}(\mathbb{Q}_{\ell})\xrightarrow{\varphi} GL(V_{\ell})$.
 
 \begin{cthm}

@@ -26,39 +26,6 @@ $T = \mathrm{Res}_{K/\mathbb{Q}}(\basechange{\mathbb{G}_m}{K})$，$T_{\mathfrak{
     在(2)中对$a$的要求再加上全正，对$\tilde{\chi}$的要求看上去是减弱了，但事实上是一样的. 可以通过强逼近定理转化到idèle版本再还原来看，也可以直接证明：令$K^{\mathfrak{m}} = \{\alpha\in K^{\times}, \alpha\equiv 1\pmod{\mathfrak{m}}\}$，$K^{\mathfrak{m}}_{+} = \{\alpha\in K^{\mathfrak{m}}, \alpha 全正\}$. 如果$\chi_{\infty}$满足当$a\in K^{\mathfrak{m}}_{+}$时，$\tilde{\chi}((a)) = \chi_{\infty}(a)$，则$\tilde{\chi}\chi_{\infty}^{-1}$定义了$K^{\mathfrak{m}}/K^{\mathfrak{m}}_{+}$的一个特征，但是则$K^{\mathfrak{m}}/K^{\mathfrak{m}}_{+} \cong \prod_{v实素点} \{\pm 1\}$. 因此存在一个$\phi: \prod_{v\mid \infty} K_v^{\times}\to \{\pm 1\}$使得在$K^{\mathfrak{m}}$上有$\tilde{\chi}\chi_{\infty}^{-1} = \phi$，于是$\chi_{\infty}\phi$满足定理中（看起来更强的）条件(2).
 \end{crem}
 
-\begin{cdef}
-    Serre群$S_{\mathfrak{m}}$是一个$\mathbb{Q}$代数群，带着一个代数群态射$T_{\mathfrak{m}}\to S_{\mathfrak{m}}$和一个群同态$\mathbb{A}_K^{\times}/U_{\mathfrak{m}}\to S_{\mathfrak{m}}(\mathbb{Q})$使得图表交换，且是以上条件定义的范畴中的始对象
-    \begin{figure}[H]
-        \centering
-        \begin{tikzcd}
-            K^{\times}/E_{\mathfrak{m}}\arrow[r]\arrow[d] &\mathbb{A}_K^{\times}/U_{\mathfrak{m}}\arrow[d]\\
-            T_{\mathfrak{m}}(\mathbb{Q})\arrow[r] &S_{\mathfrak{m}}(\mathbb{Q})
-        \end{tikzcd}
-    \end{figure}
-\end{cdef}
-
-\begin{cprop}
-    如果$R$是$\mathbb{Q}$代数，且$\mathrm{Spec}\ R$连通，则有交换图表
-    \begin{figure}[H]
-        \centering
-        \begin{tikzcd}
-            0\arrow[r] &K^{\times}/E_{\mathfrak{m}}\arrow[r]\arrow[d] &\mathbb{A}_K^{\times}/U_{\mathfrak{m}}\arrow[d] \arrow[r] &C_{\mathfrak{m}}\arrow[d]\arrow[r] &0\\
-            0\arrow[r] &T_{\mathfrak{m}}(R)\arrow[r] &S_{\mathfrak{m}}(R) \arrow[r] &C_{\mathfrak{m}}\arrow[r] &0
-        \end{tikzcd}
-    \end{figure}
-    且图表中的两行都是正合列.
-\end{cprop}
-
-\begin{cprop}
-    $X^{*}(S_{\mathfrak{m}}) = \mathrm{Hom}_{\overline{\mathbb{Q}}}(\basechange{S_{\mathfrak{m}}}{\overline{\mathbb{Q}}}, \basechange{\mathbb{G}_{m}}{\overline{\mathbb{Q}})}$可以被描述为以下对象的集合：$(\phi, \chi)$，其中$\phi: I_{\mathfrak{m}}\to \overline{\mathbb{Q}}^{\times}$，$\chi\in X^{*}(T_{\mathfrak{m}})$满足$\phi(y) = \chi(y), y\in K^{\times}/ E_{\mathfrak{m}}$.
-\end{cprop}
-
-以上两个命题可以直接通过$S_{\mathfrak{m}}$的构造来证明.
-
-\begin{cprop}
-    固定$\mathfrak{m}$. 存在$\mathbb{Q}$的有限扩张$E$使得对任意有限维表示$\rho:S_{\mathfrak{m}}\to GL(V)$，$\basechange{\rho}{E}$可以对角化. \label{reps::split_finite}
-\end{cprop}
-
 \subsubsection{乘法型代数群}
 
 命题\ref{reps::split_finite}的证明需要用到可对角化群和乘法型群的概念，因此专门开一小节来写.

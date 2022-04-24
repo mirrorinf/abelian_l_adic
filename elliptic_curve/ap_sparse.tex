@@ -1,0 +1,31 @@
+\subsection{\texorpdfstring{$\mathrm{Tr}(F_{v, \rho})=0$}{tr F v rho}的稀疏性}
+
+先假设$\rho$是任意的有理$\ell$进表示，其像是$\mathrm{GL}_n(\mathbb{Z}_{\ell})$的开子群.
+
+\begin{cprop}
+    令$S_0$为满足以下条件的素点$v$的集合：
+
+    (i) $\rho$在$v$处非分歧，且$F_{v,\rho}$的特征多项式的是有理系数的；
+
+    (ii) $\mathrm{Tr}(F_{v,\rho}) = 0$.
+
+    则$S_0$的密度为$0$.
+\end{cprop}
+
+\begin{proof}
+    令$H = \{s\in \mathrm{GL}_n(\mathbb{Z}_{\ell})\mid \mathrm{Tr}(s)=0\}$，
+    $H' = \mathrm{Im}\ \rho \bigcap H$.
+    由于$H'$的维数严格小于$n^2$，$H'$的Haar测度为$0$，而$\mathrm{Im}\ \rho$的Haar测度不为$0$.
+
+    记$H'_n$为$H$在$\mathbb{GL}_2(\mathbb{Z}/\ell^n \mathbb{Z})$上的投影，
+    $G_n$为$\mathrm{Im}\ \rho$相应的投影. 那么$\lim\limits_{n\to \infty} \frac{\absn{H'_n}}{\absn{G_n}} = 0$.
+    由Chebotarev密度定理，$S_0$的密度不大于每个$\frac{\absn{H'_n}}{\absn{G_n}}$，
+    即$S_0$的密度为$0$.
+\end{proof}
+
+特别地，如果$\rho$是椭圆曲线$E$定义的表示，且$E$在$v$处有好约化.
+则$\mathrm{Tr}(F_{v,\rho})=0$就等价于$E$在$v$处的约化高度为$2$，或者说，$\tilde{E}[p_v] = 0$.
+因此如果证明了没有复乘的椭圆曲线的$\rho_{\ell}$的像是开子群，就有了
+\begin{ccor}
+    设$E$是没有复乘的椭圆曲线，则$E$有高度为$2$的好约化的素点$v$的密度为$0$.\label{height2::sparse}
+\end{ccor}
