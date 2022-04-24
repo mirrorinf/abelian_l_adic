@@ -13,7 +13,7 @@ Cartan子群是Cartan子代数的类比. 由于基域不是代数闭的，还需
 选取$D_1, D_2$中的非零元素作为基时，$C$可以写成矩阵群$\left\{\matbt{*}{0}{0}{*}\right\}$.
 由此可以看到$|C|=(p-1)^2$.
 
-称$C_1 =\{s\in C\mid \forall x\in D_1, sx=x\}$为一个分裂的半Cartan子群. $C_1$可以写成矩阵群
+称$C_1 =\{s\in C\mid \forall x\in D_1, sx=x\}$为一个半Cartan子群. $C_1$可以写成矩阵群
 $\left\{\matbt{1}{0}{0}{*}\right\}$，此时$|C_1|=p-1$.
 
 如果子代数$k\subset \mathrm{End}(V)$同构于$\mathbb{F}_{p^2}$，
@@ -24,6 +24,10 @@ $\left\{\matbt{a}{0}{0}{\overline{a}}, a\in \mathbb{F}_{p^2}^{é}\right\}$.
 
 将分裂和未分裂的Cartan子群统称为Cartan子群.
 
+注意到半Cartan子群乘上中心之后得到唯一的包含它的分裂Cartan子群.
+分裂的Cartan子群在$\mathrm{PGL}_2(\mathbb{F}_p)$中的像是$p-1$阶的循环群，
+而未分裂的Cartan子群在$\mathrm{PGL}_2(\mathbb{F}_p)$中的像是$p+1$阶的循环群.
+
 设$C$是一个Cartan子群，记$N$为$C$的正规化子.
 
 \begin{cprop}
@@ -33,6 +37,18 @@ $\left\{\matbt{a}{0}{0}{\overline{a}}, a\in \mathbb{F}_{p^2}^{é}\right\}$.
 
     (iii) 如果$C'$是半Cartan子群，$C'\subset N$，则$C' \subset C$.
 \end{cprop}
+
+\begin{proof}
+    (i) 通过简单的矩阵计算就知道如果$C$是分裂的Cartan子群，则当$C$的元素写成形如$\matbt{*}{0}{0}{*}$的形式时，
+    $N$的元素或者属于$C$，或者写成$\matbt{0}{*}{*}{0}$的形式.
+    而如果$C$是未分裂的Cartan子群，则基域扩张到$\mathbb{F}_{p^2}$之后，$C$的元素可以写成$\matbt{x}{0}{0}{x^t}$的形式，
+    此时$N-C$的元素可以写成$\matbt{0}{y}{y^t}{0}$的形式.
+
+    (ii)(iii) 令$C_1,N_1,C'_1$分别是$C,N,C'$在$\mathrm{PGL}_2(\mathbb{F}_p)$中的像.
+    （如果$C'$是半Cartan子群，则令$C_1'$为$C'\mathbb{F}_p$在$\mathrm{PGL}_2(\mathbb{F}_p)$中的像）
+    那么$C'_1$是$p\pm 1$阶的循环群. 而$\mathrm{PGL}_2(\mathbb{F}_p)$中两个不同的Cartan子群的像的交只能是$1$，
+    因此只能是$C_1=C'_1$.
+\end{proof}
 
 \paragraph{Borel子群}
 
@@ -48,12 +64,26 @@ $\left\{\matbt{*}{*}{0}{*}\right\}$. $D$是$B$作用下唯一的一维不变子�
 \end{cprop}
 
 \begin{proof}
-    %TODO
+    $\mathrm{GL}_2(\mathbb{F}_p)$中的$p$阶元素$x$都共轭到$\matbt{1}{1}{0}{1}$，
+    因此逐点固定唯一的一维子空间$D_x$.
+
+    如果有两个$p$阶元$x,y$对应的$D_x,D_y$不相同，则将这两个子空间的生成元选为一组基，就可以把$x,y$写成矩阵
+    $\matbt{1}{a}{0}{1}$和$\matbt{1}{0}{b}{1}$.
+    这两个元素可以生成$\mathrm{SL}_2(\mathbb{F_p})$，因为
+    \begin{equation}
+        \matbt{1}{1}{0}{1}
+        \matbt{1}{0}{-1}{1}
+        \matbt{1}{1}{0}{1}
+        = \matbt{0}{1}{-1}{0}
+    \end{equation}
+
+    假设所有$p$阶元$x$对应的$D_x$是同一个. 对任何$w\in G$，$wxw^{-1}$仍然是$p$阶元素.
+    从而$wD_x = D_x$. 于是$GD_x=D_x$，即$G$包含在一个Borel子群中.
 \end{proof}
 
 \paragraph{包含Cartan子群的子群}
 
-现在可以开始$\mathrm{GL}_2(\mathbb{F}_p$中的子群分类.
+现在可以开始$\mathrm{GL}_2(\mathbb{F}_p)$中的子群分类.
 如果能够证明$\tilde{\rho}_{\ell}$的像包含一个Cartan子群，那么像的可能性就不多了.
 具体来说，
 \begin{cprop}
@@ -63,6 +93,29 @@ $\left\{\matbt{*}{*}{0}{*}\right\}$. $D$是$B$作用下唯一的一维不变子�
     或者包含在一个Cartan子群的正规化子中.\label{subgroup_class}
 \end{cprop}
 
-\begin{proof}
-    %TODO
+证明需要用到一个经典的几何定理
+\begin{cprop}
+    设$k$是一个域，$H$是$\mathrm{PGL}_2(k)$的有限子群，且$\absn{H}$和$\mathrm{char}\ k$互素.
+    如果$H$既不是循环群，也不是二面体群，则$H$同构于$S_4,A_4$或者$A_5$.
+\end{cprop}
+
+证明大致是，如果$\mathrm{char}\ k>0$，则将$k$实现为一个局部环$A$的剩余类域，
+利用$\absn{H}$与$\mathrm{char}$互素将$H$提升为$\mathrm{PGL}_2(A)$的子群，
+从而化归到$\mathrm{char}\ k=0$的情况.
+
+而当$\mathrm{char}\ k=0$时，取一个$\mathbb{Q}$的包含$H$中所有坐标的有限生成扩张$L$，
+将$L$嵌入到$\mathbb{C}$中，从而化归到$k=\mathbb{C}$的情况.
+
+最后，$\mathrm{SO}_3(\mathbb{R})\subset \mathrm{PGL}_2(\mathbb{C})$是极大紧子群，
+从而$H$可以共轭到$\mathrm{SO}_3(\mathbb{R})$中. 再利用$\mathbb{R}^3$中有限旋转群的分类.
+
+\begin{proof}[命题\ref{subgroup_class}的证明]
+    如果$G$的阶被$p$整除，那么$G$要么包含$\mathrm{SL}_2(\mathbb{F}_p)$，要么包含在一个Borel子群中.
+    但是$G$包含了一个Cartan子群，因此$\det G = \mathbb{F}_{p}^{\times}$.
+    即$G$一旦包含$\mathrm{SL}_2(\mathbb{F}_p)$，那就一定等于整个$\mathrm{GL}_2(\mathbb{F}_p)$.
+
+    反之，如果$G$的阶不被$p$整除. 令$H$是$G\mathbb{F}_{p}^{\times}$在$\mathrm{PGL}_2(\mathbb{F}_p)$中的投影.
+    由于$H$包含一个$p\pm 1$阶元素，而$p\pm 1 > 5$，$H$不可能是$S_4,A_4,A_5$中的一个.
+    如果$H$是循环群，则$H$包含在一个$p\pm 1$阶循环群中，因此包含在某个Cartan子群的像；那么$G$包含在一个Cartan子群中；
+    如果$H$是二面体群，那么它包含一个指数为$2$的循环群，此时$G$包含在某个Cartan子群的正规化子中.
 \end{proof}
