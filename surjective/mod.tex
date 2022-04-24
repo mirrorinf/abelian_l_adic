@@ -6,7 +6,16 @@ $\tilde{\rho}_{\ell}: \mathrm{Gal}(\overline{K}/K)\to \mathrm{GL}_2(\mathbb{F}_{
 由构造，$\tilde{\rho}_{\ell}$就是$\mathrm{Gal}(\overline{K}/K)$作用在$E[\ell]$上得到的表示.
 
 一般地，设$\rho$是任意$n$维$\ell$进表示$\mathrm{Gal}(\overline{K}/K)\to \mathrm{GL}(V)$.
-$\rho$的像是紧的，
+$\rho$的像是紧的，存在一个$\mathrm{Im}\ \rho$不变的$\mathbb{Z}_{\ell}$格$T$.
+通过模$T$可以得到表示$\tilde{\rho}: \mathrm{Gal}(\overline{K}/K)\to \mathrm{GL}_n(\mathbb{F}_{\ell})$.
+
+同时，还可以对一个表示定义半单化. 如果$V$是域$k$上的有限维线性空间，
+$\rho: G\to \mathrm{GL}(V)$是任意的表示.
+如果$V$中没有真不变子空间，则$V$是不可约的，即是半单的；
+否则令$V_1$为一个真不变子空间，就得到了两个表示$V_1, V/V_1$.
+对$V/V_1$继续操作，最终得到一系列不变子空间$0 = V_0 \subset V_1\subset \cdots \subset V_m = V$.
+称表示$\oplus_i V_i/V_{i-1}$为$\rho$的半单化. 注意到半单化不改变表示的迹，
+由Brauer-Nesbitt定理，半单化在同构意义下是唯一的.
 
 因为在$E$没有复乘时，已知$\rho_{\ell}$的像是开子群. 如果$\tilde{\rho}_{\ell}$是满射，则$\mathrm{Im}\ \rho_{\ell} = \mathrm{GL}_2{\mathbb{Z}_{\ell}} \subset \mathbb{GL}_2(\mathbb{Q}_{\ell})$.
 
