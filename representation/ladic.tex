@@ -1,4 +1,4 @@
-\subsection{\texorpdfstring{$\ell$}{ELL}进表示的基本定义}
+\section{\texorpdfstring{$\ell$}{ELL}进表示的基本定义}
 
 令$\ell$是一个素数，$k$是一个域，$k_s$是$k$的一个可分闭包. 记$G = \mathrm{Gal}(k_{s}/k)$.
 
@@ -34,7 +34,7 @@
     如果$\rho$是一个$\ell$进表示，且在有限多个素点以外非分歧. 令$L$是$\ker(\rho)$的固定域，则$L$也在有限多个素点以外非分歧. 由\Chebotarev 密度定理，Frobenius元素在$\mathrm{Im}(\rho)$中稠密.
 \end{crem}
 
-\subsection{有理\texorpdfstring{$\ell$}{ELL}进表示}
+\section{有理\texorpdfstring{$\ell$}{ELL}进表示}
 
 令$\rho$是一个$\ell$进表示，$v$是一个素点使得$\rho$在$v$处非分歧. 记$P_{v, \rho}(T) = \det (1 - F_{w, \rho}T)$，其中$w\mid v$.
 
@@ -77,7 +77,7 @@
 \paragraph{例子：单位根}
 假设$\ell\neq \mathrm{char}(K)$. 此时$x^{l^m}-1$是可分多项式，因此$K_s$中的$\ell^m$次单位根的乘法群$\mu_m$同构于$\mathbb{Z}/\ell^m \mathbb{Z}$. $G$作用在$\mu_m$上，因此作用在$\mathbb{Z}_{\ell} \cong T_{\ell}(\mu) = \invlim\mu_m$. 那么有$\chi_{\ell}:G\to \mathbb{Z}_{\ell}^{\times}\subset \mathbb{Q}_{\ell}^{\times}$，即一个一维的$\ell$进表示. 而如果$K$是代数数域，$v\in \Sigma_K, v\nmid \ell$，则$\chi_{\ell}$在$v$处非分歧，而且$F_{v, \chi_{\ell}} = Nv$. 因此$\chi_{\ell}$是一个整的$\ell$进表示. 当$\ell$取遍所有素数时，$\{\chi_{\ell}\}$形成了一族严格相容的有理$\ell$进表示，定义中的$S$可以取为空集.
 
-\subsection{定义在线性代数群中的表示}
+\section{定义在线性代数群中的表示}
 
 \begin{cdef}
     令$H$是一个$k$上的线性代数群，$k[H]$是$H$的坐标环. 若$f\in k[H]$满足对任意的交换$k$代数$k'$以及$x,y\in H(k')$，都有$f(xy)=f(yx)$，则称$f$是中心函数. 若$x\in H(k')$，且对任意的中心函数$f\in k[H]$都有$f(x)\in k$，则称$x$的共轭类是有理的.

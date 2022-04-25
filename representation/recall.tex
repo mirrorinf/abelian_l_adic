@@ -1,10 +1,10 @@
-\subsection{一些背景知识}
+\section{一些背景知识}
 
 如果$G$是$k$上的仿射代数群，$k'$是$k$的扩张，则记$\basechange{G}{k'}$为$G$通过基域扩张到$k'$得到的$k'$上的代数群.
 
 现在来回顾一些代数数论和代数群理论的内容，用以固定后面要用到的记号.
 
-\subsubsection{代数数论}
+\subsection{代数数论}
 
 令$K$是代数数域，$\mathfrak{m}$是$\order_K$的整理想. 记$U_{\mathfrak{m}, v}$为：当$K_v \cong \mathbb{C}$时，$K_v^{\times}$；当$K_v\cong \mathbb{R}$时，$K_v^{+}$；当$v\nmid\mathfrak{m}\infty$时，$U_{v}$；当$v(\mathfrak{m})=t>0$时，$1+\mathfrak{p}_v^{t}$. 记$U_{\mathfrak{m}}=\prod_v U_{\mathfrak{m}, v}$，$U_{\mathfrak{m}, finite} = \prod_{v\nmid \infty}U_{\mathfrak{m}, v}$（看作$\mathbb{A}_K^{\times}$的子群时，指要求$v\mid \infty$处取值为$1$）. $E_{\mathfrak{m}} = K^{\times} \bigcap U_{\mathfrak{m}}$，$I_{\mathfrak{m}} = \mathbb{A}_K^{\times}/U_{\mathfrak{m}}$，$C_{\mathfrak{m}} = \mathbb{A}_K^{\times} / K^{\times}U_{\mathfrak{m}}$.
 
@@ -26,7 +26,7 @@ $T = \mathrm{Res}_{K/\mathbb{Q}}(\basechange{\mathbb{G}_m}{K})$，$T_{\mathfrak{
     在(2)中对$a$的要求再加上全正，对$\tilde{\chi}$的要求看上去是减弱了，但事实上是一样的. 可以通过强逼近定理转化到idèle版本再还原来看，也可以直接证明：令$K^{\mathfrak{m}} = \{\alpha\in K^{\times}, \alpha\equiv 1\pmod{\mathfrak{m}}\}$，$K^{\mathfrak{m}}_{+} = \{\alpha\in K^{\mathfrak{m}}, \alpha 全正\}$. 如果$\chi_{\infty}$满足当$a\in K^{\mathfrak{m}}_{+}$时，$\tilde{\chi}((a)) = \chi_{\infty}(a)$，则$\tilde{\chi}\chi_{\infty}^{-1}$定义了$K^{\mathfrak{m}}/K^{\mathfrak{m}}_{+}$的一个特征，但是则$K^{\mathfrak{m}}/K^{\mathfrak{m}}_{+} \cong \prod_{v实素点} \{\pm 1\}$. 因此存在一个$\phi: \prod_{v\mid \infty} K_v^{\times}\to \{\pm 1\}$使得在$K^{\mathfrak{m}}$上有$\tilde{\chi}\chi_{\infty}^{-1} = \phi$，于是$\chi_{\infty}\phi$满足定理中（看起来更强的）条件(2).
 \end{crem}
 
-\subsubsection{乘法型代数群}
+\subsection{乘法型代数群}
 
 命题\ref{reps::split_finite}的证明需要用到可对角化群和乘法型群的概念，因此专门开一小节来写.
 假设$k$是一个特征$0$的域，以下讨论的代数群都是定义在$k$上的仿射代数群.
