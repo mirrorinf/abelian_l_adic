@@ -37,13 +37,25 @@ $\det (1-F_{v,\rho}) = \det (1-F_v) = 1 - \mathrm{Tr}(F_v) + q$.
 且$F_{v,\rho}$的特征多项式是与$\ell$无关的整系数多项式.
 因此$\{\rho_{\ell}\}$是一族严格相容的有理表示，例外集合$S$可以取为$E$有坏约化的素点集合.
 
-%再来考虑$\tilde{E}$中的$p_v$阶元.
-%称$E$在$v$处的约化有高度$1$是在说$\tilde{E}[p_v]$是$p_v$阶循环群，而高度为$2$是在说$\tilde{E}[p_v] = 0$.
+再来考虑$\tilde{E}$中的$p_v$阶元.
+称$E$在$v$处的约化有高度$1$是在说$\tilde{E}[p_v]$是$p_v$阶循环群，而高度为$2$是在说$\tilde{E}[p_v] = 0$.
+关于约化的高度有一般的定理
+\begin{cthm}[\parencite{silverman2009arithmetic}, p.144]
+    设$k$是特征为$p$的域，$E$是$k$上的椭圆曲线. 记$\phi_r: E\to E^{(p^r)}$为$p^r$次Frobenius作用\\
+    (i) 以下各命题等价：\\
+    \quad (1) 对某个（进而是所有的）$r\geq 1$，$E[p^r] = 0$；\\
+    \quad (2) 对某个（进而是所有的）$r\geq 1$，$\hat{\phi_r}$不可分（进而是完全不可分的）；\\
+    \quad (3) $E$上的$p$倍映射完全不可分，且$j(E)\in \mathbb{F}_{p^2}$；\\
+    \quad (4) $\mathrm{End}(E)$是一个四元数代数中的子环；\\
+    \quad (5) $E$诱导的形式群有高度$2$.\\
+    (ii) 如果以上的等价条件不成立，那么对所有的$r\geq 1$都有$E[p^r] \cong \mathbb{Z}/p^r\mathbb{Z}$，而且$E$诱导的形式群有高度$1$.
+\end{cthm}
+也就是说，上面所说的好约化的“高度”和$E$诱导的形式群的高度是吻合的.
 
-%记$\hat{F}_v$为$F_v$的对偶同源，$\hat{F}_{v,\rho}$为$\hat{F}_v$在$T_{\ell}$上的作用.
-%由$\mathrm{Tr}(F_v) = 1 - \deg(1-F_v)+\deg F_v = 1 - (1 - F_v)(1-\hat{F}_v) + F_v\hat{F}_v$
-%知$\hat{F}_v = \mathrm{Tr}(F_v) - F_v$.
-%而$E$在$v$处有高度$2$的好约化等价于$\hat{F}_v$不可分，也就等价于$p_v \mid \mathrm{Tr}(F_v)$.
+记$\hat{F}_v$为$F_v$的对偶同源，$\hat{F}_{v,\rho}$为$\hat{F}_v$在$T_{\ell}$上的作用.
+由$\mathrm{Tr}(F_v) = 1 - \deg(1-F_v)+\deg F_v = 1 - (1 - F_v)(1-\hat{F}_v) + F_v\hat{F}_v$
+知$\hat{F}_v = \mathrm{Tr}(F_v) - F_v$.
+而$E$在$v$处有高度$2$的好约化等价于$\hat{F}_v$不可分，也就等价于$p_v \mid \mathrm{Tr}(F_v)$.
 
 %另一方面，注意到$\mathrm{Tr}(F_v) = \deg F_v - \deg(1-F_v) + 1 = q+1-\absn{E(k)}$.
 %由Hasse的估计，$\absn{\mathrm{Tr}(F_v)} \leq 2\sqrt{q}$.
