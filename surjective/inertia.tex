@@ -191,3 +191,37 @@ $F$在极大理想$\overline{m} = \{x\in \overline{K}\mid w(x)>0\}$上定义了�
 \begin{cprop}
     此时$I$的像为一个半Borel子群，半单化之后是两个特征$1$和$\theta_{\ell-1}$的直和.
 \end{cprop}
+
+另外，还需要一个对$\theta_d$的显式描述.
+
+\begin{clem}[$\theta$的函子性]
+    如果$K'\subset K$是非离散的闭子域，$e$是分歧指数. 那么以下图表交换
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            &I_{t,K} \arrow[r,"\cong"] \arrow[d] &\lim\limits_{\longleftarrow} \mu_d\arrow[d, "-^e"] \\
+            &I_{t,K'} \arrow[r, "\cong"] &\lim\limits_{\longleftarrow} \mu_d
+        \end{tikzcd}
+    \end{figure}
+\end{clem}
+
+\begin{cprop}
+    如果$L/K$是Abel扩张，而且是\tame 的.
+    设$K$的剩余类域为$\mathbb{F}_q$.
+
+    一方面，有映射$I_t\to I(L/K)$.
+    另一方面，局部Artin映射给出了$\omega: U_v/(1+\mathfrak{p}_v)\to I(L/K)$. 而$U_v/(1+\mathfrak{p}_v) = \mu_{q-1}$.
+
+    那么当$s\in I_t$时，$\alpha(s) = \omega \circ \theta_{q-1}(s^{-1})$
+    \label{surj::1.5.3}
+\end{cprop}
+
+\begin{proof}
+    记$d=q-1$.
+    由$\theta$和$\omega$的函子性，不妨设$L = K_d$是$K$的极大\tame Abel扩张.
+
+    一方面，$s(x^{\frac{1}{d}}) = \theta_d(s)x^{\frac{1}{d}}$.
+    另一方面，当$t\in \mu_{d}$时，$\omega(t)x^{\frac{1}{d}} = (x,t)_d x^{\frac{1}{d}}$.
+    但是$(x,t)_d = t^{-v(x)}=t^{-1}$.
+    如果$t=\theta_d(s^{-1})$，则$\omega(t)(x^{\frac{1}{d}}) = s(x^{\frac{1}{d}})$.
+\end{proof}

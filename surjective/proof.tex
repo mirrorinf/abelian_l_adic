@@ -1,8 +1,8 @@
 \subsection{主定理的证明}
 
-选择$\overline{\mathbb{Q}}$的素点$v\mid \ell$.
-$\overline{\mathbb{Q}}$在$v$出的完备化是$\mathbb{Q}_{\ell}$的一个代数闭包.
-令$\order_{\ell}, \mathfrak{p}_{\ell}$是$v$对应的整数环和极大理想，
+选择$\overline{\mathbb{Q}}$的素点$v_{\ell} \mid \ell$.
+$\overline{\mathbb{Q}}$在$v_{\ell}$处的完备化是$\mathbb{Q}_{\ell}$的一个代数闭包.
+令$\order_{\ell}, \mathfrak{p}_{\ell}$是$v_{\ell}$对应的整数环和极大理想，
 $k_{\ell} = \order_{\ell} / \mathfrak{p}_{\ell}$.
 
 记$\Gamma$是$K\to \overline{\mathbb{Q}}$的嵌入的群.
@@ -163,11 +163,44 @@ $\theta_{\ell}: \mathrm{Gal}(\overline{K}/K)^{ab}\to k_{\ell}^{\times}$.
     因此$\phi_{\ell}(I_w)=1$. 即$\phi_{\ell}$在$p_v\neq \ell$时非分歧.
     那么$p_v\neq \ell$，$a\in U_{\mathfrak{m}, v}$时，$\theta_{\ell}^{i} = 1$.
 
-    因此只要验证存在$n(\sigma, \ell,i)\in \{0, 1\}$使得当$a\in U_{\ell}$时有
+    因此只要验证$p_v=\ell$地情况，即要找到$n(\sigma, \ell,i)\in \{0, 1\}$使得当$a\in U_{\ell}$时有
     \begin{equation}
         \theta_{\ell}^i (a) \equiv \prod_{\sigma\in \Gamma} \sigma_{\ell}(a^{-1})^{n(\sigma, \ell,i)}
         \pmod{\mathfrak{p}_{\ell}}
     \end{equation}
 
-    %TODO
+    将$\Gamma$分解成$\Gamma(v)$的无交并，其中
+    $\Gamma(v) = \{\sigma\in \Gamma\mid v_{\ell}\circ\sigma = v\}$.
+    当$\sigma\not\in \Gamma(v)$时，$\sigma_{\ell} = 1$.
+    那么只要验证当$a\in U_v$时，
+    \begin{equation}
+        \theta_{\ell}^i (a) \equiv \prod_{\sigma\in \Gamma(v)} \sigma_{\ell}(a^{-1})^{n(\sigma,\ell,i)}
+        \pmod{\mathfrak{p}_{\ell}}
+    \end{equation}
+    
+    此时可以在$v$处局部地看.
+    由于$\ell$的选取，$v$在$\mathbb{Q}$上非分歧.
+    那么$\Gamma(v)$有$f_v = [k_v:\mathbb{F}_{\ell}] = [K_v:\mathbb{Q}]$个元素，
+    $\sigma_{\ell}$模$\mathfrak{p}_{\ell}$之后就是$k_v$到$k_{\ell}=\overline{k_v}$的嵌入. 记$q=\ell^{f_v}$.
+
+    注意到$I_v$在$E[\ell]$上的作用是已知的.
+    要继续研究$\theta_{\ell}^{i}$，可以通过类域论将$U_v$和$I_v$等同起来. 具体来说，
+    由命题\ref{surj::1.5.3}，$\sigma_{\ell}$的约化$\tilde{\sigma}:k_v\to k_{\ell}$限制在$I_v$上之后就是$\theta_{q-1}^{\ell^i},i=0,1,\ldots,f_v-1$.
+
+    当$E$在$v$处有高度$1$的好约化时，两个特征$\theta_{\ell}^i$一个是$1$，此时把所有的$n$都取成$0$即可；
+    另一个是$\theta_{\ell - 1} = \theta_{q-1}^{\ell^0} \theta_{q-1}^{\ell^1}\cdots \theta_{q-1}^{\ell^{f_v-1}}$，此时把所有的$n$都取成$1$即可.
+
+    当$E$在$v$处有高度$2$的好约化时，$I_v$在通过特征$\theta_{\ell^2-1}$作用. 由于排除了$\mathrm{Im}\ \tilde{\rho}_{\ell} = N$的情况，$k_v$必须包含$\mathbb{F}_{\ell^2}$. 特别地，$2\mid f_v$.
+    此时$\theta_{\ell}^1$和$\theta_{\ell}^2$分别是$\theta_{\ell^2-1}$和两个嵌入$\tau_1,\tau_2:\mathbb{F}_{\ell^2}\to k_{\ell}$的复合.
+    $\theta_{\ell}^{i}$也是$\theta_{\ell^2 - 1}^{\ell^i}$的形式，类似于上一种情况，可以将$\theta_{\ell}^{i}$
+    写成若干个互不相同的$\theta_{q-1}^{\ell^i}$的乘积.
+
+    当$E$在$v$处有乘性的坏约化时，情况和高度为$1$的好约化时是类似的.
+
+    这就完成了主定理的证明.
 \end{proof}
+
+\begin{crem}
+    可以看到，“当$a\equiv b\pmod{\mathfrak{p}_{\ell}}$对无穷多个$\ell$成立时，$a=b$”
+    这一事实多次发挥作用，将模表示的信息提升为$\ell$进表示的信息.
+\end{crem}
