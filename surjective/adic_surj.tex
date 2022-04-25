@@ -1,10 +1,35 @@
 \subsection{几乎所有\texorpdfstring{$\rho_{\ell}$}{rho ell}都是满射}
 
-只需要证明，如果几乎所有的$\tilde{\rho}_{\ell}$都是满射，则几乎所有的$\rho_{\ell}$都是满射.
-精确来说
+最后再来证明一个很有意思的结果.
+显然当$\rho_{\ell}$是满射时，模表示$\tilde{\rho}_{\ell}$也是满射.
+逆命题也（几乎）是成立的.
+
 \begin{cprop}
-    记$G = \prod_{\ell} \mathrm{Im}\ \rho_{\ell} \subset \prod_{\ell} \mathrm{Aut}(T_{\ell})$.
-    如果几乎所有的$\tilde{\rho}_{\ell}$都是满射，那么$G$是$\mathrm{Aut}(T_{\ell})$的开子群.
+    假设$\ell \geq 5$. 如果$\tilde{\rho}_{\ell}$是满射，那么$\rho_{\ell}$也是满射.
 \end{cprop}
 
+需要一个群论的引理
+\begin{clem}[\parencite{serre1997abelian}, p. IV-23]
+    设$\ell\geq 5$，$X$是$\mathrm{SL}_2(\mathbb{Z}_{\ell})$的闭子群，且在$\mathrm{SL}_2(\mathbb{F}_{\ell})$
+    中的像是整个$\mathrm{SL}_2(\mathbb{F}_{\ell})$. 那么$X = \mathrm{SL}_2(\mathbb{Z}_{\ell})$.
+\end{clem}
 
+\begin{proof}[命题的证明]
+    令$\Gamma = \mathrm{Im}\ \rho_{\ell}\bigcap \mathrm{SL}_2(\mathbb{Z}_{\ell})$，
+    $G = \mathrm{Im}\ \tilde{\rho}_{\ell}\bigcap \mathrm{SL}_2(\mathbb{F}_{\ell})$.
+    那么$\Gamma, G$分别是$\det: \mathrm{Im}\ \rho_{\ell} \to \mathbb{Z}_{\ell}^{\times}$和
+    $\det: \mathrm{Im}\ \tilde{\rho}_{\ell}\to \mathbb{F}_{\ell}^{\times}$的核.
+
+    这两个$\det$都是满射，即有交换图
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}
+            0 \arrow[r] &\Gamma \arrow[r]\arrow[d, "\mathrm{mod}"] &\mathrm{Im}\ \rho_{\ell} \arrow[r, "\det"]\arrow[d, "\mathrm{mod}"] &\mathbb{Z}_{\ell}^{\times} \arrow[r]\arrow[d, "\mathrm{mod}"] &0 \\
+            0 \arrow[r] &G \arrow[r] &\mathrm{Im}\ \tilde{\rho}_{\ell} \arrow[r, "\det"] &\mathbb{F}_{\ell}^{\times} \arrow[r] &0
+        \end{tikzcd}
+    \end{figure}
+    两行都是正合列，且右边两个$\mathrm{mod}$都是满射.
+    于是$\mathrm{mod}:\Gamma\to G$是满射.
+    
+    如果$\tilde{\rho}_{\ell}$是满射，则$G = \mathrm{SL}_2(\mathbb{F}_{\ell})$. 由引理，$\Gamma = \mathrm{SL}_2(\mathbb{Z}_{\ell})$. 于是$\rho_{\ell}$是满射.
+\end{proof}
