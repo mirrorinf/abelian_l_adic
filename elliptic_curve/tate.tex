@@ -1,0 +1,55 @@
+\subsection{Tate模的基本性质}
+
+令$K$是代数数域.
+引言中定义了椭圆曲线的Tate模.
+现在来证明，Tate模定义了一族严格相容的有理表示. 事实上，Frobenius元素的特征多项式的系数有很好的几何解释.
+
+用$\rho_{\ell}$记$E$的$\ell$进Tate模定义的表示$\mathrm{Gal}(\overline{K}/K)\to \mathrm{GL}_2(\mathbb{Z}_{\ell})\subset \mathrm{GL}_2(\mathbb{Q}_{\ell})$.
+
+设$v\in \Sigma_K$，$p_v\neq \ell$且$E$在$v$处有好约化. 选定$\overline{K}$的素点$w\mid v$.
+记$k\cong \mathbb{F}_q$是$v$的剩余类域，则$w$的剩余类域同构于$\overline{k}$.
+此时$E$模$\mathfrak{p}_v$的约化$\tilde{E}$仍然是椭圆曲线.
+
+$\mathrm{mod}\ \mathfrak{p}_{w}$
+诱导了单同态$E[\ell^n]\to \tilde{E}[\ell^n]$，
+而且$\tilde{E}[\ell^n]\cong (\mathbb{Z}/\ell^n \mathbb{Z})^2$，
+因此$\mathrm{mod}\ \mathfrak{p}_{w}$诱导了群同构$E[\ell^n]\to \tilde{E}[\ell^n]$.
+分解子群$D=D_{w/v}$的作用保持赋值，因此$\mathrm{mod}\ \mathfrak{p}_{w}$与$D$的作用交换.
+
+那么$\mathrm{mod}\ \mathfrak{p}_{w}$诱导了
+保持$D$作用的同构$T_{\ell}(E)\cong T_{\ell}(\tilde{E})$.
+但是$D$在$T_{\ell}[\tilde{E}]$上的作用可以通过$\mathrm{Gal}(\overline{k}/k)$作用，
+那么$I=I_{w/v}$的作用的平凡的.
+
+这就证明了$I$在$\rho_{\ell}$中的像是$1$，即$\rho_{\ell}$在$v$处非分歧.
+记$F_{v,\rho}\in \mathrm{Im}\ \rho_{\ell}$为Frobenius元素.
+$F_{v,\rho}$在剩余类域$k$上通过Frobenius自同构作用，那么$F_{v,\rho}$在$\tilde{E}$上通过Frobenius自同构$F_v$作用.
+
+如果$\varphi\in\mathrm{End}_{k}(\tilde{E}, \tilde{E})$，则$\varphi$定义了Tate模到自身的线性映射$\varphi_{\ell}$.
+利用Weil配对可以计算出$\det \varphi_{\ell} = \mathrm{deg}\ \varphi$.
+（\parencite{silverman2009arithmetic}, p. 99）
+
+因此$\det F_{v,\rho} = \det F_v = q$
+$\det (1-F_{v,\rho}) = \det (1-F_v) = 1 - \mathrm{Tr}(F_v) + q$.
+于是$\mathrm{Tr}(F_{v,\rho}) = \deg F_v - \deg (1-F_v) + 1$，$\det F_{v,\rho} = q$都是与$\ell$无关的整数.
+
+也就是说，当$E$在$v$处有好约化且$p_v\neq \ell$时，$\rho_{\ell}$在$v$处非分歧
+且$F_{v,\rho}$的特征多项式是与$\ell$无关的整系数多项式.
+因此$\{\rho_{\ell}\}$是一族严格相容的有理表示，例外集合$S$可以取为$E$有坏约化的素点集合.
+
+%再来考虑$\tilde{E}$中的$p_v$阶元.
+%称$E$在$v$处的约化有高度$1$是在说$\tilde{E}[p_v]$是$p_v$阶循环群，而高度为$2$是在说$\tilde{E}[p_v] = 0$.
+
+%记$\hat{F}_v$为$F_v$的对偶同源，$\hat{F}_{v,\rho}$为$\hat{F}_v$在$T_{\ell}$上的作用.
+%由$\mathrm{Tr}(F_v) = 1 - \deg(1-F_v)+\deg F_v = 1 - (1 - F_v)(1-\hat{F}_v) + F_v\hat{F}_v$
+%知$\hat{F}_v = \mathrm{Tr}(F_v) - F_v$.
+%而$E$在$v$处有高度$2$的好约化等价于$\hat{F}_v$不可分，也就等价于$p_v \mid \mathrm{Tr}(F_v)$.
+
+%另一方面，注意到$\mathrm{Tr}(F_v) = \deg F_v - \deg(1-F_v) + 1 = q+1-\absn{E(k)}$.
+%由Hasse的估计，$\absn{\mathrm{Tr}(F_v)} \leq 2\sqrt{q}$.
+%那么当$p_v\geq 5$时，$p_v\mid \mathrm{Tr}(F_v)$当且仅当$\mathrm{Tr}(F_v)=0$.
+
+%这也就是说，当$p_v\geq 5$是，$E$在$v$处的好约化高度为$2$当且仅当$\mathrm{Tr}(F_v) = 0$，也当且仅当
+%$\absn{E(k)} = q + 1$.
+
+%接下来证明高度为$2$的好约化是非常稀疏的.
