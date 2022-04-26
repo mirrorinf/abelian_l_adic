@@ -20,7 +20,8 @@ jobs:
       - name: Build LaTeX
         uses: dante-ev/latex-action@latest
         with:
-            entrypoint: make release
+            root_file: ucasthesis/Thesis.tex
+            args: -xelatex -cd -interaction=nonstopmode -outdir=../build/release
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
