@@ -19,27 +19,26 @@ jobs:
         with:
             submodules: recursive
 
+      - name: Build LaTeX debug
+        uses: dante-ev/latex-action@latest
+        with:
+            root_file: main.tex
+            args: -xelatex -interaction=nonstopmode -outdir=build/debug
+
+      - name: Upload debug version artifacts
+        uses: actions/upload-artifact@v3
+        with:
+            name: Preview
+            path: build/debug/main.pdf
+
       - name: Build LaTeX release
         uses: dante-ev/latex-action@latest
         with:
             root_file: ucasthesis/Thesis.tex
             args: -xelatex -cd -interaction=nonstopmode -outdir=../build/release
-      
-      - name: Build LaTeX debug
-        uses: dante-ev/latex-action@latest
-        with:
-            root_file: main.tex
-            args: -xelatex -cd -interaction=nonstopmode -outdir=build/debug
-      
-      - name: Renaming built files
-        run: |
-            mv build/debug/main.pdf build/preview.pdf
-            mv build/release/Thesis.pdf build/Thesis.pdf
 
-      - name: Upload artifacts
+      - name: Upload release version artifacts
         uses: actions/upload-artifact@v3
         with:
             name: Thesis
-            path: |
-                build/Thesis.pdf
-                build/preview.pdf
+            path: build/release/Thesis.pdf
