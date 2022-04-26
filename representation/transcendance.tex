@@ -9,13 +9,13 @@ Serre在{\parencite{serre1997abelian}}中为了证明$\ell$进表示的局部代
 证明定理\ref{reps::abelian_loc_alg}前还需要一些准备工作.
 
 \begin{cprop}
-    如果$\rho$是有理、半单、交换的表示，且存在正整数$N$使得$\rho^N$是局部代数的，那么$\rho$是局部代数的. \label{reps::power_N}
+    如果$\rho$是有理、半单、交换的$\ell$进表示，且存在正整数$N$使得$\rho^N$是局部代数的，那么$\rho$是局部代数的. \label{reps::power_N}
 \end{cprop}
 
 \begin{proof}
 
-    由半单性，$\rho$可以在$\mathbb{Q}_{\ell}$的一个有限扩张上对角化. 将$\rho$写成$\mathrm{diag}(\psi_1,\ldots,\psi_n)$，其中$n=\mathrm{dim}\ \rho$，$\psi_i: \mathbb{A}_{K}^{\times}/K^{\times}\to \overline{\mathbb{Q}_{\ell}}^{\times}$是连续特征.
-    令$\chi_i = \psi_i^N$是$\rho^N$的特征. 由于$\rho^N$是局部代数的，对每个$\chi_i$都存在一个$\chi_i^{alg}\in X^{*}(T)$使得当$x$充分靠近$1$时$\chi_i(x) = \chi_i^{alg}(x^{-1})$. 而$X^{*}(T)$可以看作是$\mathrm{Hom}(\basechange{T}{\overline{\mathrm{Q}_{\ell}}}, \basechange{\mathbb{G}_m}{\overline{\mathbb{Q}_{\ell}}})$，即$\chi_i^{alg}$可以写成$\prod_{\sigma\in \Gamma} \sigma^{n_{\sigma}(i)}$，其中$\Gamma$是$K$到$\overline{Q_{\ell}}$的域嵌入的群.
+    由半单性，$\rho$可以在$\mathbb{Q}_{\ell}$的一个有限扩张上对角化. 将$\rho$写成$\mathrm{diag}(\psi_1,\ldots,\psi_n)$，其中$n=\mathrm{dim}\ \rho$，$\psi_i: \mathbb{A}_{K}^{\times}/K^{\times}\to \overline{\mathbb{Q}_{\ell}}^{\times}$是连续特征标.
+    令$\chi_i = \psi_i^N$是$\rho^N$的特征标. 由于$\rho^N$是局部代数的，对每个$\chi_i$都存在一个$\chi_i^{alg}\in X^{*}(T)$使得当$x$充分靠近$1$时$\chi_i(x) = \chi_i^{alg}(x^{-1})$. 而$X^{*}(T)$可以看作是$\mathrm{Hom}(\basechange{T}{\overline{\mathrm{Q}_{\ell}}}, \basechange{\mathbb{G}_m}{\overline{\mathbb{Q}_{\ell}}})$，即$\chi_i^{alg}$可以写成$\prod_{\sigma\in \Gamma} \sigma^{n_{\sigma}(i)}$，其中$\Gamma$是$K$到$\overline{Q_{\ell}}$的域嵌入的群.
 
     \vskip0.3cm
 
@@ -52,7 +52,7 @@ Serre在{\parencite{serre1997abelian}}中为了证明$\ell$进表示的局部代
     那么$\rho$是局部代数的.
 \end{proof}
 
-接下来需要一个环面群的特征的结论.
+接下来需要一个环面群的特征标的结论.
 令$C$为$\overline{\mathbb{Q}_{\ell}}$的完备化. 仍然令$T=\mathrm{Res}_{K/\mathbb{Q}}(\basechange{\mathbb{G}_m}{K})$为$\mathbb{Q}$上的$n$维环面子群.
 设$f: T(\mathbb{Q}_{\ell})\to C^{\times}$是连续映射. 若存在$1$在$T(\mathbb{Q}_{\ell})$的（$\ell$进拓扑下）开邻域$U$和$\phi\in X^{*}(T)$使得当$x\in U$时$f(x)=\phi(x)$，则称$f$是局部代数的. 如果存在正整数$N$使得$f^N$是局部代数的，则称$f$是几乎局部代数的.
 
@@ -112,7 +112,7 @@ Serre在{\parencite{serre1997abelian}}中为了证明$\ell$进表示的局部代
 
     假设$\mathrm{rank}(\Gamma) = n+1$. 对$\Gamma$和$\Lambda$的秩任意大的有限秩子群用命题\ref{temp::theo8}，可知$\mu_{V^{*}}(\Gamma)\leq 1$，即存在真子空间$W\subset V^{*}$使得$\mathrm{rank}(\Gamma) - \mathrm{rank}(\Gamma\bigcap W) \leq \dim V - \dim W$，即$\mathrm{rank}(\Gamma\bigcap W)\geq \dim W + 1$. 取$W$为满足条件的空间中维数最小的. 注意到无论如何$\mathrm{rank}(\Gamma\bigcap W)\geq 2$，从而存在非零的$w\in \Gamma\bigcap W$是$b_1, b_2,\ldots, b_n$张成的（$b_0$的系数为$0$）.
 
-    先验证$\Lambda$在$V/w^{\perp}$的投影还是无限秩的. 记$\pi_w: V\to V/w^{\perp}$设$w = \sum_i n_i b_i$. 令$\chi = \prod_i \chi_i^{n_i}$. 由假设，$\chi$是非平凡特征.
+    先验证$\Lambda$在$V/w^{\perp}$的投影还是无限秩的. 记$\pi_w: V\to V/w^{\perp}$设$w = \sum_i n_i b_i$. 令$\chi = \prod_i \chi_i^{n_i}$. 由假设，$\chi$是非平凡特征标.
     $T(\mathbb{Q})/\exp(\Lambda)$是有限生成的，而$\chi(T(\mathbb{Q}))$的秩无限. 而且当$\lambda\in \Lambda$时，
     \begin{equation}
         \exp \langle w, \pi_w(\lambda)\rangle = \exp \langle w, \lambda\rangle = \chi \circ \exp (\lambda)

@@ -4,28 +4,6 @@
 
 现在来回顾一些代数数论和代数群理论的内容，用以固定后面要用到的记号.
 
-\subsection{代数数论}
-
-令$K$是代数数域，$\mathfrak{m}$是$\order_K$的整理想. 记$U_{\mathfrak{m}, v}$为：当$K_v \cong \mathbb{C}$时，$K_v^{\times}$；当$K_v\cong \mathbb{R}$时，$K_v^{+}$；当$v\nmid\mathfrak{m}\infty$时，$U_{v}$；当$v(\mathfrak{m})=t>0$时，$1+\mathfrak{p}_v^{t}$. 记$U_{\mathfrak{m}}=\prod_v U_{\mathfrak{m}, v}$，$U_{\mathfrak{m}, finite} = \prod_{v\nmid \infty}U_{\mathfrak{m}, v}$（看作$\mathbb{A}_K^{\times}$的子群时，指要求$v\mid \infty$处取值为$1$）. $E_{\mathfrak{m}} = K^{\times} \bigcap U_{\mathfrak{m}}$，$I_{\mathfrak{m}} = \mathbb{A}_K^{\times}/U_{\mathfrak{m}}$，$C_{\mathfrak{m}} = \mathbb{A}_K^{\times} / K^{\times}U_{\mathfrak{m}}$.
-
-$T = \mathrm{Res}_{K/\mathbb{Q}}(\basechange{\mathbb{G}_m}{K})$，$T_{\mathfrak{m}} = T / \overline{E_{\mathfrak{m}}}$.
-
-先给出Hecke特征的理想版本和idèle版本一一对应的精确形式：
-
-\begin{cthm}
-    以下两类对象之间存在一一对应：
-
-    (1) $\chi: \mathbb{A}_K^{\times}/K^{\times} \to \mathbb{C}^{\times}$，满足$\chi(U_{\mathfrak{m}, finite}) = 1$
-
-    (2) $\tilde{\chi}: J^{\mathfrak{m}}\to \mathbb{C}^{\times}$，使得存在$\chi_{\infty}:\prod_{v\mid \infty}K_v^{\times} \to \mathbb{C}^{\times}$，满足当$a\in K, a\equiv 1\pmod{\mathfrak{m}}$时，$\tilde{\chi}((a)) = \chi_{\infty}(a)$.
-
-    其中映射$\chi\mapsto \tilde{\chi}$是，对所有$v\nmid \mathfrak{m}\infty$，选定一个素元$\pi_v\in \mathcal{O}_v$得到映射$J^{\mathfrak{m}}\to \mathbb{A}_K^{\times}$，再与$\chi$复合.
-\end{cthm}
-
-\begin{crem}
-    在(2)中对$a$的要求再加上全正，对$\tilde{\chi}$的要求看上去是减弱了，但事实上是一样的. 可以通过强逼近定理转化到idèle版本再还原来看，也可以直接证明：令$K^{\mathfrak{m}} = \{\alpha\in K^{\times}, \alpha\equiv 1\pmod{\mathfrak{m}}\}$，$K^{\mathfrak{m}}_{+} = \{\alpha\in K^{\mathfrak{m}}, \alpha 全正\}$. 如果$\chi_{\infty}$满足当$a\in K^{\mathfrak{m}}_{+}$时，$\tilde{\chi}((a)) = \chi_{\infty}(a)$，则$\tilde{\chi}\chi_{\infty}^{-1}$定义了$K^{\mathfrak{m}}/K^{\mathfrak{m}}_{+}$的一个特征，但是则$K^{\mathfrak{m}}/K^{\mathfrak{m}}_{+} \cong \prod_{v实素点} \{\pm 1\}$. 因此存在一个$\phi: \prod_{v\mid \infty} K_v^{\times}\to \{\pm 1\}$使得在$K^{\mathfrak{m}}$上有$\tilde{\chi}\chi_{\infty}^{-1} = \phi$，于是$\chi_{\infty}\phi$满足定理中（看起来更强的）条件(2).
-\end{crem}
-
 \subsection{乘法型代数群}
 
 命题\ref{reps::split_finite}的证明需要用到可对角化群和乘法型群的概念.
@@ -61,15 +39,11 @@ $T = \mathrm{Res}_{K/\mathbb{Q}}(\basechange{\mathbb{G}_m}{K})$，$T_{\mathfrak{
 %    \parencite[][p. 234]{milne2017algebraic} % Theorem 12.12.
 %\end{proof}
 
-\paragraph*{环面群}
-
-\begin{cdef}
-    若$G$在$k$的某个扩张上同构于有限个$\mathbb{G}_m$的乘积，则称$G$是环面群. 如果在$k$上就已经是同构的，则称$G$是分裂的环面群.
-\end{cdef}
-
 \paragraph*{乘法型群}
 
 \begin{cdef}
+    若$G$在$k$的某个扩张上同构于有限个$\mathbb{G}_m$的乘积，则称$G$是环面群. 如果在$k$上就已经是同构的，则称$G$是分裂的环面群.
+
     如果$G$在$k$的某个扩张下可对角化，则称$G$为乘法型的.
 \end{cdef}
 
@@ -77,7 +51,8 @@ $T = \mathrm{Res}_{K/\mathbb{Q}}(\basechange{\mathbb{G}_m}{K})$，$T_{\mathfrak{
 自然可以想到乘法型群的范畴与有限Abel群的范畴加上某种额外的结构之后是反变等价的.
 由于乘法型群和可对角化群的差别在于需要一个域扩张，额外的结构其实就是Galois群的作用.
 
-具体来说，令$\Gamma = \mathrm{Gal}(\overline{k}/k)$.
+具体来说，令$\Gamma = \mathrm{Gal}(\overline{k}/k)$，
+$X^{*}(T) = \mathrm{Hom}_{\overline{k}}(\basechange{T}{\overline{k}}, \basechange{\mathbb{G}_m}{\overline{k}})$.
 $\Gamma$自然地连续作用在$X^{*}(G)$上.
 \begin{cprop}[{\parencite[][p. 240]{milne2017algebraic}}]
     $X^{*}$是乘法型群范畴到带$\Gamma$连续作用的有限Abel群范畴的反变等价，
@@ -112,6 +87,51 @@ $\Gamma$自然地连续作用在$X^{*}(G)$上.
 %    \parencite[][p. 240]{milne2017algebraic} % Corollary 12.24
 %\end{proof}
 
+
+\subsection{代数数论}
+
+令$K$是代数数域，$\mathfrak{m}$是$\order_K$的整理想. 记$U_{\mathfrak{m}, v}$为：当$K_v \cong \mathbb{C}$时，$K_v^{\times}$；当$K_v\cong \mathbb{R}$时，$K_v^{+}$；当$v\nmid\mathfrak{m}\infty$时，$U_{v}$；当$v(\mathfrak{m})=t>0$时，$1+\mathfrak{p}_v^{t}$. 
+
+记$U_{\mathfrak{m}}=\prod_v U_{\mathfrak{m}, v}$，$U_{\mathfrak{m}, finite} = \prod_{v\nmid \infty}U_{\mathfrak{m}, v}$（看作$\mathbb{A}_K^{\times}$的子群时，指要求$v\mid \infty$处取值为$1$）.
+令$E_{\mathfrak{m}} = K^{\times} \bigcap U_{\mathfrak{m}}$，$I_{\mathfrak{m}} = \mathbb{A}_K^{\times}/U_{\mathfrak{m}}$，$C_{\mathfrak{m}} = \mathbb{A}_K^{\times} / K^{\times}U_{\mathfrak{m}}$.
+
+$T = \mathrm{Res}_{K/\mathbb{Q}}(\basechange{\mathbb{G}_m}{K})$，$T_{\mathfrak{m}} = T / \overline{E_{\mathfrak{m}}}$，其中$\overline{E_{\mathfrak{m}}}$是$E_{\mathfrak{m}}$在$T$中的Zariski闭包.
+
+设$\sigma_1,\ldots,\sigma_n$是$K$到$\overline{Q}$的域嵌入，
+则$\basechange{T}{\overline{Q}}\to \basechange{\mathbb{G}_m}{\overline{\mathbb{Q}}}\times \basechange{\mathbb{G}_m}{\overline{\mathbb{Q}}} \times \cdots \times \basechange{\mathbb{G}_m}{\overline{\mathbb{Q}}}$，$x\otimes \alpha \mapsto (\sigma_1(x)\alpha, \sigma_2(x)\alpha, \ldots,\sigma_n(x)\alpha)$是同构.
+$T$是一个环面群，由上一小节中的一般理论，这时有两个正合列
+\begin{equation}
+    0 \rightarrow \overline{E_{\mathfrak{m}}} \rightarrow T \rightarrow T_{\mathfrak{m}}\rightarrow 0
+\end{equation}
+\begin{equation}
+    0 \leftarrow X^{*}(E_{\mathfrak{m}}) \leftarrow X^{*}(T) \leftarrow X^{*}(T_{\mathfrak{m}}) \leftarrow 0
+\end{equation}
+
+例如，当$K$是二次域时，$T$是二维环面群. 记$1,\sigma$为$K$的自同构，也就是$K$到$\overline{\mathbb{Q}}$的嵌入.
+那么$X^{*}(T)\cong \mathbb{Z}^2$.
+实际上$\basechange{T}{K}$已经分裂了，$X^{*}(T)$中的元素可以写成$x\mapsto x^{n_1}\cdot \sigma(x)^{n_2}$的形式.
+$T_{\mathfrak{m}}$的特征标就是一对整数$(n_1,n_2)$，
+满足当$x\in E_{\mathfrak{m}}$时，$x^{n_1}\cdot \sigma(x)^{n_2}=1$.
+如果$K$是虚二次域，$E_{\mathfrak{m}}$是有限群，此时$T_{\mathfrak{m}}$还是二维环面群；
+如果$K$是实二次域，$E_{\mathfrak{m}}$是秩为$1$的自由交换群，此时$T_{\mathfrak{m}}$是一维环面群.
+
+先给出Hecke特征的理想版本和idèle版本一一对应的精确形式：
+
+\begin{cthm}
+    以下两类对象之间存在一一对应：
+
+    (1) $\chi: \mathbb{A}_K^{\times}/K^{\times} \to \mathbb{C}^{\times}$，满足$\chi(U_{\mathfrak{m}, finite}) = 1$
+
+    (2) $\tilde{\chi}: J^{\mathfrak{m}}\to \mathbb{C}^{\times}$，使得存在$\chi_{\infty}:\prod_{v\mid \infty}K_v^{\times} \to \mathbb{C}^{\times}$，满足当$a\in K, a\equiv 1\pmod{\mathfrak{m}}$时，$\tilde{\chi}((a)) = \chi_{\infty}(a)$.
+
+    其中映射$\chi\mapsto \tilde{\chi}$是，对所有$v\nmid \mathfrak{m}\infty$，选定一个素元$\pi_v\in \mathcal{O}_v$得到映射$J^{\mathfrak{m}}\to \mathbb{A}_K^{\times}$，再与$\chi$复合.
+\end{cthm}
+
+\begin{crem}
+    在(2)中对$a$的要求再加上全正，对$\tilde{\chi}$的要求看上去是减弱了，但事实上是一样的. 可以通过强逼近定理转化到idèle版本再还原来看，也可以直接证明：令$K^{\mathfrak{m}} = \{\alpha\in K^{\times}, \alpha\equiv 1\pmod{\mathfrak{m}}\}$，$K^{\mathfrak{m}}_{+} = \{\alpha\in K^{\mathfrak{m}}, \alpha 全正\}$. 如果$\chi_{\infty}$满足当$a\in K^{\mathfrak{m}}_{+}$时，$\tilde{\chi}((a)) = \chi_{\infty}(a)$，则$\tilde{\chi}\chi_{\infty}^{-1}$定义了$K^{\mathfrak{m}}/K^{\mathfrak{m}}_{+}$的一个特征标，但是则$K^{\mathfrak{m}}/K^{\mathfrak{m}}_{+} \cong \prod_{v实素点} \{\pm 1\}$. 因此存在一个$\phi: \prod_{v\mid \infty} K_v^{\times}\to \{\pm 1\}$使得在$K^{\mathfrak{m}}$上有$\tilde{\chi}\chi_{\infty}^{-1} = \phi$，于是$\chi_{\infty}\phi$满足定理中（看起来更强的）条件(2).
+\end{crem}
+
+
 \subsection{代数群的表示}
 
 令$G$是仿射交换代数群.
@@ -120,24 +140,24 @@ $\Gamma$自然地连续作用在$X^{*}(G)$上.
 每个$\chi\in X^{*}(G)$都可以看作是$\overline{\Lambda}$的元素.
 那么有映射$\alpha: \overline{k}[X^{*}(G)] \to \overline{\Lambda}$，其中$\overline{k}[X^{*}(G)]$是$X^{*}$的群代数.（这里$X^{*}(G)$用乘法记号）
 
-$G = \mathrm{Gal}(\overline{k}/k)$通过$s(\sum a_{\chi} \chi) = \sum s(a_{\chi}) s(\chi)$作用在$\overline{k}[X^{*}(H)]$上.
-通过直接计算可以验证$G$的作用和$\alpha$交换.
+$\Gamma = \mathrm{Gal}(\overline{k}/k)$通过$s(\sum a_{\chi} \chi) = \sum s(a_{\chi}) s(\chi)$作用在$\overline{k}[X^{*}(H)]$上.
+通过直接计算可以验证$\Gamma$的作用和$\alpha$交换.
 当$G$是乘法型群时，$\basechange{G}{\overline{k}}$是对角化群，此时$\alpha$是双射.
 
 设$V$是$k$上的有限维线性空间，$\phi: G\to \mathrm{GL}(V)$是一个半单表示.
 记$\theta_{\phi}$为$\phi$的迹$\theta_{\phi} = \sum n_{\chi}(\phi)\chi$，
 其中$n_{\phi}(\chi)$是$\phi$在$\overline{k}$上的分解中$\chi$的重数.
-对于$h\in G(R)$，$\theta_{\phi}(h) = \mathrm{Tr}(\phi(h))$.
+对于任意的（交换）$k$代数$R$和$h\in G(R)$，都有$\theta_{\phi}(h) = \mathrm{Tr}(\phi(h))$.
 
 记$\mathsf{Rep}_{k}(G)$为$G$的半单表示的范畴. 如果$k'/k$是域扩张，
 那么通过基域扩张可以得到映射$\mathsf{Rep}_{k}(G)\to \mathsf{Rep}_{k'}(\basechange{G}{k'})$.
-称$V\in \mathsf{Rep}_{k'}(G)$可以定义在$k$上是指$V$落在基域扩张的像（essential image）中.
+称$V\in \mathsf{Rep}_{k'}(\basechange{G}{k'})$可以定义在$k$上是指$V$落在基域扩张的像（essential image）中.
 
 \begin{cprop}
     $\phi\mapsto \theta_{\phi}$是$\mathsf{Rep}_{k}(G)$的同构类和$S \subset \mathbb{Z}[X^{*}(G)]$之间的双射，
     其中$S$包含了满足以下条件的元素$\theta$：
 
-    (i) $\theta$在$G$的作用下不变；
+    (i) $\theta$在$\Gamma$的作用下不变；
 
     (ii) 所有的$n_{\chi}\geq 0$.
 \end{cprop}

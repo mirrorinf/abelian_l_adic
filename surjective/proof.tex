@@ -15,7 +15,7 @@ $\sigma_{\ell}: K_{\ell} = K\otimes \mathbb{Q}_{\ell}\to \overline{\mathbb{Q}}_{
 再利用一个事实，即当一个等式模无穷多个素数$\ell$成立时，它可以被提升到特征$0$的情况.
 于是无穷多个$\tilde{\rho}_{\ell}$一起了发挥威力.
 
-假设当素数$\ell$变化时$\{\theta_{\ell}\}$，是一族Galois群的特征
+假设当素数$\ell$变化时$\{\theta_{\ell}\}$，是一族Galois群的特征标
 $\theta_{\ell}: \mathrm{Gal}(\overline{K}/K)^{ab}\to k_{\ell}^{\times}$.
 
 \begin{cprop}
@@ -30,8 +30,8 @@ $\theta_{\ell}: \mathrm{Gal}(\overline{K}/K)^{ab}\to k_{\ell}^{\times}$.
 \end{cprop}
 
 \begin{proof}
-    令$\phi$为$T$的特征$\phi = \prod_{\sigma\in \Gamma} \sigma^{n_{\sigma}}$.
-    先来验证$\phi$是$T_{\mathfrak{m}}$的特征. 设$x\in E_{\mathfrak{m}}$.
+    令$\phi$为$T$的特征标$\phi = \prod_{\sigma\in \Gamma} \sigma^{n_{\sigma}}$.
+    先来验证$\phi$是$T_{\mathfrak{m}}$的特征标. 设$x\in E_{\mathfrak{m}}$.
     此时$x\in K$，因此
     \begin{equation}
         \phi(x^{-1}) = \prod_{\sigma\in\Gamma}\sigma(x^{-1})^{n_{\sigma}}
@@ -41,8 +41,8 @@ $\theta_{\ell}: \mathrm{Gal}(\overline{K}/K)^{ab}\to k_{\ell}^{\times}$.
     因此只能是$\phi(x) = 1$.
 
     取一个$\chi\in X^{*}(S_{\mathfrak{m}})$使得$\chi$在$X^{*}(S_{\mathfrak{m}})\to X^{*}(T_{\mathfrak{m}})$
-    下的像是$\phi$. 令$\chi_{\ell}$为$\chi$定义的$\ell$进特征，
-    $\tilde{\chi}_{\ell}$为$\chi_{\ell}$模$\mathfrak{p}_{\ell}$的特征.
+    下的像是$\phi$. 令$\chi_{\ell}$为$\chi$定义的$\ell$进特征标，
+    $\tilde{\chi}_{\ell}$为$\chi_{\ell}$模$\mathfrak{p}_{\ell}$的特征标.
     令$\theta'_{\ell} = \tilde{\chi}_{\ell} \theta_{\ell}^{-1}$.
 
     由$\chi_{\ell}$的定义，当$a\in U_{\mathfrak{m}}$时，$\theta'_{\ell}=1$.
@@ -57,12 +57,12 @@ $\theta_{\ell}: \mathrm{Gal}(\overline{K}/K)^{ab}\to k_{\ell}^{\times}$.
     此时$\psi = \theta^{''-1}\chi$满足当$\ell\in L'$时，$\tilde{\psi}_{\ell} = \theta_{\ell}$.
 \end{proof}
 
-完成了对特征的讨论之后，可以来考虑一般的表示.
+完成了对特征标的讨论之后，可以来考虑一般的表示.
 
 \begin{cthm}
     如果$\{\rho_{\ell}\}$是一族严格相容的半单、有理$\ell$进表示，$\dim \rho_{\ell} = d$，
     且存在正整数$N$和素数的无穷集合$L$使得
-    对所有的$\ell\in L$，$\tilde{\rho}_{\ell}$是交换的. 记$\theta_{\ell}^i$为$\tilde{\rho}_{\ell}$分解中的特征.
+    对所有的$\ell\in L$，$\tilde{\rho}_{\ell}$是交换的. 记$\theta_{\ell}^i$为$\tilde{\rho}_{\ell}$分解中的特征标.
     如果存在绝对值不大于$N$的整数
     $n(\sigma,i,\ell)$使得当$a\in U_{\mathfrak{m}}$时，
     \begin{equation}
@@ -108,8 +108,8 @@ $\theta_{\ell}: \mathrm{Gal}(\overline{K}/K)^{ab}\to k_{\ell}^{\times}$.
     此时$\phi(F_v)$的迹都是有理数，而$F_v$在$S_{\mathfrak{m}}$中稠密，因此$\phi$可以定义在$\mathbb{Q}$上.
 \end{proof}
 
-下面开始主定理\ref{main::surjective}的证明.
-\begin{proof}[]
+下面开始主定理的证明.
+\begin{proof}[定理\ref{main::surjective}的证明]
     通过将$K$取成一个有限扩张，不妨设$E$是半稳定的，即当$E$在$v$处有坏约化时，
     这个坏约化是乘性的.
 
@@ -187,10 +187,10 @@ $\theta_{\ell}: \mathrm{Gal}(\overline{K}/K)^{ab}\to k_{\ell}^{\times}$.
     要继续研究$\theta_{\ell}^{i}$，可以通过类域论将$U_v$和$I_v$等同起来. 具体来说，
     由命题\ref{surj::1.5.3}，$\sigma_{\ell}$的约化$\tilde{\sigma}:k_v\to k_{\ell}$限制在$I_v$上之后就是$\theta_{q-1}^{\ell^i},i=0,1,\ldots,f_v-1$.
 
-    当$E$在$v$处有高度$1$的好约化时，两个特征$\theta_{\ell}^i$一个是$1$，此时把所有的$n$都取成$0$即可；
+    当$E$在$v$处有高度$1$的好约化时，两个特征标$\theta_{\ell}^i$一个是$1$，此时把所有的$n$都取成$0$即可；
     另一个是$\theta_{\ell - 1} = \theta_{q-1}^{\ell^0} \theta_{q-1}^{\ell^1}\cdots \theta_{q-1}^{\ell^{f_v-1}}$，此时把所有的$n$都取成$1$即可.
 
-    当$E$在$v$处有高度$2$的好约化时，$I_v$在通过特征$\theta_{\ell^2-1}$作用. 由于排除了$\mathrm{Im}\ \tilde{\rho}_{\ell} = N$的情况，$k_v$必须包含$\mathbb{F}_{\ell^2}$. 特别地，$2\mid f_v$.
+    当$E$在$v$处有高度$2$的好约化时，$I_v$在通过特征标$\theta_{\ell^2-1}$作用. 由于排除了$\mathrm{Im}\ \tilde{\rho}_{\ell} = N$的情况，$k_v$必须包含$\mathbb{F}_{\ell^2}$. 特别地，$2\mid f_v$.
     此时$\theta_{\ell}^1$和$\theta_{\ell}^2$分别是$\theta_{\ell^2-1}$和两个嵌入$\tau_1,\tau_2:\mathbb{F}_{\ell^2}\to k_{\ell}$的复合.
     $\theta_{\ell}^{i}$也是$\theta_{\ell^2 - 1}^{\ell^i}$的形式，类似于上一种情况，可以将$\theta_{\ell}^{i}$
     写成若干个互不相同的$\theta_{q-1}^{\ell^i}$的乘积.

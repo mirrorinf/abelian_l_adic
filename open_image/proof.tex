@@ -1,13 +1,14 @@
 \begin{cthm}
-    如果$E$定义的$\ell$进表示$\rho_{\ell}$满足：存在理想$\mathfrak{m}$和$\mathbb{Q}$代数群的态射$\phi: S_{\mathfrak{m}}\to \mathrm{GL}(V)$使得$\rho_{\ell} = \phi_{\ell}$. 那么$E$在$K$上有复乘.
+    如果$E$定义的$\ell$进表示$\rho_{\ell}$满足：存在理想$\mathfrak{m}$和$\mathbb{Q}$代数群的态射$\phi: S_{\mathfrak{m}}\to \mathrm{GL}(V)$使得$\rho_{\ell} \cong \phi_{\ell}$. 那么$E$在$K$上有复乘.\label{open::thm}
 \end{cthm}
 
 \begin{proof}
     假设$E$在$K$上没有复乘.
     $\phi$定义了有一族严格相容的Galois表示$\{\phi_{\ell'}\}$.
     由定理\ref{reps::finite_diagonal}，可以选取一个$\ell'$使得$\phi_{\ell'}$在$\mathbb{Q}_{\ell'}$上就可以对角化. 
-    由于$\phi_{\ell}$和$\rho_{\ell}$相容，$\phi_{\ell'}$与$\rho_{\ell}$也相容.
-    $\rho_{\ell'}$是不可约的，而已知$\phi_{\ell}$是半单的. 那么$\phi_{\ell'}\cong \rho_{\ell'}$.
+    由于$\phi_{\ell}\cong\rho_{\ell}$和$\rho_{\ell'}$相容，
+    $\phi_{\ell'}$与$\phi_{\ell}$也相容，于是$\phi_{\ell'}$与$\rho_{\ell'}$相容.
+    $\rho_{\ell'}$是不可约的，而已知$\phi_{\ell'}$是半单的. 那么$\phi_{\ell'}\cong \rho_{\ell'}$.
     即$\rho_{\ell'}$是对角化的，但这与不可约性矛盾.
 \end{proof}
 
@@ -15,9 +16,18 @@
     如果$E$定义的$\ell$进表示$\rho_{\ell}$是局部代数的，则$E$在$K$上有复乘. \label{reps::when_cm}
 \end{ccor}
 
+\begin{proof}
+    如果$\rho_{\ell}$是局部代数的，那么由定理\ref{galois::when_sm}，$\rho_{\ell}$满足定理\ref{open::thm}的条件.
+\end{proof}
+
 \begin{ccor}
-    如果$E$定义的$\ell$进表示是交换的，则$E$在$K$上有复乘.
+    如果$E$定义的$\ell$进表示$\rho_{\ell}$是交换的，则$E$在$K$上有复乘.
 \end{ccor}
+
+\begin{proof}
+    假设$E$在$K$上没有复乘，那么$\rho_{\ell}$不可约，特别地，是半单的.
+    如果$\rho_{\ell}$是交换的，由定理\ref{reps::abelian_loc_alg}，$\rho_{\ell}$是局部代数的.
+\end{proof}
 
 由于Galois群是紧的，$G_{\ell} = \mathrm{Im}(\rho_\ell)$是$\mathrm{GL}_2(\mathbb{Q}_{\ell})$的闭子群. 由非阿基米德的Cartan定理{\parencite[][p. 155]{serre2009lie}}，$\mathrm{Im}(\rho_{\ell})$是一个$\ell$进李群. 令$\mathfrak{g}_{\ell}$为其李代数.
 
