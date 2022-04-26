@@ -45,21 +45,21 @@ $T = \mathrm{Res}_{K/\mathbb{Q}}(\basechange{\mathbb{G}_m}{K})$，$T_{\mathfrak{
     若一个代数群$G$同构于某个$D(M)$，则称$G$为可对角化的.
 \end{cdef}
 
-\begin{cprop}
-    $M\to D(M)$和$X: G\mapsto \mathrm{Hom}_k(G, \mathbb{G}_m)$互为伪逆，定义了可对角化代数群和有限生成交换群范畴的反变等价，且$D,X$都是正合的.
+\begin{cprop}[{\parencite[][p. 233]{milne2017algebraic}}]
+    $M\to D(M)$和$X: G\mapsto \mathrm{Hom}_k(G, \mathbb{G}_m)$互为拟逆，定义了可对角化代数群和有限生成交换群范畴的反变等价，且$D,X$都是正合的.
 \end{cprop}
 
-\begin{proof}
-    \cite{milne2017algebraic}, Theorem 12.9.
-\end{proof}
+%\begin{proof}
+%    \parencite[][p. 233]{milne2017algebraic} % Theorem 12.9
+%\end{proof}
 
-\begin{cprop}
+\begin{cprop}[{\parencite[][p. 234]{milne2017algebraic}}]
     如果$G$可对角化，则$G$的任何有限维表示都（在同一个域$F$上）可对角化，即可以通过$\sigma\in\mathrm{GL}_n(k)$的共轭成为对角矩阵.
 \end{cprop}
 
-\begin{proof}
-    \cite{milne2017algebraic}, Theorem 12.12.
-\end{proof}
+%\begin{proof}
+%    \parencite[][p. 234]{milne2017algebraic} % Theorem 12.12.
+%\end{proof}
 
 \paragraph*{环面群}
 
@@ -73,11 +73,22 @@ $T = \mathrm{Res}_{K/\mathbb{Q}}(\basechange{\mathbb{G}_m}{K})$，$T_{\mathfrak{
     如果$G$在$k$的某个扩张下可对角化，则称$G$为乘法型的.
 \end{cdef}
 
+既然可对角化群的范畴与有限Abel群的范畴反变等价，
+自然可以想到乘法型群的范畴与有限Abel群的范畴加上某种额外的结构之后是反变等价的.
+由于乘法型群和可对角化群的差别在于需要一个域扩张，额外的结构其实就是Galois群的作用.
+
+具体来说，令$\Gamma = \mathrm{Gal}(\overline{k}/k)$.
+$\Gamma$自然地连续作用在$X^{*}(G)$上.
+\begin{cprop}[{\parencite[][p. 240]{milne2017algebraic}}]
+    $X^{*}$是乘法型群范畴到带$\Gamma$连续作用的有限Abel群范畴的反变等价，
+    且在这个等价中正合列对应到正合列.
+\end{cprop}
+
 \begin{cprop}
     如果$G$是乘法型群，则$G$在$k$的某个有限扩张上可对角化.
 \end{cprop}
 
-\begin{cprop}
+\begin{cprop}[{\parencite[][p. 239]{milne2017algebraic}}]
     如果$G',G''$都是乘法型群，$G$是交换代数群，且有正合列
     \begin{equation}
         1\to G'\to G\to G''\to 1
@@ -85,11 +96,11 @@ $T = \mathrm{Res}_{K/\mathbb{Q}}(\basechange{\mathbb{G}_m}{K})$，$T_{\mathfrak{
     则$G$也是乘法型群.
 \end{cprop}
 
-\begin{proof}
-    \cite{milne2017algebraic}, Corollary 12.22.
-\end{proof}
+%\begin{proof}
+%    {\parencite[][p. 239]{milne2017algebraic}} % Theorem 12.22
+%\end{proof}
 
-\begin{cprop}
+\begin{cprop}[{\parencite[][p. 240]{milne2017algebraic}}]
     如果$G$是乘法型群，那么$G$是群扩张
     \begin{equation}
         1\to G'\to G\to G''\to 1
@@ -97,9 +108,9 @@ $T = \mathrm{Res}_{K/\mathbb{Q}}(\basechange{\mathbb{G}_m}{K})$，$T_{\mathfrak{
     其中$G'$是环面群，$G''$是有限乘法型群.
 \end{cprop}
 
-\begin{proof}
-    \cite{milne2017algebraic}, Corollary 12.24.
-\end{proof}
+%\begin{proof}
+%    \parencite[][p. 240]{milne2017algebraic} % Corollary 12.24
+%\end{proof}
 
 \subsection{代数群的表示}
 
@@ -123,7 +134,7 @@ $G = \mathrm{Gal}(\overline{k}/k)$通过$s(\sum a_{\chi} \chi) = \sum s(a_{\chi}
 称$V\in \mathsf{Rep}_{k'}(G)$可以定义在$k$上是指$V$落在基域扩张的像（essential image）中.
 
 \begin{cprop}
-    $\phi\mapsto \theta_{\phi}$是$\mathsf{Rep}_{k}(G)$的骨架和$S \subset \mathbb{Z}[X^{*}(G)]$之间的双射，
+    $\phi\mapsto \theta_{\phi}$是$\mathsf{Rep}_{k}(G)$的同构类和$S \subset \mathbb{Z}[X^{*}(G)]$之间的双射，
     其中$S$包含了满足以下条件的元素$\theta$：
 
     (i) $\theta$在$G$的作用下不变；

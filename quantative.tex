@@ -2,13 +2,48 @@
 
 假设$E$没有复乘. 此时存在一个$\ell_E$使得当$\ell>\ell_E$时$\tilde{\rho}_{\ell}$是满射.
 接下来最自然的问题就是$\ell_{E}$可以有多大.
-Serre在\parencite{serre1981quelques}中对$K=\mathbb{Q}$的情况进行了详细的分析，并在GRH下证明了可以取
-$\ell_E = O((\log N_E) (\log\log 2N_E)^3)$. （\parencite{serre1981quelques}, p. 196）
+Serre在\parencite{serre1981quelques}中对$K=\mathbb{Q}$的情况进行了详细的分析，并在GRH下证明了
+$\ell_E \leq c(\log N_E) (\log\log 2N_E)^3$. \parencite[][p. 196]{serre1981quelques}
 
-Serre提出了一致性猜想，即$\ell_{E}$仅与基域$K$有关. 并且当$K = \mathbb{Q}$时，还有猜测$\ell_{E} = 37$.
-Sutherland（\parencite{sutherland}）对Galois表示的像做了非常多的计算，
+证明的思路与定理\ref{main::surjective}是类似的，也是依靠对$\mathrm{GL}_2(\mathbb{F}_{\ell})$子群的分类.
+但是论证的过程要复杂得多.
+其中需要用到Chebotarev密度定理和素数定理共同的应用.
+这里只对最关键的一步进行介绍.
+
+设$Y$是$N$维$\ell$进解析空间$X = (\mathbb{Z}_{\ell})^N$中的闭子集.
+记$X_n,Y_n$分别是$X,Y$模$\ell^n$之后的有限集合.
+那么$\lim\limits_{\longleftarrow} Y_n$.
+如果$d\in \mathbb{R}_{\geq 0}$，称$Y$的Minkowski维数不大于$d$是在说，
+\begin{equation}
+    \absn{Y_n} = O(\ell^{nd}),n\to +\infty
+\end{equation}
+定义$Y$的Minkowski维数为满足以上条件的$d$的上确界.
+形如$(\mathbb{Z}_{\ell})^{N}\to (\mathbb{Z}_{\ell})^{N'}$的解析映射都保持Minkowski维数不增加，于是可以
+通过解析映射来定义$\ell$进李群中子集的Minkowski维数.
+这里的Minkowski维数可以看作是Hausdorff维数的一个变种.
+
+设$E/K$是Galois扩张，其Galois群是$N$维的$\ell$进李群$G$. 设$C$是$G$中在共轭下不变的闭集.
+我们想要知道$\pi_C(x)$，即非分歧的，$q_v$不大于$x$的，且Frobenius元素落在$C$中的素点$v$的数量.
+
+记$G_n$是“$G$模$\ell^n$之后的有限群”.
+这里$G_n$的具体定义比较复杂，是通过李代数实现的，可以参看\parencite[][p. 151]{serre1981quelques}.
+取$K_n$为$\ker G\to G_n$的固定域，则$K_n/K$的Galois群是$G_n$.
+对所有的$K_n/K$用（有效形式的）Chebotarev密度定理，并将信息综合起来，就可以得到
+\begin{cthm}
+    假设GRH.
+    设实数$0\leq d<N$，且$C$的Minkowski维数不大于$d$.
+    记$\alpha=\frac{N-d}{N}$，则
+    \begin{equation}
+        \pi_C(x) = O(\mathrm{Li}(x)/\varepsilon(x)^{\alpha}), x\to +\infty
+    \end{equation}
+    其中$\varepsilon(x) = x^{\frac{1}{2}} (\log x)^{-2}$.
+\end{cthm}
+
+由此可以精确地限制Frobenius元素的迹等于某个给定的值的素数的密度，进而对椭圆曲线的几何性质做出限制.
+
+Serre还提出了一致性猜想，即$\ell_{E}$仅与基域$K$有关. 并且当$K = \mathbb{Q}$时，还有猜测$\ell_{E} = 37$.
+Bilu等人解决了一致性猜想的某些情形\parencite{bilu2011serre}，但是一般的情况仍然未被解决.
+Sutherland\parencite{sutherland}借助计算机对Galois表示的像做了非常多的计算，
 目前还没有发现$\mathbb{Q}$上使得$\ell_{E}>37$的椭圆曲线$E$.
+
 关于$K\neq \mathbb{Q}$的情况，目前知道的很少.
-
-
-

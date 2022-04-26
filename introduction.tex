@@ -48,6 +48,7 @@
 现在开始正式的讨论.
 添加椭圆曲线的有限阶点得到的扩张的Galois群就是绝对Galois群在有限阶点上的作用的像，
 接下来我们采用更方便的Galois表示的语言.
+本文中的证明主要参考\parencite{serre1997abelian}和\parencite{serre1981quelques}.
 
 设$E$是定义在域$K$上的椭圆曲线，$\ell$是素数且$\ell\neq \mathrm{char}\ K$. 对所有的正整数$n$，$E[\ell^n]$是$E(\overline{K})$的有限子群，且同构于$(\mathbb{Z}/\ell^n\mathbb{Z})^2$. $G = \mathrm{Gal}(\overline{K}/K)$作用在$E[\ell^n]$上，且作用与$E$上的加法交换，即有表示$\rho_n:G\to \mathrm{GL}_2(\mathbb{Z}/\ell^n \mathbb{Z})$.
 
@@ -75,11 +76,11 @@ $\rho_{\ell}'$的像就不是$\mathrm{GL}_2(\mathbb{Z}_{\ell})$了.
 
 但无论如何，还可以继续追问什么时候$\rho_{\ell}$的像是整个$\mathrm{GL}_2(\mathbb{Z}_{\ell})$.
 首先，如果$\rho_{\ell}$的像是$\mathrm{GL}_2(\mathbb{Z}_{\ell})$，
-则$\tilde{\rho} = \rho \pmod{\ell}$也是满射.
+则$\tilde{\rho}_{\ell} = \rho_{\ell} \pmod{\ell}$也是满射.
 因此可以先问什么时候$\tilde{\rho}$是满射. 这就是第二个主定理
 
 \begin{cthm}
-    $K, E$同上. 对于除了有限多个以外的素数$\ell$，模$\ell$Galois表示$\tilde{\rho}_{\ell}: \mathrm{Gal}(\overline{K}/K)\to \mathrm{GL}_2(\mathbb{F}_{\ell})$是满射. \label{main::surjective}
+    $K, E$同上. 对于除了有限多个以外的素数$\ell$，模$\ell$\quad Galois表示$\tilde{\rho}_{\ell}: \mathrm{Gal}(\overline{K}/K)\to \mathrm{GL}_2(\mathbb{F}_{\ell})$是满射. \label{main::surjective}
 \end{cthm}
 
 事实上，由几乎所有的$\tilde{\rho}_{\ell}$是满射，可以推出几乎所有的$\rho_{\ell}$都是满射.
@@ -96,11 +97,18 @@ $\rho_{\ell}'$的像就不是$\mathrm{GL}_2(\mathbb{Z}_{\ell})$了.
 
 有了定理\ref{main::surjective}，自然就可以进一步地问例外的素数可以有多少个.
 记$\ell_{E}$是最大的使得$\tilde{\rho}_{\ell}$不是满射的素数.
-Serre在\parencite{serre1981quelques}中证明了，如果$E/\mathbb{Q}$没有复乘，记$N_E$是所有$E$有坏约化的素数的乘积.
-假设GRH，有
-\begin{equation}
-    \ell_{E} = O((\log N_E)(\log \log 2N_E)^3)
-\end{equation}
+$\ell_{E}$的大小可以作为例外的素数集合有多大的一种表现.
+Serre在\parencite{serre1981quelques}中利用素数定理对$\ell_{E}$的大小进行了估计，并在GRH下证明了
+\begin{cthm}
+    如果$E/\mathbb{Q}$没有复乘，记$N_E$是所有$E$有坏约化的素数的乘积. 那么存在与$E$无关的常数$c$使得当
+    \begin{equation}
+        \ell \geq c(\log N_E)(\log\log 2N_E)^3
+    \end{equation}
+    时，$\tilde{\rho}_{\ell}$都是满射. 或者说，
+    \begin{equation}
+        \ell_{E} \leq c(\log N_E)(\log \log 2N_E)^3
+    \end{equation}
+\end{cthm}
 
 猜测$\ell_{E}$仅与基域$K$有关，且$\ell_{\mathbb{Q}}=37$.
 这被称为Serre的一致性猜想（Serre's uniformity conjecture）.
