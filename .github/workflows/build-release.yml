@@ -1,4 +1,4 @@
-name: Build the LaTeX Project with release settings
+name: Build the LaTeX Project
 
 on:
   push:
@@ -19,14 +19,27 @@ jobs:
         with:
             submodules: recursive
 
-      - name: Build LaTeX
+      - name: Build LaTeX release
         uses: dante-ev/latex-action@latest
         with:
             root_file: ucasthesis/Thesis.tex
             args: -xelatex -cd -interaction=nonstopmode -outdir=../build/release
+      
+      - name: Build LaTeX debug
+        uses: dante-ev/latex-action@latest
+        with:
+            root_file: main.tex
+            args: -xelatex -cd -interaction=nonstopmode -outdir=build/debug
+      
+      - name: Renaming built files
+        run: |
+            mv build/debug/main.pdf build/preview.pdf
+            mv build/release/Thesis.pdf build/Thesis.pdf
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
             name: Thesis
-            path: build/release/Thesis.pdf
+            path: |
+                build/Thesis.pdf
+                build/preview.pdf
