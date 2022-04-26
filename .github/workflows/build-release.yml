@@ -1,0 +1,29 @@
+name: Build the LaTeX Project with release settings
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build LaTeX
+        uses: dante-ev/latex-action@latest
+        with:
+            entrypoint: make release
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+            name: Thesis
+            path: build/release/Thesis.pdf
