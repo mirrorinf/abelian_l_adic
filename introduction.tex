@@ -1,11 +1,53 @@
 \chapter{引言}
 
-绝对Galois群是数论中最引人注目的对象之一，而对它的研究通常是通过研究它的表示进行的.
-通过平展上同调群可以定义一类Galois表示。其中最简单的情形是考虑Galois群在椭圆曲线的挠点上的作用：
+志村五郎在\parencite{shimura1966reciprocity}中讨论了由椭圆曲线$E$的$\ell$阶点生成的数域$L/\mathbb{Q}$，
+其中$\ell$是一个素数.
+志村对$E=X_0(11)$和$7\leq \ell\leq 97$证明了
+是$\mathrm{Gal}(L/\mathbb{Q})\cong \mathrm{GL}_2(\mathbb{F}_{\ell})$.
+
+同时由熟知的结果，Frobenius元素的特征多项式能够由椭圆曲线的几何性质完全决定（本文将在第三章中证明这些结果）.
+对$\tau\in\mathrm{GL}_2(\mathbb{F}_{\ell})$中，特征多项式能几乎确定其共轭类：
+如果特征多项式没有重根，那么$\tau$共轭于$\matbt{a}{0}{0}{b}$，其中$a,b$是特征多项式的两个根
+（如果$a,b\in \mathbb{F}_{\ell^2} - \mathbb{F}_{\ell}$，则需要再共轭到一个$\matbt{c}{\sigma d}{d}{c}$，其中$\sigma\in\mathbb{F}_{\ell}^{\times} - (\mathbb{F}_{\ell}^{\times})^2;c, d\in\mathbb{F}_{\ell}$）；
+而如果特征多项式有重根$a$，则$\tau$或者共轭于$\matbt{a}{1}{0}{a}$，或者就是$\matbt{a}{0}{0}{a}$.
+
+那么，假设$\mathrm{Gal}(L/\mathbb{Q})\cong \mathrm{GL}_2(\mathbb{F}_{\ell})$成立，
+则素数在$L$中的分解情况几乎可以由椭圆曲线的几何性质决定.
+于是我们可以构造一大类扩张，其Galois群是有限李型群，而且可以几乎确定素数在其中的分解.
+
+同时，$X_0(11)$是模曲线，其几何性质被编码在一个模形式
+\begin{equation}
+    f(z) = q\prod_{n=1}^{\infty} \paten{1-q^n}^2 \paten{1 - q^{11n}}^2,q=\exp(2\pi i z)
+\end{equation}
+的Fourier系数中. 那么，$L$中素数的分解性质就（几乎，还差确定幂零共轭类）被编码在了一个模形式中.
+这一事实可以被看作是某种非交换的类域论. 如果不是取椭圆曲线的有限阶点，
+而是取乘法群$\mathbb{G}_m$的有限阶点，即单位根，
+就得到了经典的类域论.
+
+要完全实现上面的想法，需要解决以下的问题：
+\begin{enumerate}
+    \item 什么时候$L/\mathbb{Q}$的Galois群是$\mathrm{GL}_2(\mathbb{F}_{\ell})$？
+    \item 以上讨论能否推广到一般的基域$K$？
+    \item 什么时候椭圆曲线$E$是模曲线？
+\end{enumerate}
+问题3就是模性问题. 问题2的回答是肯定的，问题1和椭圆曲线的复乘有关，我们下面进行详细的分析.
+
+在开始之前，还可以提出几个问题：
+\begin{enumerate}
+    \item 如果添加上$E$的合数阶点会发生什么？
+    \item 在Frobenius元素的特征多项式有重根时，如何确定它是不是幂零的？
+    \item 对高维的Abel簇是否存在类似的理论？
+    \item 更一般地，能否构造Galois群是$G(\mathbb{F}_{q})$的扩张，其中$G$是Chevalley群，$q$是素数的幂，并确定其中的Frobenius元素？
+\end{enumerate}
+
+问题1是比较简单的，添加合数阶点就是添加所有的素数幂阶点，我们下面分析时会讨论素数幂阶点的情况.
+问题2-4比较复杂，超出了本文讨论的范围.
+
+\vskip0.3cm
 
 设$E$是定义在域$K$上的椭圆曲线，$\ell$是素数且$\ell\neq \mathrm{char}\ K$. 对所有的正整数$n$，$E[\ell^n]$是$E(\overline{K})$的有限子群，且同构于$(\mathbb{Z}/\ell^n\mathbb{Z})^2$. $G = \mathrm{Gal}(\overline{K}/K)$作用在$E[\ell^n]$上，且作用与$E$上的加法交换，即有表示$\rho_n:G\to \mathrm{GL}_2(\mathbb{Z}/\ell^n \mathbb{Z})$.
 
-记$K_n=K(E[\ell^n])$. $\sigma\in G$在$K_n$上作用平凡当且仅当$\sigma$在$E[\ell^n]$上的作用平凡，因此$K_n/K$是Galois扩张，且$\mathrm{Gal}(K_n/K)=\mathrm{Im}\ \rho_n$. $\mathrm{Im}\ \rho_n$的大小反映了$K_n$的复杂程度，也就是$E$的挠点之间相互独立的程度.
+记$K_n=K(E[\ell^n])$. $\sigma\in G$在$K_n$上作用平凡当且仅当$\sigma$在$E[\ell^n]$上的作用平凡，因此$K_n/K$是Galois扩张，且$\mathrm{Gal}(K_n/K)=\mathrm{Im}\ \rho_n$. $\mathrm{Im}\ \rho_n$的大小反映了$K_n$的复杂程度，也就是$E$的有限阶点之间相互独立的程度.
 
 可以将所有的$\rho_n$放在一起考虑. 记$E[\ell^{\infty}]=\bigcup_n E[\ell^n]$，$K_{\infty} = K(E[\ell^{\infty}])$. $K_{\infty}$也是Galois扩张，且$\mathrm{Gal}(K_{\infty}/K) = \lim\limits_{\longleftarrow} \mathrm{Gal}(K_n/K)$. 记$\rho = \lim\limits_{\longleftarrow} \rho_n$，$\rho: G\to \mathrm{GL}_2(\mathbb{Z}_{\ell})$，其中转移映射$\mathrm{GL}_2(\mathbb{Z}/\ell^{n+1} \mathbb{Z}) \to \mathbb{Z}/\ell^n \mathbb{Z}$，$\tau \mapsto \tau \pmod{\ell^n}$.
 
@@ -58,3 +100,11 @@ Serre在\parencite{serre1981quelques}中证明了，如果$E/\mathbb{Q}$没有�
 
 猜测$\ell_{E}$仅与基域$K$有关，且$\ell_{\mathbb{Q}}=37$.
 这被称为Serre的一致性猜想（Serre's uniformity conjecture）.
+
+本文其余部分的组织如下：
+第二章定义$\ell$进Galois表示和严格相容的有理表示族的概念，
+并证明一族严格相容的有理表示只要是交换的，就一定可以被某个代数群$S_{\mathfrak{m}}$刻画；
+第三章证明一些椭圆曲线的Tate模的结论；
+第四章证明第一个主定理，即无复乘时，$\ell$进表示$\rho_{\ell}$的像是开子群；
+第五章证明第二个主定理，即无复乘时，对几乎所有的素数$\ell$，模$\ell$表示$\tilde{\rho}_{\ell}$是满射；
+第六章不加证明地介绍一些对$\ell_{E}$的估计的结果.
