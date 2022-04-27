@@ -11,22 +11,29 @@
 \usepackage{xcolor}
 
 
-%\theoremstyle{definition}
+\theoremstyle{definition}
+
+\newtheorem{cdef}{定义}
+\numberwithin{cdef}{section}
 
 \newtheorem{cthm}{定理}
 \numberwithin{cthm}{section}
+
 \newtheorem{cprop}{命题}
 \numberwithin{cprop}{section}
-\newtheorem{crem}{注记}
-\numberwithin{crem}{section}
-\newtheorem{cdef}{定义}
-\numberwithin{cdef}{section}
+
 \newtheorem{ccor}{推论}
 \numberwithin{ccor}{section}
+
 \newtheorem{clem}{引理}
 \numberwithin{clem}{section}
-\newtheorem{cyyy}{白日梦}
-\numberwithin{cyyy}{section}
+
+
+\theoremstyle{remark}
+
+\newtheorem{crem}{注记}
+\numberwithin{crem}{section}
+
 
 \newenvironment{pppmatrix}{\left(\begin{matrix}}{\end{matrix}\right)}
 

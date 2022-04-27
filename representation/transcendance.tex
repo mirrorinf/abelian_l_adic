@@ -2,7 +2,7 @@
 
 Serre在{\parencite{serre1997abelian}}中为了证明$\ell$进表示的局部代数性质给出了三种方法，其中两种利用Hodge-Tate分解和对局部域上相应表示的分析. 但事实上这些表示是局部代数的事实与它们来自椭圆曲线并没有多大关系. Serre的第三种方法是用Lang关于超越数的结果证明以下简洁的结果，但由于Lang的结果所限只能局限在$K$是二次域的复合的情形. 现在，有了更强大的Waldschmidt关于超越数的结果，我们可以证明
 
-\begin{cthm}[{\parencite[][p. 117]{henniart}}]
+\begin{cthm}[{\parencite[][p. 117]{henniart}}, Théorème 7]
     如果$\rho$是有理、半单、交换的$\ell$进表示，那么$\rho$是局部代数的. \label{reps::abelian_loc_alg}
 \end{cthm}
 
@@ -57,7 +57,7 @@ Serre在{\parencite{serre1997abelian}}中为了证明$\ell$进表示的局部代
 设$f: T(\mathbb{Q}_{\ell})\to C^{\times}$是连续映射. 若存在$1$在$T(\mathbb{Q}_{\ell})$的（$\ell$进拓扑下）开邻域$U$和$\phi\in X^{*}(T)$使得当$x\in U$时$f(x)=\phi(x)$，则称$f$是局部代数的. 如果存在正整数$N$使得$f^N$是局部代数的，则称$f$是几乎局部代数的.
 
 需要的关于超越数的结论是
-\begin{cprop}[{\parencite[][p. 117]{henniart}}; {\parencite[][p. 124]{waldschmidt1981transcendance}}]
+\begin{cprop}[{\parencite[][p. 117]{henniart}}, Théorème 8]
     令$V$是$C$上的有限维线性空间，$\Gamma$是$V$的有限秩子群. 记$\mu_{V}(\Gamma) = \min_W \left\{ \frac{\mathrm{rank}(\Gamma) - \mathrm{rank}(\Gamma \bigcap W)}{\dim V-\dim W} \right\}$，其中$W$取遍$V$的真子空间. 如果$\Lambda, \Gamma$是$V, V^{*}$的有限秩子群，$\mathrm{rank}(\Gamma)>\dim V$，且$\exp\langle \lambda, \gamma\rangle, \lambda \in \Lambda, \gamma\in \Gamma$都收敛并取代数数值. 那么
     \begin{equation}
         \mu_{V^{*}}(\Gamma)\leq \frac{\mathrm{rank}(\Lambda)}{\mathrm{rank}(\Lambda) - \dim V}
