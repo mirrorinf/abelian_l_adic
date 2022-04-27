@@ -27,6 +27,10 @@ $\ell_E \leq c(\log N_E) (\log\log 2N_E)^3$. 证明的详细过程参见\parenci
 
 记$G_n$是“$G$模$\ell^n$之后的有限群”.
 这里$G_n$的具体定义比较复杂，是通过李代数实现的，可以参看\parencite[][p. 151]{serre1981quelques}.
+对$G=\mathrm{GL}_n(\mathbb{Z}_{\ell})$，
+可以令$G_n = G/( 1 + \ell^n \mathrm{M}^{2\times 2}(\mathbb{Z}_{\ell}))$，
+即$G$商掉模$\ell^n$余$1$的元素构成的子群. 此时$G_n\cong \mathrm{GL}_2(\mathbb{Z}/\ell^n \mathbb{Z})$.
+
 取$K_n$为$\ker G\to G_n$的固定域，则$K_n/K$的Galois群是$G_n$.
 对所有的$K_n/K$用（有效形式的）Chebotarev密度定理，并将信息综合起来，就可以得到
 \begin{cthm}
