@@ -20,7 +20,7 @@ $\theta_{\ell}: \mathrm{Gal}(\overline{K}/K)^{ab}\to k_{\ell}^{\times}$.
 
 \begin{cprop}
     固定一个理想$\mathfrak{m}$.
-    如果存在$n:\Gamma: \mathbb{Z}$以及无穷多个素数的集合$L$使得
+    如果存在$n:\Gamma\to \mathbb{Z}$以及无穷多个素数的集合$L$使得
     对每个$\ell\in L, a\in U_{\mathfrak{m}}$都有
     \begin{equation}
         \theta_{\ell}(a) \equiv \prod_{\sigma\in \Gamma} \sigma_{\ell}(a_{\ell}^{-1})^{n(\sigma)} \pmod{\mathfrak{p}_{\ell}}
@@ -203,4 +203,12 @@ $\theta_{\ell}: \mathrm{Gal}(\overline{K}/K)^{ab}\to k_{\ell}^{\times}$.
 \begin{crem}
     可以看到，“当$a\equiv b\pmod{\mathfrak{p}_{\ell}}$对无穷多个$\ell$成立时，$a=b$”
     这一事实多次发挥作用，将模表示的信息提升为$\ell$进表示的信息.
+
+    注意到在第一个主定理的证明过程中，证明表示的局部代数性时只用到了它是有理、半单、交换这三个条件；
+    而在上面第二个主定理的证明过程中，定理\ref{surj::main_lemma}实际上是一个类似于局部代数的性质，
+    但在验证它的条件时，表示来自于椭圆曲线这一信息是本质的.
+    和第一个主定理的证明类比，可以提出以下的问题：
+
+    如果有一族严格相容的半单有理表示$\{\psi_{\ell}\}$，而且对无穷多个$\ell$模表示$\tilde{\psi}_{\ell}$都是交换的，
+    此时是否可以推出$\{\psi_{\ell}\}$本身是交换的？
 \end{crem}

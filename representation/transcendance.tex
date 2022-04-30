@@ -53,7 +53,7 @@ Serre在{\parencite{serre1997abelian}}中为了证明$\ell$进表示的局部代
 \end{proof}
 
 接下来需要一个环面群的特征标的结论.
-令$C$为$\overline{\mathbb{Q}_{\ell}}$的完备化. 仍然令$T=\mathrm{Res}_{K/\mathbb{Q}}(\basechange{\mathbb{G}_m}{K})$为$\mathbb{Q}$上的$n$维环面子群.
+令$C$为$\overline{\mathbb{Q}_{\ell}}$的完备化. 仍然令$T=\mathrm{Res}_{K/\mathbb{Q}}(\basechange{\mathbb{G}_m}{K})$为$\mathbb{Q}$上的$n$维环面子群. 此时$C$也是代数闭域，$X^{*}(T)$中的元素都可以看作是$\basechange{T}{C}\to \basechange{\mathbb{G}_m}{C}$的态射.
 设$f: T(\mathbb{Q}_{\ell})\to C^{\times}$是连续映射. 若存在$1$在$T(\mathbb{Q}_{\ell})$的（$\ell$进拓扑下）开邻域$U$和$\phi\in X^{*}(T)$使得当$x\in U$时$f(x)=\phi(x)$，则称$f$是局部代数的. 如果存在正整数$N$使得$f^N$是局部代数的，则称$f$是几乎局部代数的.
 
 需要的关于超越数的结论是
@@ -64,7 +64,13 @@ Serre在{\parencite{serre1997abelian}}中为了证明$\ell$进表示的局部代
     \end{equation}\label{temp::theo8}
 \end{cprop}
 
-设$S$是素数的一个有限集合. 对每个$p\in S$，令$W_p$是$T(\mathbb{Q}_p)$的开子群. 记$T(\mathbb{Q})_{W}$为所有的$x\in T(\mathbb{Q})$使得$x\in W_p\subset T(\mathbb{Q}_p)$. 那么$T(\mathbb{Q})_{W}$是$T(\mathbb{Q})$的子群.
+这一结论实际上是$\mathbb{C}$上类似结论的类比. 所有这一类结论的原型是
+\begin{cprop}[{\parencite[][p. 8]{lang1966introduction}}, Theorem 1]
+    设$b_1,b_2, z_1,z_2,z_3\in \mathbb{C}$，$z_1,z_2,z_3$三者$\mathbb{Q}$线性无关，
+    而且$\exp b_iz_j, i=1,2,j=1,2,3$都是代数数，那么$b_1,b_2$是$\mathbb{Q}$线性相关的.
+\end{cprop}
+
+现在设$S$是素数的一个有限集合. 对每个$p\in S$，令$W_p$是$T(\mathbb{Q}_p)$的开子群. 记$T(\mathbb{Q})_{W}$为所有的$x\in T(\mathbb{Q})$使得$x\in W_p\subset T(\mathbb{Q}_p)$. 那么$T(\mathbb{Q})_{W}$是$T(\mathbb{Q})$的子群.
 
 \begin{cprop}
     如果存在一族$W_p, p\in S$使得$f(T(\mathbb{Q})_W)$都是$\mathbb{Q}$-代数数，则$f$是几乎局部代数的. \label{temp::reps::loc_alg}

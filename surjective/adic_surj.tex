@@ -1,14 +1,90 @@
 \section{几乎所有\texorpdfstring{$\rho_{\ell}$}{rho ell}都是满射}
 
-最后再来证明一个很有意思的结果.
+最后再来介绍一个很有意思的结果.
 显然当$\rho_{\ell}$是满射时，模表示$\tilde{\rho}_{\ell}$也是满射.
-逆命题也（几乎）是成立的.
+反过来，几乎所有模表示都是满射也可以推出几乎所有$\ell$进表示都是满射.
 
-\begin{cprop}
-    假设$\ell \geq 5$. 如果$\tilde{\rho}_{\ell}$是满射，那么$\rho_{\ell}$也是满射.
-\end{cprop}
+% \begin{cprop}
+%     假设$\ell \geq 5$. 如果$\tilde{\rho}_{\ell}$是满射，那么$\rho_{\ell}$也是满射.
+%     %TODO 这个真的对么
+% \end{cprop}
 
-需要一个群论的引理
+% 需要一个群论的引理
+% \begin{clem}[{\parencite[][p. IV-23]{serre1997abelian}}, Lemma 3]
+%     设$\ell\geq 5$，$X$是$\mathrm{SL}_2(\mathbb{Z}_{\ell})$的闭子群，且在$\mathrm{SL}_2(\mathbb{F}_{\ell})$
+%     中的像是整个$\mathrm{SL}_2(\mathbb{F}_{\ell})$. 那么$X = \mathrm{SL}_2(\mathbb{Z}_{\ell})$.
+% \end{clem}
+
+% \begin{proof}
+%     对$n$归纳证明，$X$在$\mathrm{SL}_2(\mathbb{Z}/\ell^n \mathbb{Z})$上的像是满射.
+%     $n=1$的情况就是假设.
+
+%     假设对$n$成立. 只要证明，对所有的$s\in \mathrm{SL}_2(\mathbb{Z}_{\ell}), s\equiv 1\pmod{\ell^n}$，
+%     都存在一个$x\in X$使得$x\equiv s\pmod{\ell^{n+1}}$.
+
+%     将$s$写成$1+\ell^n u$的形式. 由于$\det s = 1$，$\mathrm{Tr}(u)\equiv 0\pmod{\ell^n}$.
+%     注意到只需要考虑$u$模$\ell$的等价类即可. 由上面的讨论，$u$是$\mathfrak{gl}_2(\mathbb{F}_{\ell})$中迹为$0$的元素.
+%     但是，这样的元素或者共轭于$\matbt{0}{a}{\sigma a}{0},\sigma\in \mathbb{F}_{\ell^2}-\mathbb{F}_{\ell}$，
+%     或者共轭于$\matbt{a}{0}{0}{-a}$，
+%     或者共轭于$\matbt{0}{*}{0}{0}$.
+%     无论如何都可以写成至多两个平方为$0$的矩阵之和.
+%     因此，选取一个上面的矩阵的提升，不妨设$u^2=0$.
+
+%     由归纳假设，存在$y\in X$使得$y\equiv 1+\ell^{n-1}u \pmod{\ell^n}$. 令
+%     $v\in \mathfrak{gl}_2(\mathbb{Z}_{\ell})$使得
+%     $y = 1+\ell^{n-1}u + \ell^n v$. 令$x=y^{\ell}$.
+%     那么 
+%     \begin{equation}
+%         x = 1 + \ell(\ell^{n-1}u + \ell^n v) + {\ell\choose 2}(\ell^{n-1}u+\ell^nv)^2 + \cdots
+%         + (\ell^{n-1}u+\ell^n v)^{\ell}
+%     \end{equation}
+%     如果$n\geq 2$，则$2(n-1) + 1 \geq n + 1$，因此$x\equiv 1+\ell^n u \pmod{\ell^{n+1}}$.
+%     如果$n=1$，由$u^2=0$，$\ell (u+\ell v)^k \equiv 0\pmod{\ell^2}$，那么
+%     $x\equiv 1+\ell u + (u + \ell v)^{\ell} \pmod{\ell^2}$.
+%     但是$\ell\geq 5$，所以
+%     \begin{equation}
+%         (u+\ell v)^{\ell} \equiv \ell(uv+vu)u^{\ell-2} \equiv 0\pmod{\ell}
+%     \end{equation}
+%     这就证明了$x\equiv 1+\ell^n u\pmod{\ell^{n+1}}$.
+% \end{proof}
+
+% 注意到这个引理中的$SL_2$都换成$GL_2$的话是不成立的，例如在
+
+% \begin{proof}[命题的证明]
+%     令$\Gamma = \mathrm{Im}\ \rho_{\ell}\bigcap \mathrm{SL}_2(\mathbb{Z}_{\ell})$，
+%     $G = \mathrm{Im}\ \tilde{\rho}_{\ell}\bigcap \mathrm{SL}_2(\mathbb{F}_{\ell})$.
+%     那么$\Gamma, G$分别是$\det: \mathrm{Im}\ \rho_{\ell} \to \mathbb{Z}_{\ell}^{\times}$和
+%     $\det: \mathrm{Im}\ \tilde{\rho}_{\ell}\to \mathbb{F}_{\ell}^{\times}$的核.
+
+%     这两个$\det$都是满射，即有交换图
+%     \begin{figure}[H]
+%         \centering
+%         \begin{tikzcd}
+%             0 \arrow[r] &\Gamma \arrow[r]\arrow[d, "\mathrm{mod}"] &\mathrm{Im}\ \rho_{\ell} \arrow[r, "\det"]\arrow[d, "\mathrm{mod}"] &\mathbb{Z}_{\ell}^{\times} \arrow[r]\arrow[d, "\mathrm{mod}"] &0 \\
+%             0 \arrow[r] &G \arrow[r] &\mathrm{Im}\ \tilde{\rho}_{\ell} \arrow[r, "\det"] &\mathbb{F}_{\ell}^{\times} \arrow[r] &0
+%         \end{tikzcd}
+%     \end{figure}
+%     两行都是正合列，且右边两个$\mathrm{mod}$都是满射.
+%     于是$\mathrm{mod}:\Gamma\to G$是满射.
+    
+%     如果$\tilde{\rho}_{\ell}$是满射，则$G = \mathrm{SL}_2(\mathbb{F}_{\ell})$. 由引理，$\Gamma = \mathrm{SL}_2(\mathbb{Z}_{\ell})$. 于是$\rho_{\ell}$是满射.
+% \end{proof}
+
+\begin{cthm}[{\parencite[][p. IV-19]{serre1997abelian}}]
+    记$G_{\ell} = \mathrm{Im}(\rho_{\ell})$，$\tilde{G}_{\ell}=\mathrm{Im}(\tilde{\rho}_{\ell})$，
+    $G=\prod_{\ell} G_{\ell}$. 那么以下命题等价：
+
+    (i) $G$是$\prod_{\ell}\mathrm{Aut}(T_{\ell})$的开子群；
+
+    (ii) 对几乎所有（除了有限多个以外）的$\ell$都有$G_{\ell} = \mathrm{Aut}(T_{\ell})$；
+
+    (iii) 对几乎所有的$\ell$都有$\tilde{G}_{\ell}=\mathrm{Aut}(E[\ell])$；
+
+    (iv) 对几乎所有的$\ell$，$\tilde{G}_{\ell}$都包含了$\mathrm{SL}_2(\mathbb{F}_{\ell})$.
+\end{cthm}
+
+证明过程中最关键的一步是将模表示的信息提升到$\ell$进表示的信息，即
+一个群论的引理
 \begin{clem}[{\parencite[][p. IV-23]{serre1997abelian}}, Lemma 3]
     设$\ell\geq 5$，$X$是$\mathrm{SL}_2(\mathbb{Z}_{\ell})$的闭子群，且在$\mathrm{SL}_2(\mathbb{F}_{\ell})$
     中的像是整个$\mathrm{SL}_2(\mathbb{F}_{\ell})$. 那么$X = \mathrm{SL}_2(\mathbb{Z}_{\ell})$.
@@ -47,22 +123,4 @@
     这就证明了$x\equiv 1+\ell^n u\pmod{\ell^{n+1}}$.
 \end{proof}
 
-\begin{proof}[命题的证明]
-    令$\Gamma = \mathrm{Im}\ \rho_{\ell}\bigcap \mathrm{SL}_2(\mathbb{Z}_{\ell})$，
-    $G = \mathrm{Im}\ \tilde{\rho}_{\ell}\bigcap \mathrm{SL}_2(\mathbb{F}_{\ell})$.
-    那么$\Gamma, G$分别是$\det: \mathrm{Im}\ \rho_{\ell} \to \mathbb{Z}_{\ell}^{\times}$和
-    $\det: \mathrm{Im}\ \tilde{\rho}_{\ell}\to \mathbb{F}_{\ell}^{\times}$的核.
-
-    这两个$\det$都是满射，即有交换图
-    \begin{figure}[H]
-        \centering
-        \begin{tikzcd}
-            0 \arrow[r] &\Gamma \arrow[r]\arrow[d, "\mathrm{mod}"] &\mathrm{Im}\ \rho_{\ell} \arrow[r, "\det"]\arrow[d, "\mathrm{mod}"] &\mathbb{Z}_{\ell}^{\times} \arrow[r]\arrow[d, "\mathrm{mod}"] &0 \\
-            0 \arrow[r] &G \arrow[r] &\mathrm{Im}\ \tilde{\rho}_{\ell} \arrow[r, "\det"] &\mathbb{F}_{\ell}^{\times} \arrow[r] &0
-        \end{tikzcd}
-    \end{figure}
-    两行都是正合列，且右边两个$\mathrm{mod}$都是满射.
-    于是$\mathrm{mod}:\Gamma\to G$是满射.
-    
-    如果$\tilde{\rho}_{\ell}$是满射，则$G = \mathrm{SL}_2(\mathbb{F}_{\ell})$. 由引理，$\Gamma = \mathrm{SL}_2(\mathbb{Z}_{\ell})$. 于是$\rho_{\ell}$是满射.
-\end{proof}
+当然，整体的证明过程并不是从每个$\tilde{G}_{\ell}$直接提升到$G_{\ell}$那么简单的.
