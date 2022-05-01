@@ -7,7 +7,7 @@ $\ell_E \leq c(\log N_E) (\log\log 2N_E)^3$. 证明的详细过程参见\parenci
 
 证明的思路与定理\ref{main::surjective}是类似的，也是依靠对$\mathrm{GL}_2(\mathbb{F}_{\ell})$子群的分类.
 但是论证的过程要复杂得多.
-其中需要用到Chebotarev密度定理和素数定理共同的应用.
+其中需要综合运用Chebotarev密度定理和素数定理.
 这里只对最关键的一步进行介绍.
 
 设$Y$是$N$维$\ell$进解析空间$X = (\mathbb{Z}_{\ell})^N$中的闭子集.
@@ -17,7 +17,7 @@ $\ell_E \leq c(\log N_E) (\log\log 2N_E)^3$. 证明的详细过程参见\parenci
 \begin{equation}
     \absn{Y_n} = O(\ell^{nd}),n\to +\infty
 \end{equation}
-定义$Y$的Minkowski维数为满足以上条件的$d$的上确界.
+定义$Y$的Minkowski维数为满足以上条件的$d$的下确界.
 形如$(\mathbb{Z}_{\ell})^{N}\to (\mathbb{Z}_{\ell})^{N'}$的解析映射都保持Minkowski维数不增加，于是可以
 通过解析映射来定义$\ell$进李群中子集的Minkowski维数.
 这里的Minkowski维数可以看作是Hausdorff维数的一个变种.
@@ -31,7 +31,7 @@ $\ell_E \leq c(\log N_E) (\log\log 2N_E)^3$. 证明的详细过程参见\parenci
 可以令$G_n = G/( 1 + \ell^n \mathrm{M}^{2\times 2}(\mathbb{Z}_{\ell}))$，
 即$G$商掉模$\ell^n$余$1$的元素构成的子群. 此时$G_n\cong \mathrm{GL}_2(\mathbb{Z}/\ell^n \mathbb{Z})$.
 
-取$K_n$为$\ker G\to G_n$的固定域，则$K_n/K$的Galois群是$G_n$.
+取$K_n$为$\ker (G\to G_n)$的固定域，则$K_n/K$的Galois群是$G_n$.
 对所有的$K_n/K$用（有效形式的）Chebotarev密度定理，并将信息综合起来，就可以得到
 \begin{cthm}
     假设GRH.

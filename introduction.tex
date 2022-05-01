@@ -1,6 +1,6 @@
 \chapter{引言}
 
-本文中的讨论主要参考\parencite{serre1997abelian}和\parencite{serre1981quelques}.
+本文中的讨论主要参考Serre的\parencite{serre1997abelian}和\parencite{serre1972proprietes}.
 大致来说，第二章与第四章介绍了\parencite{serre1997abelian}中的一部分内容，
 而第五章介绍了\parencite{serre1972proprietes}中的一部分内容.
 在这三章中，大部分命题证明的逻辑链条都在本文中完整地展示出来了，因此不再逐个标注引用.
@@ -63,7 +63,7 @@
 Tate提出了另一种将$\rho_n$放在一起的方式. 令Tate模$T_{\ell}(E) = \lim\limits_{\longleftarrow} E[\ell^n]$，其中转移映射为$E[\ell^{n+1}]\to E[\ell^n], P\mapsto \ell P$，则$T_{\ell}\cong (\mathbb{Z}_{\ell})^2$. $G$在$E[\ell^n]$上的作用还与椭圆曲线上的加法交换，因此在同构$T_{\ell}(E)\cong (\mathbb{Z}_{\ell})^2$下$G$的作用是线性映射. 这就得到了表示$G\mapsto \mathrm{GL}_2(\mathbb{Z}_{\ell})$. 可以看出Tate模定义的表示在模每个$\ell^n$之后都成为$\rho_n$，因此就是上一段中定义的$\rho$.
 记$V_{\ell} = T_{\ell}\otimes \mathbb{Q}_{\ell}$.
 
-在$\mathrm{char}\ K = 0$，且$E$具有复乘的情况下，$\mathrm{Im}\ \rho$是相对简单的. 通过将$K$取成一个有限扩张，不妨设$\mathrm{End}_K(E) \cong \mathcal{O}$. 此时$T_{\ell}$是$\mathcal{O}_{\ell} = \lim\limits_{\longleftarrow}\mathcal{O}/\ell^n \mathcal{O}$上秩为$1$的模，$G$的作用与$\mathcal{O}_{\ell}$的作用交换. 此时$\rho$实际上是表示$G\to (\mathcal{O}_{\ell})^{\times}$，即$\mathrm{Im}\ \rho$是交换群.
+在$\mathrm{char}\ K = 0$，且$E$具有复乘的情况下，$\mathrm{Im}\ \rho$是相对简单的. 通过将$K$取成一个有限扩张，不妨设$\mathrm{End}_K(E) \cong \mathcal{O}$，其中$\mathcal{O}\subset \mathcal{O}_F$为某个二次域$F/\mathbb{Q}$中的序模（即$\mathcal{O}$是有限秩自由$\mathbb{Z}$模，且$\mathcal{O}\otimes \mathbb{Q} = F$）. 此时$V_{\ell} =T_{\ell} \otimes_{\mathbb{Z}_{\ell}} \mathbb{Q}_{\ell}$是$F_{\ell} = F \otimes \mathbb{Q}_{\ell}$上秩为$1$的自由模，$G$的作用与$F_{\ell}$的作用交换. 那么$\rho$通过$(F_{\ell})^{\times}$分解，于是$\mathrm{Im}\ \rho$是交换群.
 
 如果$K$是代数数域，绝对Galois群的表示的像似乎遵从一个原则，“如果没有让像变小的理由，那么它就会尽可能地大”. $E$具有复乘就是一个让$\rho$的像变小的原因. Serre证明了复乘就是仅有的让像变小的原因，也就是本文的第一个主定理：
 
@@ -102,7 +102,7 @@ $\rho_{\ell}'$的像就不是$\mathrm{GL}_2(\mathbb{Z}_{\ell})$了.
 有了定理\ref{main::surjective}，自然就可以进一步地问例外的素数可以有多少个.
 记$\ell_{E}$是最大的使得$\tilde{\rho}_{\ell}$不是满射的素数.
 $\ell_{E}$的大小可以作为例外的素数集合有多大的一种表现.
-Serre在\parencite{serre1981quelques}中利用素数定理对$\ell_{E}$的大小进行了估计，并在GRH下证明了
+Serre在\parencite{serre1981quelques}中利用素数定理对$\ell_{E}$的大小进行了估计，并在GRH（广义黎曼假设，Generalized Riemann Hypothesis）下证明了
 \begin{cthm}
     如果$E/\mathbb{Q}$没有复乘，记$N_E$是所有$E$有坏约化的素数的乘积. 那么存在与$E$无关的常数$c$使得当
     \begin{equation}
