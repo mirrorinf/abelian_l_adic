@@ -122,13 +122,13 @@ $T_{\mathfrak{m}}$的特征标就是一对整数$(n_1,n_2)$，
 
     (1) $\chi: \mathbb{A}_K^{\times}/K^{\times} \to \mathbb{C}^{\times}$，满足$\chi(U_{\mathfrak{m}, finite}) = 1$
 
-    (2) $\tilde{\chi}: J^{\mathfrak{m}}\to \mathbb{C}^{\times}$，使得存在$\chi_{\infty}:\prod_{v\mid \infty}K_v^{\times} \to \mathbb{C}^{\times}$，满足当$a\in K, a\equiv 1\pmod{\mathfrak{m}}$时，$\tilde{\chi}((a)) = \chi_{\infty}(a)$.
+    (2) $\tilde{\chi}: J^{\mathfrak{m}}\to \mathbb{C}^{\times}$，使得存在$\chi_{\infty}:\prod_{v\mid \infty}K_v^{\times} \to \mathbb{C}^{\times}$，满足当$a\in K, a\equiv 1\pmod{\mathfrak{m}}$时，$\tilde{\chi}((a)) = \chi_{\infty}(a)$；其中$J^{\mathfrak{m}}$是所有与$\mathfrak{m}$互素的分式理想的群.
 
     其中映射$\chi\mapsto \tilde{\chi}$是，对所有$v\nmid \mathfrak{m}\infty$，选定一个素元$\pi_v\in \mathcal{O}_v$得到映射$J^{\mathfrak{m}}\to \mathbb{A}_K^{\times}$，再与$\chi$复合.
 \end{cthm}
 
 \begin{crem}
-    在(2)中对$a$的要求再加上全正，对$\tilde{\chi}$的要求看上去是减弱了，但事实上是一样的. 可以通过强逼近定理转化到idèle版本再还原来看，也可以直接证明：令$K^{\mathfrak{m}} = \{\alpha\in K^{\times}, \alpha\equiv 1\pmod{\mathfrak{m}}\}$，$K^{\mathfrak{m}}_{+} = \{\alpha\in K^{\mathfrak{m}}, \alpha 全正\}$. 如果$\chi_{\infty}$满足当$a\in K^{\mathfrak{m}}_{+}$时，$\tilde{\chi}((a)) = \chi_{\infty}(a)$，则$\tilde{\chi}\chi_{\infty}^{-1}$定义了$K^{\mathfrak{m}}/K^{\mathfrak{m}}_{+}$的一个特征标，但是则$K^{\mathfrak{m}}/K^{\mathfrak{m}}_{+} \cong \prod_{v实素点} \{\pm 1\}$. 因此存在一个$\phi: \prod_{v\mid \infty} K_v^{\times}\to \{\pm 1\}$使得在$K^{\mathfrak{m}}$上有$\tilde{\chi}\chi_{\infty}^{-1} = \phi$，于是$\chi_{\infty}\phi$满足定理中（看起来更强的）条件(2).
+    在(2)中对$a$的要求再加上全正，对$\tilde{\chi}$的要求看上去是减弱了，但事实上是一样的. 可以通过强逼近定理转化到idèle版本再还原来看，也可以直接证明：令$K^{\mathfrak{m}} = \{\alpha\in K^{\times}, \alpha\equiv 1\pmod{\mathfrak{m}}\}$，$K^{\mathfrak{m}}_{+} = \{\alpha\in K^{\mathfrak{m}}, \alpha \text{全正}\}$. 如果$\chi_{\infty}$满足当$a\in K^{\mathfrak{m}}_{+}$时，$\tilde{\chi}((a)) = \chi_{\infty}(a)$，则$\tilde{\chi}\chi_{\infty}^{-1}$定义了$K^{\mathfrak{m}}/K^{\mathfrak{m}}_{+}$的一个特征标，但是则$K^{\mathfrak{m}}/K^{\mathfrak{m}}_{+} \cong \prod_{v实素点} \{\pm 1\}$. 因此存在一个$\phi: \prod_{v\mid \infty} K_v^{\times}\to \{\pm 1\}$使得在$K^{\mathfrak{m}}$上有$\tilde{\chi}\chi_{\infty}^{-1} = \phi$，于是$\chi_{\infty}\phi$满足定理中（看起来更强的）条件(2).
 \end{crem}
 
 

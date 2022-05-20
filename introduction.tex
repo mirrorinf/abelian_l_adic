@@ -5,7 +5,8 @@
 而第五章介绍了\parencite{serre1972proprietes}中的一部分内容.
 在这三章中，大部分命题证明的逻辑链条都在本文中完整地展示出来了，因此不再逐个标注引用.
 
-志村五郎在\parencite{shimura1966reciprocity}中讨论了由椭圆曲线$E$的$\ell$阶点生成的数域$L/\mathbb{Q}$，
+志村五郎在\parencite{shimura1966reciprocity}中讨论了由
+定义在$\mathbb{Q}$上的椭圆曲线$E$的$\ell$阶点生成的数域$L/\mathbb{Q}$，
 其中$\ell$是一个素数.
 志村对$E=X_0(11)$和$7\leq \ell\leq 97$证明了
 是$\mathrm{Gal}(L/\mathbb{Q})\cong \mathrm{GL}_2(\mathbb{F}_{\ell})$.
@@ -24,7 +25,7 @@
 \begin{equation}
     f(z) = q\prod_{n=1}^{\infty} \paten{1-q^n}^2 \paten{1 - q^{11n}}^2,q=\exp(2\pi i z)
 \end{equation}
-的Fourier系数中. 那么，$L$中素数的分解性质就（几乎，还差确定幂零共轭类）被编码在了一个模形式中.
+的Fourier系数中. 那么，$L$中素数的分解性质就（几乎，还差确定幺幂共轭类）被编码在了一个模形式中.
 这一事实可以被看作是某种非交换的类域论. 如果不是取椭圆曲线的有限阶点，
 而是取乘法群$\mathbb{G}_m$的有限阶点，即单位根，
 就得到了经典的类域论.
@@ -40,7 +41,7 @@
 在开始之前，还可以提出几个问题：
 \begin{enumerate}
     \item 如果添加上$E$的合数阶点会发生什么？
-    \item 在Frobenius元素的特征多项式有重根时，如何确定它是不是幂零的？
+    \item 在Frobenius元素的特征多项式有重根时，如何确定它是不是数乘？
     \item 对高维的Abel簇是否存在类似的理论？
     \item 更一般地，能否构造Galois群是$G(\mathbb{F}_{q})$的扩张，其中$G$是Chevalley群，$q$是素数的幂，并确定其中的Frobenius元素？
 \end{enumerate}
@@ -58,7 +59,7 @@
 
 记$K_n=K(E[\ell^n])$. $\sigma\in G$在$K_n$上作用平凡当且仅当$\sigma$在$E[\ell^n]$上的作用平凡，因此$K_n/K$是Galois扩张，且$\mathrm{Gal}(K_n/K)=\mathrm{Im}\ \rho_n$. $\mathrm{Im}\ \rho_n$的大小反映了$K_n$的复杂程度，也就是$E$的有限阶点之间相互独立的程度.
 
-可以将所有的$\rho_n$放在一起考虑. 记$E[\ell^{\infty}]=\bigcup_n E[\ell^n]$，$K_{\infty} = K(E[\ell^{\infty}])$. $K_{\infty}$也是Galois扩张，且$\mathrm{Gal}(K_{\infty}/K) = \lim\limits_{\longleftarrow} \mathrm{Gal}(K_n/K)$. 记$\rho = \lim\limits_{\longleftarrow} \rho_n$，$\rho: G\to \mathrm{GL}_2(\mathbb{Z}_{\ell})$，其中转移映射$\mathrm{GL}_2(\mathbb{Z}/\ell^{n+1} \mathbb{Z}) \to \mathbb{Z}/\ell^n \mathbb{Z}$，$\tau \mapsto \tau \pmod{\ell^n}$.
+可以将所有的$\rho_n$放在一起考虑. 记$E[\ell^{\infty}]=\bigcup_n E[\ell^n]$，$K_{\infty} = K(E[\ell^{\infty}])$. $K_{\infty}$也是Galois扩张，且$\mathrm{Gal}(K_{\infty}/K) = \lim\limits_{\longleftarrow} \mathrm{Gal}(K_n/K)$. 记$\rho = \lim\limits_{\longleftarrow} \rho_n$，$\rho: G\to \mathrm{GL}_2(\mathbb{Z}_{\ell})$，其中转移映射$\mathrm{GL}_2(\mathbb{Z}/\ell^{n+1} \mathbb{Z}) \to \mathrm{GL}_2(\mathbb{Z}/\ell^n \mathbb{Z})$，$\tau \mapsto \tau \pmod{\ell^n}$.
 
 Tate提出了另一种将$\rho_n$放在一起的方式. 令Tate模$T_{\ell}(E) = \lim\limits_{\longleftarrow} E[\ell^n]$，其中转移映射为$E[\ell^{n+1}]\to E[\ell^n], P\mapsto \ell P$，则$T_{\ell}\cong (\mathbb{Z}_{\ell})^2$. $G$在$E[\ell^n]$上的作用还与椭圆曲线上的加法交换，因此在同构$T_{\ell}(E)\cong (\mathbb{Z}_{\ell})^2$下$G$的作用是线性映射. 这就得到了表示$G\mapsto \mathrm{GL}_2(\mathbb{Z}_{\ell})$. 可以看出Tate模定义的表示在模每个$\ell^n$之后都成为$\rho_n$，因此就是上一段中定义的$\rho$.
 记$V_{\ell} = T_{\ell}\otimes \mathbb{Q}_{\ell}$.
